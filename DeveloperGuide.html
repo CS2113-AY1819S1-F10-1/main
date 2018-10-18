@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>ClassRep0 - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>ClassRepo - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="header"><h1>ClassRep0 - Developer Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="header"><h1>ClassRepo - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>Team ???</code>      Since: <code>Jun 2016</code>      Licence: <code>NUS</code></p>
+<p>By: <code>Team F10-1</code>      Since: <code>Oct 2018</code>      Licence: <code>NUS</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
@@ -29,7 +29,8 @@
 </li>
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#privilege-feature">3.1. Privilege Feature</a></li>
+<li><a href="#exams-feature">3.1. Exams Feature</a></li>
+<li><a href="#privilege-feature">3.2. Privilege Feature</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a>
@@ -59,7 +60,11 @@
 </li>
 <li><a href="#product-scope">Appendix A: Product Scope</a></li>
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
-<li><a href="#use-cases">Appendix C: Use Cases</a></li>
+<li><a href="#use-cases">Appendix C: Use Cases</a>
+<ul class="sectlevel2">
+<li><a href="#use-case-add-person">C.1. Use case: Add person</a></li>
+</ul>
+</li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
 <li><a href="#glossary">Appendix E: Glossary</a></li>
 <li><a href="#product-survey">Appendix F: Product Survey</a></li>
@@ -82,19 +87,6 @@
 <ol class="arabic">
 <li>
 <p><strong>JDK <code>9</code></strong> or later</p>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-JDK <code>10</code> on Windows will fail to run tests in <a href="UsingGradle.html#Running-Tests">headless mode</a> due to a <a href="https://github.com/javafxports/openjdk-jfx/issues/66">JavaFX bug</a>.
-Windows developers are highly recommended to use JDK <code>9</code>.
-</td>
-</tr>
-</table>
-</div>
 </li>
 <li>
 <p><strong>IntelliJ</strong> IDE</p>
@@ -145,14 +137,10 @@ Do not disable them. If you have disabled them, go to <code>File</code> &gt; <co
 <p>Locate the <code>build.gradle</code> file and select it. Click <code>OK</code></p>
 </li>
 <li>
-<p>Click <code>Open as Project</code></p>
+<p>Click <code>Open</code></p>
 </li>
 <li>
 <p>Click <code>OK</code> to accept the default settings</p>
-</li>
-<li>
-<p>Open a console and run the command <code>gradlew processResources</code> (Mac/Linux: <code>./gradlew processResources</code>). It should finish with the <code>BUILD SUCCESSFUL</code> message.<br>
-This will generate all resources required by the application and tests.</p>
 </li>
 </ol>
 </div>
@@ -166,6 +154,19 @@ This will generate all resources required by the application and tests.</p>
 </li>
 <li>
 <p><a href="#Testing">Run the tests</a> to ensure they all pass.</p>
+</li>
+<li>
+<p>Open the <code>StorageFile</code> file and check for any code errors</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Due to an ongoing <a href="https://youtrack.jetbrains.com/issue/IDEA-189060">issue</a> with some of the newer versions of IntelliJ, code errors may be detected even if the project can be built and run successfully</p>
+</li>
+<li>
+<p>To resolve this, place your cursor over any of the code section highlighted in red. Press <span class="keyseq"><kbd>ALT</kbd>+<kbd>ENTER</kbd></span>, and select <code>Add '--add-modules=java.xml.bind' to module compiler options</code></p>
+</li>
+</ol>
+</div>
 </li>
 </ol>
 </div>
@@ -572,15 +573,222 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="privilege-feature"><a class="link" href="#privilege-feature">3.1. Privilege Feature</a></h3>
+<h3 id="exams-feature"><a class="link" href="#exams-feature">3.1. Exams Feature</a></h3>
+<div id="fig-ExamDiagram" class="imageblock">
+<div class="content">
+<img src="images/Exam.png" alt="Exam" width="800">
+</div>
+<div class="title">Figure 10. Structure of the Exam Component</div>
+</div>
+<div class="sect3">
+<h4 id="current-implementation"><a class="link" href="#current-implementation">3.1.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>There is a master ExamBook which contains all the exams. There are several features the ExamBook offers.
+The main features are:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>Adding a new exam</code></p>
+</li>
+<li>
+<p><code>Deleting an exam</code></p>
+</li>
+<li>
+<p><code>Editing an exam</code></p>
+</li>
+<li>
+<p><code>Registering a person for an exam</code></p>
+</li>
+<li>
+<p><code>Deregistering a person for an exam</code></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Changes to the master ExamBook will affect the corresponding exams in the AddressBook. This is done through iterating through the AddressBook to update the change. Changes in the AddressBook will also affect the exams the persons registered for in the ExamBook and hence, for other persons in the AddressBook. This is also done through iterating.</p>
+</div>
+<div class="paragraph">
+<p>An Example of how feature 5 - <code>Registering a person for an exam</code> works:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>First the specific exam and person will be identified from the most recent exams and persons listing respectively.</p>
+</li>
+<li>
+<p>The specific exam and person is then extracted out of the ExamBook and AddressBook respectively.</p>
+</li>
+<li>
+<p>A check is performed to ensure the specific person is not already registered for the exam.</p>
+</li>
+<li>
+<p>A new exam is created to make a copy of the original exam, then have its number of exam takers increased by 1.</p>
+</li>
+<li>
+<p>The original exam is added to the specific person.</p>
+</li>
+<li>
+<p>For both the AddressBook and ExamBook, any copies of the original exam is removed and replaced with the new exam.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This is demostrated by the following sequence diagram:</p>
+</div>
+<div id="fig-registerPersonDiagram" class="imageblock">
+<div class="content">
+<img src="images/registerperson.png" alt="registerperson" width="800">
+</div>
+<div class="title">Figure 11. Sequence Diagram of registering person</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-the-exam-data-are-being-synchronised-between-the-addressbook-and-exambook"><a class="link" href="#aspect-how-the-exam-data-are-being-synchronised-between-the-addressbook-and-exambook">Aspect: How the exam data are being synchronised between the AddressBook and ExamBook</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Each time there is a change in a field of an Exam, there has to be iteration through the whole AddressBook or ExamBook to update them.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Less space is needed.</p>
+</li>
+<li>
+<p>Cons: This can waste some time, if no changes need to be made for example.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Store the persons registered for an exam for each exam.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: This makes it faster to update any changes if needed.</p>
+</li>
+<li>
+<p>Cons: More space is needed.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-how-the-exam-data-are-being-updated"><a class="link" href="#aspect-how-the-exam-data-are-being-updated">Aspect: How the exam data are being updated</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Each time there is a change in a field of an Exam, a new Exam is created with the new details and added into the ExamBook and the old Exam is deleted from the ExamBook.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Allows exams to be encapsulated using interface.</p>
+</li>
+<li>
+<p>Cons: Temporary increase in space for object created during method .</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Have no interface.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy access to set values.</p>
+</li>
+<li>
+<p>Cons: No encapsulation.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-data-structure-to-support-the-exam-commands"><a class="link" href="#aspect-data-structure-to-support-the-exam-commands">Aspect: Data structure to support the exam commands</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Exams are stored in a set under each Person object in the AddressBook but stored as a list in the ExamBook.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: In the Exambook, it is required to access an exam through an index to delete and edit, hence list is better. In the AddressBook, exams are only to be used for viewing and accessed to check for value.</p>
+</li>
+<li>
+<p>Cons: Exams stored under each Person in the AddressBook cannot be sorted.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Exams are stored as a list in both ExamBook and AddressBook.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Exams stored under each Person in the AddressBook can be sorted.</p>
+</li>
+<li>
+<p>Cons: It will take longer to check if a Person has a same Exam with the Exam to be updated.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-storage-of-exambook"><a class="link" href="#aspect-storage-of-exambook">Aspect: Storage of ExamBook</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Exams are stored in a separate txt file from AddressBook</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: This allows for clarity and easy access to find and see exams in raw XML format.</p>
+</li>
+<li>
+<p>Cons: Extra storage file and hence methods and file paths are needed, this may be confusing and cause much repetition of code.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Exams are stored in same data file as AddressBook.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Only 1 storage file is needed. Less repetition and variables are needed.</p>
+</li>
+<li>
+<p>Cons: May be harder for user to see exams in raw XML format.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="privilege-feature"><a class="link" href="#privilege-feature">3.2. Privilege Feature</a></h3>
 <div id="fig-PrivilegeDiagram" class="imageblock">
 <div class="content">
 <img src="images/Privilege.png" alt="Privilege" width="800">
 </div>
-<div class="title">Figure 10. Structure of the Privilege Component</div>
+<div class="title">Figure 12. Structure of the Privilege Component</div>
 </div>
 <div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">3.1.1. Current Implementation</a></h4>
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">3.2.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>Logic is assigned to one Privilege object at all times. Privilege contains a User and a Person.
 The User interface defines what access level the Privilege object have, which is implemented by BasicUser, TutorUser and AdminUser.<br>
@@ -595,17 +803,17 @@ When switching Privilege levels, the Privilege attached to Logic will point its 
 <div class="content">
 <img src="images/PrivilegeObjectDiagram.png" alt="PrivilegeObjectDiagram" width="900">
 </div>
-<div class="title">Figure 11. How switching Privilege is implemented (Object Diagram)</div>
+<div class="title">Figure 13. How switching Privilege is implemented (Object Diagram)</div>
 </div>
 <div id="fig-LoginSequenceDiagram" class="imageblock">
 <div class="content">
 <img src="images/Login_Sequence_Diagram.png" alt="Login Sequence Diagram" width="600">
 </div>
-<div class="title">Figure 12. Sequence Diagram for Login Command</div>
+<div class="title">Figure 14. Sequence Diagram for Login Command</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.2. Design Considerations</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-to-define-a-privilege-level-of-privilege"><a class="link" href="#aspect-how-to-define-a-privilege-level-of-privilege">Aspect: How to define a privilege level of Privilege</a></h5>
 <div class="ulist">
@@ -874,7 +1082,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 13. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 15. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -1145,24 +1353,6 @@ Students, teachers and staff of Secondary Schools.<br></p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add a new person</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete a person</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">remove entries that I no longer need</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">find a person by name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">locate details of persons without having to go through the entire list</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">login to my account</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">access my account</p></td>
 </tr>
@@ -1174,9 +1364,27 @@ Students, teachers and staff of Secondary Schools.<br></p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find a person by name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">locate details of persons without having to go through the entire list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">first admin</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">raise my privilege to admin</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">have the initial privilege to access restricted commands</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">admin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add a new person</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">admin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete a person</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove entries that I no longer need</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -1197,6 +1405,42 @@ Students, teachers and staff of Secondary Schools.<br></p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">remove account from people who do not need it anymore</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">admin/tutor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add a new exam</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">admin/tutor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete an exam</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove entries that I no longer need</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">admin/tutor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit an exam</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">update the details of exam entries</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">admin/tutor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">register a user for an exam</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">allow the user to know of the exam and keep track of the number of exam-takers</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">admin/tutor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deregister a user for an exam</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove entries that I made wrongly or no longer need</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">admin/tutor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view the lists of exams</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">manage the exams</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view my privilege</p></td>
@@ -1210,6 +1454,12 @@ Students, teachers and staff of Secondary Schools.<br></p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view my non-private exams</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know details of the exams I am going to take</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">hide <a href="#private-contact-detail">private contact details</a> by default</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">minimize chance of someone else seeing them by accident</p></td>
@@ -1219,6 +1469,12 @@ Students, teachers and staff of Secondary Schools.<br></p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user with many persons in the address book</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">sort persons by name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">locate a person easily</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user with many exams in the exam book</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sort exams by a specificied field</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">locate an exam easily</p></td>
 </tr>
 </tbody>
 </table>
@@ -1233,56 +1489,8 @@ Students, teachers and staff of Secondary Schools.<br></p>
 <div class="paragraph">
 <p>(For all use cases below, the <strong>System</strong> is the <code>AddressBook</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
-<h3 id="use-case-delete-person" class="discrete">Use case: Delete person</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to list persons</p>
-</li>
-<li>
-<p>AddressBook shows a list of persons</p>
-</li>
-<li>
-<p>User requests to delete a specific person in the list</p>
-</li>
-<li>
-<p>AddressBook deletes the person</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>2a. The list is empty.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-<li>
-<p>3a. The given index is invalid.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>3a1. AddressBook shows an error message.</p>
-<div class="paragraph">
-<p>Use case resumes at step 2.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="use-case-add-person" class="discrete">Use case: Add person</h3>
+<div class="sect2">
+<h3 id="use-case-add-person"><a class="link" href="#use-case-add-person">C.1. Use case: Add person</a></h3>
 <h4 id="actors-tutor-admin" class="discrete">Actors: Tutor, Admin</h4>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -1331,6 +1539,449 @@ Use case ends.<br></p>
 Use case ends.</p>
 </li>
 </ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-delete-person" class="discrete">Use case: Delete person</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list persons.</p>
+</li>
+<li>
+<p>ClassRepo shows a list of persons.</p>
+</li>
+<li>
+<p>User requests to delete a specific person in the list.</p>
+</li>
+<li>
+<p>ClassRepo deletes the person.</p>
+</li>
+<li>
+<p>ClassRepo checks for all the exams the person is registered for and updates the number of exam takers in the ExamBook. Persons in the AddressBook registered under the exams will have their exams details updated.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a. The given index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. ClassRepo shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-add-exam" class="discrete">Use case: Add exam</h3>
+<h4 id="system-exambook" class="discrete">System: ExamBook</h4>
+<h4 id="actor-admin-tutor" class="discrete">Actor: Admin,Tutor</h4>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to add exam.</p>
+</li>
+<li>
+<p>ClassRepo requests the details of the exam to add.</p>
+</li>
+<li>
+<p>User enters the details of the exam.</p>
+</li>
+<li>
+<p>ClassRepo adds the exam in the ExamBook.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a. The details entered is of an invalid format.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. ClassRepo shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3b. The exam to add already exists in ClassRepo.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. ClassRepo shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-delete-exam" class="discrete">Use case: Delete exam</h3>
+<h4 id="system-adressbook-exambook" class="discrete">System: AdressBook,ExamBook</h4>
+<h4 id="actor-admin-tutor-2" class="discrete">Actor: Admin,Tutor</h4>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list exams.</p>
+</li>
+<li>
+<p>ClassRepo shows a list of exams.</p>
+</li>
+<li>
+<p>User requests to delete a specific exam in the list.</p>
+</li>
+<li>
+<p>ClassRepo deletes the exam in the ExamBook.</p>
+</li>
+<li>
+<p>ClassRepo deletes the exam for all persons registered for it in the AddressBook.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a. The given index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. ClassRepo shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-edit-exam" class="discrete">Use case: Edit exam</h3>
+<h4 id="system-adressbook-exambook-2" class="discrete">System: AdressBook,ExamBook</h4>
+<h4 id="actor-admin-tutor-3" class="discrete">Actor: Admin,Tutor</h4>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list exams.</p>
+</li>
+<li>
+<p>ClassRepo shows a list of exams.</p>
+</li>
+<li>
+<p>User requests to edit a specific exam in the list.</p>
+</li>
+<li>
+<p>ClassRepo requests the details of the exam to edit.</p>
+</li>
+<li>
+<p>ClassRepo edits the exam in the ExamBook.</p>
+</li>
+<li>
+<p>ClassRepo edits the exam for all persons registered for it in the AddressBook.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a. The given index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. ClassRepo shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>4a. The details entered is of an invalid format.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>4a1. ClassRepo shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>4b. The exam with the changed details already exists in the ExamBook.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>4b1. ClassRepo shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-register-for-an-exam" class="discrete">Use case: Register for an exam</h3>
+<h4 id="system-adressbook-exambook-3" class="discrete">System: AdressBook,ExamBook</h4>
+<h4 id="actor-admin-tutor-4" class="discrete">Actor: Admin,Tutor</h4>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list exams.</p>
+</li>
+<li>
+<p>ClassRepo shows a list of exams.</p>
+</li>
+<li>
+<p>User requests to list persons.</p>
+</li>
+<li>
+<p>ClassRepo shows a list of persons.</p>
+</li>
+<li>
+<p>User requests to register a specific person in the persons list for a specific exam in the exams list.</p>
+</li>
+<li>
+<p>ClassRepo edits the person.</p>
+</li>
+<li>
+<p>ClassRepo updates the number of exam takers for the specific exam in the ExamBook.</p>
+</li>
+<li>
+<p>ClassRepo updates the specific exam for all persons registered for it in the AddressBook.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>4a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>5a. The given person index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>5a1. ClassRepo shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 4.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>5b. The given exam index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>5b1. ClassRepo shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 4.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-deregister-for-an-exam" class="discrete">Use case: Deregister for an exam</h3>
+<h4 id="system-adressbook-exambook-4" class="discrete">System: AdressBook,ExamBook</h4>
+<h4 id="actor-admin-tutor-5" class="discrete">Actor: Admin,Tutor</h4>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list exams.</p>
+</li>
+<li>
+<p>ClassRepo shows a list of exams.</p>
+</li>
+<li>
+<p>User requests to list persons.</p>
+</li>
+<li>
+<p>ClassRepo shows a list of persons.</p>
+</li>
+<li>
+<p>User requests to deregister a specific person in the persons list for a specific exam in the exams list.</p>
+</li>
+<li>
+<p>ClassRepo edits the person.</p>
+</li>
+<li>
+<p>ClassRepo updates the number of exam takers for the specific exam in the ExamBook.</p>
+</li>
+<li>
+<p>ClassRepo updates the specific exam for all persons registered for it in the AddressBook.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>4a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>5a. The given person index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>5a1. ClassRepo shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 4.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>5b. The given exam index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>5b1. ClassRepo shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 4.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-viewing-the-exams-list" class="discrete">Use case: Viewing the exams list</h3>
+<h4 id="system-exambook-2" class="discrete">System: ExamBook</h4>
+<h4 id="actor-admin-tutor-6" class="discrete">Actor: Admin,Tutor</h4>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list exams.</p>
+</li>
+<li>
+<p>ClassRepo shows a list of exams.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
@@ -1449,14 +2100,8 @@ Use case ends</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
+<div class="ulist">
+<ul>
 <li>
 <p>3a. Incorrect password entered</p>
 <div class="ulist">
@@ -1485,6 +2130,9 @@ User case resumes from step 4</p>
 </div>
 </li>
 </ul>
+</div>
+</li>
+</ol>
 </div>
 <h3 id="use-case-add-account-to-a-person" class="discrete">Use case: Add account to a person</h3>
 <h4 id="actor-admin-2" class="discrete">Actor: Admin</h4>
@@ -1753,6 +2401,7 @@ User case resumes from step 4</p>
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
 <h2 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></h2>
 <div class="sectionbody">
@@ -1786,6 +2435,10 @@ User case resumes from step 4</p>
 <dt class="hdlist1"><a id="private-contact-detail"></a> Private contact detail</dt>
 <dd>
 <p>A contact detail that is not meant to be shared with others</p>
+</dd>
+<dt class="hdlist1"><a id="private-exam"></a> Private exam</dt>
+<dd>
+<p>A exam with details that is not meant to be released to the students yet</p>
 </dd>
 <dt class="hdlist1">Main Success Scenario</dt>
 <dd>
@@ -1941,4 +2594,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-17 15:55:23 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-18 01:18:14 UTC</div></div></div></body></html>

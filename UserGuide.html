@@ -24,7 +24,14 @@
 </li>
 <li><a href="#exam-commands">Exam Commands</a>
 <ul class="sectlevel2">
-<li><a href="#creating-an-exam-code-createexam-code">Creating an exam : <code>createexam</code></a></li>
+<li><a href="#adding-an-exam-code-addexam-code">Adding an exam : <code>addexam</code></a></li>
+<li><a href="#deleting-an-exam-code-deleteexam-code">Deleting an exam : <code>deleteexam</code></a></li>
+<li><a href="#editing-an-exam-code-editexam-code">Editing an exam : <code>editexam</code></a></li>
+<li><a href="#listing-all-exams-code-examslist-code">Listing all exams : <code>examslist</code></a></li>
+<li><a href="#registering-for-an-exam-code-regexam-code">Registering for an exam : <code>regexam</code></a></li>
+<li><a href="#deregistering-for-an-exam-code-deregexam-code">Deregistering for an exam : <code>deregexam</code></a></li>
+<li><a href="#viewing-exams-code-viewexams-code">Viewing exams : <code>viewexams</code></a></li>
+<li><a href="#clearing-all-entries-code-clearexams-code">Clearing all entries : <code>clearexams</code></a></li>
 </ul>
 </li>
 <li><a href="#fees-commands">Fees Commands</a>
@@ -212,14 +219,14 @@ Returns Any person having names <code>Betsy</code>, <code>Tim</code>, or <code>J
 <div class="sect2">
 <h3 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">Deleting a person : <code>delete</code></a></h3>
 <div class="paragraph">
-<p>Deletes the specified person from the address book. Irreversible.<br>
+<p>Deletes the specified person from the address book. Updates the exams the person is registered for in the exam book and for all persons registered for them in the address book. Irreversible.<br>
 Format: <code>delete INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
 <p>Deletes the person at the specified <code>INDEX</code>.
-The index refers to the index number shown in the most recent listing.</p>
+The index refers to the index number shown in the most recent persons listing.</p>
 </div>
 </div>
 </div>
@@ -251,7 +258,7 @@ Format: <code>view INDEX</code></p>
 <div class="content">
 <div class="paragraph">
 <p>Views the person at the specified <code>INDEX</code>.
-The index refers to the index number shown in the most recent listing.</p>
+The index refers to the index number shown in the most recent persons listing.</p>
 </div>
 </div>
 </div>
@@ -283,7 +290,7 @@ Format: <code>viewall INDEX</code></p>
 <div class="content">
 <div class="paragraph">
 <p>Views all details of the person at the specified <code>INDEX</code>.
-The index refers to the index number shown in the most recent listing.</p>
+The index refers to the index number shown in the most recent persons listing.</p>
 </div>
 </div>
 </div>
@@ -315,7 +322,7 @@ Format: <code>viewself</code></p>
 <div class="sect2">
 <h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
-<p>Clears all entries from the address book.<br>
+<p>Clears all entries from the address book. Reset all the exams in the exam book.<br>
 Format: <code>clear</code></p>
 </div>
 </div>
@@ -328,19 +335,18 @@ Format: <code>clear</code></p>
 <p>Below are the commands that deals with exam data:</p>
 </div>
 <div class="sect2">
-<h3 id="creating-an-exam-code-createexam-code"><a class="link" href="#creating-an-exam-code-createexam-code">Creating an exam : <code>createexam</code></a></h3>
+<h3 id="adding-an-exam-code-addexam-code"><a class="link" href="#adding-an-exam-code-addexam-code">Adding an exam : <code>addexam</code></a></h3>
 <div class="paragraph">
 <p>Adds an exam to the exam book.<br>
-Format: <code>createexam SUBJECTNAME [p]n/EXAMNAME  d/EXAMDATE st/EXAMSTARTTIME et/EXAMENDTIME dt/EXAMDETAILS</code></p>
+Format: <code>addexam [p]e/EXAMNAME s/SUBJECTNAME d/EXAMDATE st/EXAMSTARTTIME et/EXAMENDTIME dt/EXAMDETAILS</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Words in <code>UPPER_CASE</code> are the parameters, order of parameters are fixed.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters, items in SQUARE_BRACKETS are optional. Order of parameters are fixed.</p>
 </div>
 <div class="paragraph">
-<p>Put a <code>p</code> before the examname prefix to mark it as <code>private</code>. <code>private</code> details can only
-be seen using the <code>viewall</code> command.</p>
+<p>Put a <code>p</code> before the exam name prefix to mark the exam as <code>private</code>.</p>
 </div>
 </div>
 </div>
@@ -350,12 +356,200 @@ be seen using the <code>viewall</code> command.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>createexam Mathematics n/Math Mid-terms d/01122018 st/0900 et/1200 dt/At MPSH</code><br></p>
+<p><code>addexam e/Math 2018 Finals s/Mathematics d/01-12-2018 st/09:00 et/12:00 dt/At MPSH</code><br></p>
 </li>
 <li>
-<p><code>createexam English n/Eng Finals d/012122017 st/0800 et/1000 dt/At School Hall</code></p>
+<p><code>addexam pe/2017 English Finals Paper 2 s/English d/01-12-2017 st/08:00 et/10:00 dt/No Pencils Allowed</code></p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-an-exam-code-deleteexam-code"><a class="link" href="#deleting-an-exam-code-deleteexam-code">Deleting an exam : <code>deleteexam</code></a></h3>
+<div class="paragraph">
+<p>Deletes the specified exam from the exam book. Irreversible. Persons registered for the corresponding exam will have the exam deleted as well.<br>
+Format: <code>deleteexam INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Deletes the exam at the specified <code>INDEX</code>.
+The index refers to the index number shown in the most recent exams listing.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>examslist</code><br>
+<code>deleteexam 2</code><br>
+Deletes the 2nd exam in the exam book.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-an-exam-code-editexam-code"><a class="link" href="#editing-an-exam-code-editexam-code">Editing an exam : <code>editexam</code></a></h3>
+<div class="paragraph">
+<p>Edits the specified exam from the exam book. Persons registered for the corresponding exam will have the exam details updated as well.<br>
+Format: <code>editexam INDEX [p/PRIVATESTATUS] [e/EXAMNAME] [s/SUBJECTNAME] [d/EXAMDATE] [st/EXAMSTARTTIME] [et/EXAMENDTIME] [dt/EXAMDETAILS]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Words in <code>UPPER_CASE</code> are the parameters, items in <code>SQUARE_BRACKETS</code> are optional,
+however at least 1 of the optional items must be present. Order of parameters are fixed.</p>
+</div>
+<div class="paragraph">
+<p>The index refers to the index number shown in the most recent exams listing.</p>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>PRIVATESTATUS is denoted by <code>y</code> for private and <code>n</code> for non-private.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>examslist</code><br>
+<code>editexam 2 p/y e/English 2018 Finals dt/In MPSH</code></p>
+</li>
+<li>
+<p><code>examslist</code><br>
+<code>editexam 1 dt/Cancelled</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-all-exams-code-examslist-code"><a class="link" href="#listing-all-exams-code-examslist-code">Listing all exams : <code>examslist</code></a></h3>
+<div class="paragraph">
+<p>Shows a list of all exams in the exam book.<br>
+Format: <code>examslist</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="registering-for-an-exam-code-regexam-code"><a class="link" href="#registering-for-an-exam-code-regexam-code">Registering for an exam : <code>regexam</code></a></h3>
+<div class="paragraph">
+<p>Registers a specified person for a specified exam.<br>
+Format: <code>regexam PERSONINDEX EXAMINDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Registers a specified person for a specified exam.
+The person index refers to the index number shown in the most recent persons listing.
+The exam index refers to the index number shown in the most recent exams listing.</p>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Changes to an exam in the exam book will change the corresponding exam for all persons registered under it, be it an edit or a delete.
+Exams registered for a person will not be shown in the <code>list</code> command and only viewable under the <code>viewall</code> and <code>viewexams</code> command.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>examslist</code><br>
+<code>list</code><br>
+<code>regexam 2</code><br>
+Registers the 2nd person in the address book for the 2nd exam in the exam book.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deregistering-for-an-exam-code-deregexam-code"><a class="link" href="#deregistering-for-an-exam-code-deregexam-code">Deregistering for an exam : <code>deregexam</code></a></h3>
+<div class="paragraph">
+<p>Deregister a specified person for a specified exam.<br>
+Format: <code>deregexam PERSONINDEX EXAMINDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Degisters a specified person for a specified exam.
+The person index refers to the index number shown in the most recent persons listing.
+The exam index refers to the index number shown in the most recent exams listing.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>examslist</code><br>
+<code>list</code><br>
+<code>deregexam 2</code><br>
+Deregisters the 2nd person in the address book for the 2nd exam in the exam book.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-exams-code-viewexams-code"><a class="link" href="#viewing-exams-code-viewexams-code">Viewing exams : <code>viewexams</code></a></h3>
+<div class="paragraph">
+<p>View the non-private exams for a person at the specified <code>INDEX</code>.<br>
+Format: <code>viewexams INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Views the exams of the person at the specified <code>INDEX</code>.
+The index refers to the index number shown in the most recent persons listing.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code><br>
+<code>viewexams 1</code><br>
+Views the non-private exams of the 1st person in the address book.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clearing-all-entries-code-clearexams-code"><a class="link" href="#clearing-all-entries-code-clearexams-code">Clearing all entries : <code>clearexams</code></a></h3>
+<div class="paragraph">
+<p>Clears all entries from the exam book. All exams will be cleared in the address book as well.<br>
+Format: <code>clearexams</code></p>
 </div>
 </div>
 </div>
@@ -630,8 +824,9 @@ Deletes the account of the first person in the list, provided that he has an acc
 </div>
 <h1 id="saving-the-data" class="sect0"><a class="link" href="#saving-the-data">Saving the data</a></h1>
 <div class="paragraph">
-<p>Address book data are saved in the hard disk automatically after any command that changes the data.</p>
+<p>Address book, exam book and statistics book data are saved in the hard disk automatically after any command that changes the data.</p>
 </div>
 <div class="paragraph">
-<p>There is no need to save manually. Address book data are saved in a file called <code>addressbook.txt</code> in the project root folder.</p>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-17 15:55:23 UTC</div></div></div></body></html>
+<p>There is no need to save manually. In the project root folder, address book data are saved in a file called <code>addressbook.txt</code>,
+exam book data are saved in a file called <code>exams.txt</code> and statistics book data are saved in a file called <code>statistics.txt</code>.</p>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-18 01:18:14 UTC</div></div></div></body></html>
