@@ -1036,10 +1036,19 @@ being stored in the AddressBook. The current set of commands include:</p>
 <p><code>Adding a new assessment</code></p>
 </li>
 <li>
+<p>`Listing all assessments'</p>
+</li>
+<li>
 <p><code>Deleting an assessment</code></p>
 </li>
 <li>
-<p>`Listing all assessments'</p>
+<p><code>Adding grades for a student</code></p>
+</li>
+<li>
+<p><code>Viewing all grades for a student</code></p>
+</li>
+<li>
+<p><code>Deleting a specific grade for a student</code></p>
 </li>
 </ol>
 </div>
@@ -1060,6 +1069,158 @@ not be entered.</p>
 grades to a particular student.</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>This is demonstrated by the following sequence diagram:</p>
+</div>
+<div id="fig-AddAssessmentDiagram" class="imageblock">
+<div class="content">
+<img src="images/Assessment_Seq_Diagram.png" alt="Assessment Seq Diagram" width="800">
+</div>
+<div class="title">Figure 15. Sequence Diagram of adding a new assessment</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.3.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-assessment-and-grades-as-classes"><a class="link" href="#aspect-assessment-and-grades-as-classes">Aspect: 'Assessment' and 'Grades' as classes</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Assessments and Grades are created as two separate classes. Assessment class stores the grades of all students for that assessment while a reference to the grades is given to person.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Better design in terms of OOP. Allows easier calculation of statistics per assessment as you can simply loop through all the grades.</p>
+</li>
+<li>
+<p>Cons: This is a little more tedious in terms of coding.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> The Assessment and Grades are combined into a single class with different parameters to take in the exam name and grade respectively.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: -</p>
+</li>
+<li>
+<p>Cons: Cannot view list of assessments separately.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>An example of Alternative 1 is demonstrated in the following diagram:</p>
+</div>
+<div id="fig-AssessmentandGrades" class="imageblock">
+<div class="content">
+<img src="images/Assessment_Aspect_Example.png" alt="Assessment Aspect Example" width="800">
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-data-structure-to-store-grades"><a class="link" href="#aspect-data-structure-to-store-grades">Aspect: Data structure to store grades</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> The grades are stored using a Map data structure under Assessment class</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Allows easy reference to person class.</p>
+</li>
+<li>
+<p>Cons: Cannot sort/ order the entries if required.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> The grades are stored using a 'List' data structure under Assessment class</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Can sort the grades alphabetically if required.</p>
+</li>
+<li>
+<p>Cons: Difficult to link grades to person.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-data-type-for-grades-value"><a class="link" href="#aspect-data-type-for-grades-value">Aspect: Data type for Grades value</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> The grades are stored as an integer.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Since the ClassRepo is targeted at Secondary Schools where marks out of 100 are usually awarded rather than letter grades, integer makes more sense.</p>
+</li>
+<li>
+<p>Cons: Can only enter whole numbers (Possible improvement: Change to float)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Store the grades as a String</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Can also enter letter grades (A, B, C etc. if required)</p>
+</li>
+<li>
+<p>Cons: -</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-creation-and-storage-of-statistics-book"><a class="link" href="#aspect-creation-and-storage-of-statistics-book">Aspect: Creation and Storage of Statistics Book</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> A separate Statistics Book is created to store the statistics of all assessments. Also, these statistics are stored in a separate txt file (statistics.txt) from AddressBook</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: These assessment statistics have no link to person. They are a set of separate information accessible to all users (students, teachers and admin). Hence, a separate Statistics Book provides increased clarity and makes sense in terms of the end-usage. This also gives easy access to find and see statistics in raw XML format.</p>
+</li>
+<li>
+<p>Cons: Using an extra storage file implies that additional methods and file paths are needed. Makes code lengthier and repetitive.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Store statistics in AddressBook itself.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Everything is condensed and can be found in the same spot. Also, only one storage file would be needed. Reduces duplication of files.</p>
+</li>
+<li>
+<p>Cons: It is messy and confusing. Unrelated data is stored together.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
@@ -1124,7 +1285,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 15. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 16. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -2663,4 +2824,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-29 05:39:33 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-29 13:41:53 UTC</div></div></div></body></html>
