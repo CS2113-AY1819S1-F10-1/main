@@ -6,28 +6,13 @@
 <li><a href="#commands-available">Commands Available</a>
 <ul class="sectlevel2">
 <li><a href="#general-commands">General Commands</a></li>
+<li><a href="#privilege">Privilege Commands</a></li>
 <li><a href="#person-commands">Person Commands</a></li>
 <li><a href="#exam-commands">Exam Commands</a></li>
 <li><a href="#fees-commands">Fees Commands</a></li>
-<li><a href="#privilege-commands">Privilege Commands</a></li>
-<li><a href="#account-commands">Account Commands</a></li>
-</ul>
-</li>
-<li><a href="#grade-commands">Grade Commands</a>
-<ul class="sectlevel3">
-<li><a href="#adding-an-assessment-code-addassess-code">Adding an Assessment : <code>addassess</code></a></li>
-<li><a href="#listing-all-assessments-code-listassess-code">Listing all assessments : <code>listassess</code></a></li>
-<li><a href="#deleting-an-assessment-code-deleteassess-code">Deleting an assessment : <code>deleteassess</code></a></li>
-<li><a href="#adding-grades-to-a-person-code-addgrades-code">Adding grades to a person : <code>addgrades</code></a></li>
-<li><a href="#viewing-grades-of-a-person-code-viewgrades-code">Viewing grades of a person : <code>viewgrades</code></a></li>
-<li><a href="#deleting-a-grade-code-deletegrades-code">Deleting a grade : <code>deletegrades</code></a></li>
-</ul>
-</li>
-<li><a href="#attendance-commands">Attendance Commands</a>
-<ul class="sectlevel3">
-<li><a href="#updates-the-attendance-of-a-person-code-attendance-code">Updates the attendance of a person: <code>attendance</code></a></li>
-<li><a href="#replaces-the-attendance-of-a-person-code-replaceatten-code">Replaces the attendance of a person: <code>replaceAtten</code></a></li>
-<li><a href="#view-the-attendance-of-a-person-code-viewatten-code">View the attendance of a person: <code>viewAtten</code></a></li>
+<li><a href="#account">Account Commands</a></li>
+<li><a href="#grade-commands">Grade Commands</a></li>
+<li><a href="#attendance-commands">Attendance Commands</a></li>
 </ul>
 </li>
 <li><a href="#saving-the-data">Saving the data</a></li>
@@ -68,15 +53,33 @@
 <div class="sect1">
 <h2 id="commands-available"><a class="link" href="#commands-available">Commands Available</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>This sections documents all the commands available to the user:</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<span class="image"><img src="images/Admin.png" alt="16" width="16"></span> commands require Admin privileges to run<br>
+<span class="image"><img src="images/Tutor.png" alt="16" width="16"></span> commands require Tutor privileges to run<br>
+<span class="image"><img src="images/Basic.png" alt="16" width="16"></span> commands require no privilege to run.
+</td>
+</tr>
+</table>
+</div>
 <div class="sect2">
 <h3 id="general-commands"><a class="link" href="#general-commands">General Commands</a></h3>
 <div class="paragraph">
-<p>Below are the generic commands:</p>
+<p>Below are the general commands:</p>
 </div>
 <div class="sect3">
-<h4 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">Viewing help : <code>help</code></a></h4>
+<h4 id="viewing-help-code-help-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span"><a class="link" href="#viewing-help-code-help-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span">Viewing help : <code>help</code> <span class="image"><img src="images/Basic.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
-<p>Format: <code>help</code></p>
+<p>Displays the list of commands the user can run.<br>
+Format: <code>help</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -94,10 +97,142 @@
 </div>
 </div>
 <div class="sect3">
-<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">Exiting the program : <code>exit</code></a></h4>
+<h4 id="exiting-the-program-code-exit-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span"><a class="link" href="#exiting-the-program-code-exit-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span">Exiting the program : <code>exit</code> <span class="image"><img src="images/Basic.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="privilege"><a class="link" href="#privilege">Privilege Commands</a></h3>
+<div class="paragraph">
+<p>Below are the commands that deals with privilege:</p>
+</div>
+<div class="sect3">
+<h4 id="raises-your-privilege-level-code-raise-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span"><a class="link" href="#raises-your-privilege-level-code-raise-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span">Raises your privilege level : <code>raise</code> <span class="image"><img src="images/Basic.png" alt="16" width="16"></span></a></h4>
+<div class="paragraph">
+<p>Raises the privilege level to Admin. Requires the master password.<br>
+Format: <code>viewall PASSWORD</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The default master password when first deploying ClassRepo is <code>default_pw</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>raise default_pw</code><br>
+Raises your privilege level to Admin.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="see-your-privilege-level-code-viewpri-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span"><a class="link" href="#see-your-privilege-level-code-viewpri-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span">See your privilege level : <code>viewpri</code> <span class="image"><img src="images/Basic.png" alt="16" width="16"></span></a></h4>
+<div class="paragraph">
+<p>Displays your current privilege level as well as the account you are logged in as<br>
+Format: <code>viewpri</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="change-the-master-password-code-editpw-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span"><a class="link" href="#change-the-master-password-code-editpw-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span">Change the master password : <code>editpw</code> <span class="image"><img src="images/Admin.png" alt="16" width="16"></span></a></h4>
+<div class="paragraph">
+<p>Changes the master password. Requires the current master password and Admin privileges.<br>
+Format: <code>editpw OLD_PASSWORD NEW_PASSWORD</code></p>
+</div>
+<div class="paragraph">
+<p>Changes the master password to <code>NEW_PASSWORD</code>, if the provided <code>OLD_PASSWORD</code> is correct.<br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>It is recommended to change the master password when first deploying ClassRepo.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>editpw default_pw new_pw</code><br>
+Changes the master password to "new_pw".</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sets-default-privilege-code-perm-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span"><a class="link" href="#sets-default-privilege-code-perm-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span">Sets default privilege : <code>perm</code> <span class="image"><img src="images/Admin.png" alt="16" width="16"></span></a></h4>
+<div class="paragraph">
+<p>Sets/Unsets the privilege to be Admin when starting a session.<br>
+Format: <code>perm BOOLEAN</code><br>
+Enter <code>BOOLEAN</code> as <code>true</code> to set the default privilege to be Admin.<br>
+Enter <code>BOOLEAN</code> as <code>false</code> to set the default privilege to be Basic.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This is recommended to be only done on machines that you are certain only administrators of your school have access to.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>raise default_pw</code><br>
+<code>perm true</code><br>
+Sets the default privilege when starting a session to be Admin.</p>
+</li>
+<li>
+<p><code>raise default_pw</code><br>
+<code>perm false</code><br>
+Sets the default privilege when starting a session to be Basic.</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -107,7 +242,7 @@ Format: <code>exit</code></p>
 <p>Below are the commands that deals with persons in the system:</p>
 </div>
 <div class="sect3">
-<h4 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">Adding a person: <code>add</code></a></h4>
+<h4 id="adding-a-person-code-add-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span"><a class="link" href="#adding-a-person-code-add-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span">Adding a person: <code>add</code> <span class="image"><img src="images/Admin.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Adds a person to the address book.<br>
 Format: <code>add NAME [p]p/PHONE_NUMBER [p]e/EMAIL [p]a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
@@ -142,14 +277,52 @@ be seen using the <code>viewall</code> command.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">Listing all persons : <code>list</code></a></h4>
+<h4 id="listing-all-persons-simplied-view-code-list-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span"><a class="link" href="#listing-all-persons-simplied-view-code-list-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span">Listing all persons (simplied view): <code>list</code> <span class="image"><img src="images/Basic.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
-<p>Shows a list of all persons in the address book.<br>
-Format: <code>list</code></p>
+<p>Shows a list of all persons in the address book.<br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This shows only the names of each person in the addressbook.<br>
+For a more detailed view, refer to <a href="#listall">List (detailed view)</a></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Format: <code>list</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="finding-all-persons-containing-any-keyword-in-their-name-code-find-code"><a class="link" href="#finding-all-persons-containing-any-keyword-in-their-name-code-find-code">Finding all persons containing any keyword in their name: <code>find</code></a></h4>
+<h4 id="listall"><a class="link" href="#listall">Listing all persons (detailed view) : <code>listall</code>  <span class="image"><img src="images/Tutor.png" alt="16" width="16"></span></a></h4>
+<div class="paragraph">
+<p>Displays all persons (showing all non-private details) in the address book as a list with index numbers.<br>
+Format: <code>listall</code><br></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>listall</code><br></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="finding-all-persons-containing-any-keyword-in-their-name-code-find-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span"><a class="link" href="#finding-all-persons-containing-any-keyword-in-their-name-code-find-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span">Finding all persons containing any keyword in their name: <code>find</code> <span class="image"><img src="images/Basic.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Finds persons whose names contain any of the given keywords.<br>
 Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
@@ -186,16 +359,16 @@ Returns Any person having names <code>Betsy</code>, <code>Tim</code>, or <code>J
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">Deleting a person : <code>delete</code></a></h4>
+<h4 id="deleting-a-person-code-delete-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span"><a class="link" href="#deleting-a-person-code-delete-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span">Deleting a person : <code>delete</code> <span class="image"><img src="images/Admin.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
-<p>Deletes the specified person from the address book. Updates the exams the person is registered for in the exam book and for all persons registered for them in the address book. Irreversible.<br>
+<p>Deletes the specified person from the address book. Irreversible.<br>
 Format: <code>delete INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
 <p>Deletes the person at the specified <code>INDEX</code>.
-The index refers to the index number shown in the most recent persons listing.</p>
+The index refers to the index number shown in the most recent listing.</p>
 </div>
 </div>
 </div>
@@ -218,7 +391,7 @@ Deletes the 1st person in the results of the <code>find</code> command.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="view-non-private-details-of-a-person-code-view-code"><a class="link" href="#view-non-private-details-of-a-person-code-view-code">View non-private details of a person : <code>view</code></a></h4>
+<h4 id="view-non-private-details-of-a-person-code-view-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span"><a class="link" href="#view-non-private-details-of-a-person-code-view-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span">View non-private details of a person : <code>view</code> <span class="image"><img src="images/Basic.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Displays the non-private details of the specified person.<br>
 Format: <code>view INDEX</code></p>
@@ -227,7 +400,7 @@ Format: <code>view INDEX</code></p>
 <div class="content">
 <div class="paragraph">
 <p>Views the person at the specified <code>INDEX</code>.
-The index refers to the index number shown in the most recent persons listing.</p>
+The index refers to the index number shown in the most recent listing.</p>
 </div>
 </div>
 </div>
@@ -250,7 +423,7 @@ Views the 1st person in the results of the <code>find</code> command.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="view-all-details-of-a-person-code-viewall-code"><a class="link" href="#view-all-details-of-a-person-code-viewall-code">View all details of a person : <code>viewall</code></a></h4>
+<h4 id="view-all-details-of-a-person-code-viewall-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span"><a class="link" href="#view-all-details-of-a-person-code-viewall-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span">View all details of a person : <code>viewall</code> <span class="image"><img src="images/Tutor.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Displays all details (including private details) of the specified person.<br>
 Format: <code>viewall INDEX</code></p>
@@ -259,7 +432,7 @@ Format: <code>viewall INDEX</code></p>
 <div class="content">
 <div class="paragraph">
 <p>Views all details of the person at the specified <code>INDEX</code>.
-The index refers to the index number shown in the most recent persons listing.</p>
+The index refers to the index number shown in the most recent listing.</p>
 </div>
 </div>
 </div>
@@ -282,16 +455,16 @@ Views all details of the 1st person in the results of the <code>find</code> comm
 </div>
 </div>
 <div class="sect3">
-<h4 id="view-your-own-details-code-viewself-code"><a class="link" href="#view-your-own-details-code-viewself-code">View your own details : <code>viewself</code></a></h4>
+<h4 id="view-your-own-details-code-viewself-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span"><a class="link" href="#view-your-own-details-code-viewself-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span">View your own details : <code>viewself</code>  <span class="image"><img src="images/Basic.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
-<p>Displays the all the details (including private details) of the user, provided the user is logged in.<br>
+<p>Displays the all the details of the user, provided the user is logged in.<br>
 Format: <code>viewself</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">Clearing all entries : <code>clear</code></a></h4>
+<h4 id="clearing-all-entries-code-clear-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span"><a class="link" href="#clearing-all-entries-code-clear-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span">Clearing all entries : <code>clear</code>  <span class="image"><img src="images/Admin.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
-<p>Clears all entries from the address book. Reset all the exams in the exam book.<br>
+<p>Clears all entries from the address book.<br>
 Format: <code>clear</code></p>
 </div>
 </div>
@@ -367,13 +540,23 @@ Format: <code>editexam INDEX [p/PRIVATESTATUS] [e/EXAMNAME] [s/SUBJECTNAME] [d/E
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Words in <code>UPPER_CASE</code> are the parameters, items in <code>SQUARE_BRACKETS</code> are optional,
-however at least 1 of the optional items must be present. Order of parameters are fixed.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters, order of parameters are fixed.</p>
 </div>
 <div class="paragraph">
-<p>The index refers to the index number shown in the most recent exams listing.</p>
+<p>Put a <code>p</code> before the examname prefix to mark it as <code>private</code>. <code>private</code> details can only
+be seen using the <code>viewall</code> command.</p>
 </div>
 </div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>createexam Mathematics n/Math Mid-terms d/01122018 st/0900 et/1200 dt/At MPSH</code><br></p>
+</li>
+</ul>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -471,9 +654,6 @@ The exam index refers to the index number shown in the most recent exams listing
 </div>
 </div>
 </div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
@@ -526,7 +706,7 @@ Format: <code>clearexams</code></p>
 <p>Below are the commands that deals with fees data:</p>
 </div>
 <div class="sect3">
-<h4 id="adding-fees-to-a-person-code-addfees-code"><a class="link" href="#adding-fees-to-a-person-code-addfees-code">Adding fees to a person: <code>addfees</code></a></h4>
+<h4 id="adding-fees-to-a-person-code-addfees-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span"><a class="link" href="#adding-fees-to-a-person-code-addfees-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span">Adding fees to a person: <code>addfees</code> <span class="image"><img src="images/Admin.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Adds a numerical fee to a person in the address book.<br>
 Format: <code>add INDEX FEE</code></p>
@@ -557,7 +737,7 @@ be seen using the <code>viewall</code> command, or for fees specifically, the <c
 </div>
 </div>
 <div class="sect3">
-<h4 id="view-fees-of-a-person-code-viewfees-code"><a class="link" href="#view-fees-of-a-person-code-viewfees-code">View fees of a person : <code>viewfees</code></a></h4>
+<h4 id="view-fees-of-a-person-code-viewfees-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span"><a class="link" href="#view-fees-of-a-person-code-viewfees-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span">View fees of a person : <code>viewfees</code>  <span class="image"><img src="images/Admin.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Displays the fees(private) of the specified person.<br>
 Format: <code>viewfees INDEX</code></p>
@@ -590,92 +770,16 @@ Views fees of the 1st person in the results of the <code>find</code> command.</p
 </div>
 </div>
 <div class="sect2">
-<h3 id="privilege-commands"><a class="link" href="#privilege-commands">Privilege Commands</a></h3>
-<div class="paragraph">
-<p>Below are the commands that deals with privilege:</p>
-</div>
-<div class="sect3">
-<h4 id="raises-your-privilege-level-code-raise-code"><a class="link" href="#raises-your-privilege-level-code-raise-code">Raises your privilege level : <code>raise</code></a></h4>
-<div class="paragraph">
-<p>Raises the privilege level to Admin. Requires the master password.<br>
-Format: <code>viewall PASSWORD</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>raise default_pw</code><br>
-Raises your privilege level to Admin.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="see-your-privilege-level-code-viewpri-code"><a class="link" href="#see-your-privilege-level-code-viewpri-code">See your privilege level : <code>viewpri</code></a></h4>
-<div class="paragraph">
-<p>Displays your current privilege level as well as the account you are logged in as<br>
-Format: <code>viewpri</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="change-the-master-password-code-editpw-code"><a class="link" href="#change-the-master-password-code-editpw-code">Change the master password : <code>editpw</code></a></h4>
-<div class="paragraph">
-<p>Changes the master password. Requires the current master password and Admin privileges.<br>
-Format: <code>editpw OLD_PASSWORD NEW_PASSWORD</code></p>
-</div>
-<div class="paragraph">
-<p>Changes the master password to <code>NEW_PASSWORD</code>, if the provided <code>OLD_PASSWORD</code> is correct.<br></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The default master password is "default_pw".</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>editpw default_pw new_pw</code><br>
-Changes the master password to "new_pw".</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="account-commands"><a class="link" href="#account-commands">Account Commands</a></h3>
+<h3 id="account"><a class="link" href="#account">Account Commands</a></h3>
 <div class="paragraph">
 <p>Below are the commands that deals with accounts:</p>
 </div>
 <div class="sect3">
-<h4 id="add-an-account-to-a-person-code-addacc-code"><a class="link" href="#add-an-account-to-a-person-code-addacc-code">Add an account to a person: <code>addacc</code></a></h4>
+<h4 id="add-an-account-to-a-person-code-addacc-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span"><a class="link" href="#add-an-account-to-a-person-code-addacc-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span">Add an account to a person: <code>addacc</code>  <span class="image"><img src="images/Admin.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Adds an account to the target person.<br>
-Format: <code>addacc INDEX USERNAME PASSWORD USER_TYPE</code><br></p>
-</div>
-<div class="paragraph">
-<p>Creates an account for the person with INDEX as specified by the last shown list.<br>
+Format: <code>addacc INDEX USERNAME PASSWORD USER_TYPE</code><br>
+Creates an account for the person with INDEX as specified by the last shown list.<br>
 USERNAME and PASSWORD will be used for logging in.<br></p>
 </div>
 <div class="admonitionblock note">
@@ -710,7 +814,31 @@ Adds an account with the username of <code>JohnDoe1337</code> and password of <c
 </div>
 </div>
 <div class="sect3">
-<h4 id="login-to-an-account-code-login-code"><a class="link" href="#login-to-an-account-code-login-code">Login to an account: <code>login</code></a></h4>
+<h4 id="delete-the-account-of-a-person-code-delacc-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span"><a class="link" href="#delete-the-account-of-a-person-code-delacc-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span">Delete the account of a person: <code>delacc</code>  <span class="image"><img src="images/Admin.png" alt="16" width="16"></span></a></h4>
+<div class="paragraph">
+<p>Deletes the account of the target person.<br>
+Format: <code>delacc INDEX</code>
+Deletes the account of the person with INDEX as specified by the last shown list.<br></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code> <br>
+<code>delacc 1</code><br>
+Deletes the account of the first person in the list, provided that he has an account.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="login-to-an-account-code-login-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span"><a class="link" href="#login-to-an-account-code-login-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span">Login to an account: <code>login</code>  <span class="image"><img src="images/Basic.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Login to the account with the specified username and password.<br>
 Format: <code>login USERNAME PASSWORD</code><br>
@@ -734,7 +862,7 @@ Login an account with the username of <code>JohnDoe1337</code> and password of <
 </div>
 </div>
 <div class="sect3">
-<h4 id="logout-of-an-account-code-logout-code"><a class="link" href="#logout-of-an-account-code-logout-code">Logout of an account: <code>logout</code></a></h4>
+<h4 id="logout-of-an-account-code-logout-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span"><a class="link" href="#logout-of-an-account-code-logout-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span">Logout of an account: <code>logout</code>  <span class="image"><img src="images/Basic.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Logout of the current account.<br>
 Format: <code>logout</code><br>
@@ -758,35 +886,15 @@ Logs out of the current account, provided there is privilege or account to relin
 </div>
 </div>
 <div class="sect3">
-<h4 id="delete-the-account-of-a-person-code-delacc-code"><a class="link" href="#delete-the-account-of-a-person-code-delacc-code">Delete the account of a person: <code>delacc</code></a></h4>
+<h4 id="displays-the-list-of-people-with-account-code-listacc-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span"><a class="link" href="#displays-the-list-of-people-with-account-code-listacc-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span">Displays the list of people with account: <code>listacc</code>  <span class="image"><img src="images/Basic.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
-<p>Deletes the account of the target person.<br>
-Format: <code>delacc INDEX</code>
-Deletes the account of the person with INDEX as specified by the last shown list.<br></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list</code> <br>
-<code>delacc 1</code><br>
-Deletes the account of the first person in the list, provided that he has an account.</p>
-</li>
-</ul>
+<p>Shows a list of all persons with an account in the address book.<br>
+Format: <code>listacc</code></p>
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="grade-commands"><a class="link" href="#grade-commands">Grade Commands</a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="grade-commands"><a class="link" href="#grade-commands">Grade Commands</a></h3>
 <div class="paragraph">
 <p>Below are the commands that deals with grades/assessments of students:</p>
 </div>
@@ -841,15 +949,6 @@ The index refers to the index number shown in the most recent assessments listin
 </div>
 <div class="paragraph">
 <p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>listassess</code><br>
-<code>deleteassess 2</code><br>
-Deletes the 2nd assessment in the address book.</p>
-</li>
-</ul>
 </div>
 </div>
 <div class="sect3">
@@ -935,10 +1034,8 @@ Deletes the grades corresponding to the 2nd assessment in the address book for t
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="attendance-commands"><a class="link" href="#attendance-commands">Attendance Commands</a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="attendance-commands"><a class="link" href="#attendance-commands">Attendance Commands</a></h3>
 <div class="sect3">
 <h4 id="updates-the-attendance-of-a-person-code-attendance-code"><a class="link" href="#updates-the-attendance-of-a-person-code-attendance-code">Updates the attendance of a person: <code>attendance</code></a></h4>
 <div class="paragraph">
@@ -975,22 +1072,6 @@ Marks the attendance of the first person in the list as abesnt for Today&#8217;s
 Format: <code>replaceAtten INDEX d/DATE att/ATTENDANCE</code>
 Replaces the attendance of the person with INDEX as specified by the last shown list according to the DATE.<br></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list</code> <br>
-<code>replaceAtten 1 d/29-09-2018 att/1</code><br>
-Marks the attendance of the first person in the list as present for the date 29th September 2018.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 </div>
 <div class="sect3">
 <h4 id="view-the-attendance-of-a-person-code-viewatten-code"><a class="link" href="#view-the-attendance-of-a-person-code-viewatten-code">View the attendance of a person: <code>viewAtten</code></a></h4>
@@ -998,21 +1079,6 @@ Marks the attendance of the first person in the list as present for the date 29t
 <p>View the attendance of the target person.<br>
 Format: <code>viewAtten INDEX</code>
 View the attendance of the person with INDEX as specified by the last shown list.<br></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list</code> <br>
-<code>viewAtten 1</code><br>
-Views the attendance of the first person in the list.</p>
-</li>
-</ul>
-</div>
 </div>
 </div>
 </div>
@@ -1022,11 +1088,10 @@ Views the attendance of the first person in the list.</p>
 <h2 id="saving-the-data"><a class="link" href="#saving-the-data">Saving the data</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Address book, exam book and statistics book data are saved in the hard disk automatically after any command that changes the data.</p>
+<p>Address book data are saved in the hard disk automatically after any command that changes the data.</p>
 </div>
 <div class="paragraph">
-<p>There is no need to save manually. In the project root folder, address book data are saved in a file called <code>addressbook.txt</code>,
-exam book data are saved in a file called <code>exams.txt</code> and statistics book data are saved in a file called <code>statistics.txt</code>.</p>
+<p>There is no need to save manually. Address book data are saved in a file called <code>addressbook.txt</code> in the project root folder.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-29 13:41:53 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-29 14:04:08 UTC</div></div></div></body></html>
