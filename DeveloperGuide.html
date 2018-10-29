@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>ClassRepo - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="header"><h1>ClassRepo - Developer Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">ClassRep0</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2113-AY1819S1-F10-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>ClassRepo - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>Team F10-1</code>      Since: <code>Oct 2018</code>      Licence: <code>NUS</code></p>
@@ -151,7 +151,7 @@ Do not disable them. If you have disabled them, go to <code>File</code> &gt; <co
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Run the <code>seedu.address.MainApp</code> and try a few commands</p>
+<p>Run the <code>seedu.address.Main</code> and try a few commands</p>
 </li>
 <li>
 <p><a href="#Testing">Run the tests</a> to ensure they all pass.</p>
@@ -209,10 +209,10 @@ Do not disable them. If you have disabled them, go to <code>File</code> &gt; <co
 <div class="sect3">
 <h4 id="updating-documentation-to-match-your-fork"><a class="link" href="#updating-documentation-to-match-your-fork">1.4.2. Updating documentation to match your fork</a></h4>
 <div class="paragraph">
-<p>After forking the repo, the documentation will still have the SE-EDU branding and refer to the <code>se-edu/addressbook-level4</code> repo.</p>
+<p>After forking the repo, the documentation will still have the SE-EDU branding and refer to the <code>se-edu/addressbook-level3</code> repo.</p>
 </div>
 <div class="paragraph">
-<p>If you plan to develop this fork as a separate product (i.e. instead of contributing to <code>se-edu/addressbook-level4</code>), you should do the following:</p>
+<p>If you plan to develop this fork as a separate product (i.e. instead of contributing to <code>se-edu/addressbook-level3</code>), you should do the following:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -429,10 +429,10 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <p><strong>API</strong> : <a href="https://github.com/CS2113-AY1819S1-F10-1/main/tree/master/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code>, <code>BrowserPanel</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
+<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>OutputConsole</code>, <code>StatusConsole</code>.</p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/CS2113-AY1819S1-F10-1/main/tree/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/CS2113-AY1819S1-F10-1/main/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/seedu/addressbook/ui</code> folder. For example, the layout of the <a href="https://github.com/CS2113-AY1819S1-F10-1/main/tree/master/src/seedu/addressbook/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/CS2113-AY1819S1-F10-1/main/tree/master/src/seedu/addressbook/ui/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component,</p>
@@ -441,9 +441,6 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <ul>
 <li>
 <p>Executes user commands using the <code>Logic</code> component.</p>
-</li>
-<li>
-<p>Binds itself to some data in the <code>Model</code> so that the UI can auto-update when data in the <code>Model</code> change.</p>
 </li>
 <li>
 <p>Responds to events raised from various parts of the App and updates the UI accordingly.</p>
@@ -466,13 +463,13 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>Logic</code> uses the <code>AddressBookParser</code> class to parse the user command.</p>
+<p><code>Logic</code> uses the <code>Parser</code> class to parse the user command.</p>
 </li>
 <li>
-<p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
+<p>This results in a <code>Command</code> object which is then executed.</p>
 </li>
 <li>
-<p>The command execution can affect the <code>Model</code> (e.g. adding a person) and/or raise events.</p>
+<p>The command execution can affect the <code>data</code> (e.g. adding a person).</p>
 </li>
 <li>
 <p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
@@ -505,9 +502,6 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 <div class="ulist">
 <ul>
-<li>
-<p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
-</li>
 <li>
 <p>stores the Address Book data.</p>
 </li>
@@ -624,10 +618,13 @@ The main features are:</p>
 <p>A check is performed to ensure the specific person is not already registered for the exam.</p>
 </li>
 <li>
-<p>A new exam is created to make a copy of the original exam, then have its number of exam takers increased by 1.</p>
+<p>A new exam is created to keep a copy of the original exam.</p>
 </li>
 <li>
-<p>The original exam is added to the specific person.</p>
+<p>The exam has its number of exam takers increased by 1.</p>
+</li>
+<li>
+<p>The exam is added to the specific person.</p>
 </li>
 <li>
 <p>For both the AddressBook and ExamBook, any copies of the original exam is removed and replaced with the new exam.</p>
@@ -639,9 +636,9 @@ The main features are:</p>
 </div>
 <div id="fig-registerPersonDiagram" class="imageblock">
 <div class="content">
-<img src="images/registerperson.png" alt="registerperson" width="800">
+<img src="images/RegisterExam_Sequence_Diagram.png" alt="RegisterExam Sequence Diagram" width="800">
 </div>
-<div class="title">Figure 11. Sequence Diagram of registering person</div>
+<div class="title">Figure 11. Sequence Diagram of registering person for an exam</div>
 </div>
 </div>
 <div class="sect3">
@@ -668,10 +665,10 @@ The main features are:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: This makes it faster to update any changes if needed.</p>
+<p>Pros: This makes it faster to update any changes in both AddressBook and ExamBook if needed.</p>
 </li>
 <li>
-<p>Cons: More space is needed.</p>
+<p>Cons: More data is duplicated and stored in both AddressBook and ExamBook.</p>
 </li>
 </ul>
 </div>
@@ -721,7 +718,7 @@ The main features are:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: In the Exambook, it is required to access an exam through an index to delete and edit, hence list is better. In the AddressBook, exams are only to be used for viewing and accessed to check for value.</p>
+<p>Pros: In the Exambook, it is required to access an exam through an index to delete and edit, hence list is better. In the AddressBook, exams are only to be used for viewing and accessed to check for value. It takes O(1) time to check for existence and remove and add.</p>
 </li>
 <li>
 <p>Cons: Exams stored under each Person in the AddressBook cannot be sorted.</p>
@@ -737,7 +734,7 @@ The main features are:</p>
 <p>Pros: Exams stored under each Person in the AddressBook can be sorted.</p>
 </li>
 <li>
-<p>Cons: It will take longer to check if a Person has a same Exam with the Exam to be updated.</p>
+<p>Cons: It takes O(n) time (longer time) to check if a Person has a same Exam with the Exam to be updated.</p>
 </li>
 </ul>
 </div>
@@ -1198,7 +1195,7 @@ The most reliable way to run tests is the 3rd one. The first two methods might f
 <div class="ulist">
 <ul>
 <li>
-<p>Open a console and run the command <code>gradlew clean allTests</code> (Mac/Linux: <code>./gradlew clean allTests</code>)</p>
+<p>Open a console and run the command <code>gradlew clean test</code> (Mac/Linux: <code>./gradlew clean test</code>)</p>
 </li>
 </ul>
 </div>
@@ -1214,15 +1211,6 @@ See <a href="UsingGradle.html">UsingGradle.adoc</a> for more info on how to run 
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p><strong>Method 3: Using Gradle (headless)</strong></p>
-</div>
-<div class="paragraph">
-<p>Thanks to the <a href="https://github.com/TestFX/TestFX">TestFX</a> library we use, our GUI tests can be run in the <em>headless</em> mode. In the headless mode, GUI tests do not show up on the screen. That means the developer can do other things on the Computer while the tests are running.</p>
-</div>
-<div class="paragraph">
-<p>To run tests in headless mode, open a console and run the command <code>gradlew clean headless allTests</code> (Mac/Linux: <code>./gradlew clean headless allTests</code>)</p>
-</div>
 </div>
 <div class="sect2">
 <h3 id="types-of-tests"><a class="link" href="#types-of-tests">5.2. Types of tests</a></h3>
@@ -1237,15 +1225,15 @@ See <a href="UsingGradle.html">UsingGradle.adoc</a> for more info on how to run 
 <ol class="loweralpha" type="a">
 <li>
 <p><em>Unit tests</em> targeting the lowest level methods/classes.<br>
-e.g. <code>seedu.address.commons.StringUtilTest</code></p>
+e.g. <code>seedu.addressbook.commons.UtilsTest</code></p>
 </li>
 <li>
 <p><em>Integration tests</em> that are checking the integration of multiple code units (those code units are assumed to be working).<br>
-e.g. <code>seedu.address.storage.StorageManagerTest</code></p>
+e.g. <code>seedu.addressbook.storage.StorageFileTest</code></p>
 </li>
 <li>
 <p>Hybrids of unit and integration tests. These test are checking multiple code units as well as how the are connected together.<br>
-e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
+e.g. <code>seedu.addressbook.logic.LogicTest</code></p>
 </li>
 </ol>
 </div>
@@ -1306,7 +1294,7 @@ e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Update the version number in <a href="https://github.com/CS2113-AY1819S1-F10-1/main/tree/master/src/main/java/seedu/address/MainApp.java"><code>MainApp.java</code></a>.</p>
+<p>Update the version number in <a href="https://github.com/CS2113-AY1819S1-F10-1/main/tree/master/src/seedu/addressbook/Main.java"><code>Main.java</code></a>.</p>
 </li>
 <li>
 <p>Generate a JAR file <a href="UsingGradle.html#creating-the-jar-file">using Gradle</a>.</p>
@@ -2031,6 +2019,42 @@ Use case ends.</p>
 </li>
 </ul>
 </div>
+<h3 id="use-case-view-a-person-s-exams" class="discrete">Use case: View a person&#8217;s exams</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list persons.</p>
+</li>
+<li>
+<p>ClassRepo shows a list of persons.</p>
+</li>
+<li>
+<p>User requests to show exams of a specified person in list.</p>
+</li>
+<li>
+<p>ClassRepo shows list of exams of specified person.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
 <h3 id="use-case-view-the-user-s-own-details" class="discrete">Use case: View the user&#8217;s own details</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -2639,4 +2663,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-27 16:36:51 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-29 05:39:33 UTC</div></div></div></body></html>

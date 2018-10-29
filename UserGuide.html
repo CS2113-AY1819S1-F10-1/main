@@ -1,100 +1,44 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>ClassRepo - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">ClassRep0</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2113-AY1819S1-F10-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>User Guide</h1><div id="toc" class="toc"><div id="toctitle"></div><ul class="sectlevel1">
-<li><a href="#starting-the-program">Starting the program</a></li>
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">ClassRep0</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2113-AY1819S1-F10-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>ClassRepo - User Guide</h1><div id="toc" class="toc"><div id="toctitle"></div><ul class="sectlevel1">
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#quick-start">Quick Start</a></li>
 <li><a href="#commands-available">Commands Available</a>
-<ul class="sectlevel1">
-<li><a href="#general-commands">General Commands</a>
 <ul class="sectlevel2">
-<li><a href="#viewing-help-code-help-code">Viewing help : <code>help</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">Exiting the program : <code>exit</code></a></li>
-</ul>
-</li>
-<li><a href="#person-commands">Person Commands</a>
-<ul class="sectlevel2">
-<li><a href="#adding-a-person-code-add-code">Adding a person: <code>add</code></a></li>
-<li><a href="#listing-all-persons-code-list-code">Listing all persons : <code>list</code></a></li>
-<li><a href="#finding-all-persons-containing-any-keyword-in-their-name-code-find-code">Finding all persons containing any keyword in their name: <code>find</code></a></li>
-<li><a href="#deleting-a-person-code-delete-code">Deleting a person : <code>delete</code></a></li>
-<li><a href="#view-non-private-details-of-a-person-code-view-code">View non-private details of a person : <code>view</code></a></li>
-<li><a href="#view-all-details-of-a-person-code-viewall-code">View all details of a person : <code>viewall</code></a></li>
-<li><a href="#view-your-own-details-code-viewself-code">View your own details : <code>viewself</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">Clearing all entries : <code>clear</code></a></li>
-</ul>
-</li>
-<li><a href="#exam-commands">Exam Commands</a>
-<ul class="sectlevel2">
-<li><a href="#adding-an-exam-code-addexam-code">Adding an exam : <code>addexam</code></a></li>
-<li><a href="#deleting-an-exam-code-deleteexam-code">Deleting an exam : <code>deleteexam</code></a></li>
-<li><a href="#editing-an-exam-code-editexam-code">Editing an exam : <code>editexam</code></a></li>
-<li><a href="#listing-all-exams-code-examslist-code">Listing all exams : <code>examslist</code></a></li>
-<li><a href="#registering-for-an-exam-code-regexam-code">Registering for an exam : <code>regexam</code></a></li>
-<li><a href="#deregistering-for-an-exam-code-deregexam-code">Deregistering for an exam : <code>deregexam</code></a></li>
-<li><a href="#viewing-exams-code-viewexams-code">Viewing exams : <code>viewexams</code></a></li>
-<li><a href="#clearing-all-entries-code-clearexams-code">Clearing all entries : <code>clearexams</code></a></li>
-</ul>
-</li>
-<li><a href="#fees-commands">Fees Commands</a>
-<ul class="sectlevel2">
-<li><a href="#adding-fees-to-a-person-code-addfees-code">Adding fees to a person: <code>addfees</code></a></li>
-<li><a href="#view-fees-of-a-person-code-viewfees-code">View fees of a person : <code>viewfees</code></a></li>
-</ul>
-</li>
-<li><a href="#privilege-commands">Privilege Commands</a>
-<ul class="sectlevel2">
-<li><a href="#raises-your-privilege-level-code-raise-code">Raises your privilege level : <code>raise</code></a></li>
-<li><a href="#see-your-privilege-level-code-viewpri-code">See your privilege level : <code>viewpri</code></a></li>
-<li><a href="#change-the-master-password-code-editpw-code">Change the master password : <code>editpw</code></a></li>
-</ul>
-</li>
-<li><a href="#account-commands">Account Commands</a>
-<ul class="sectlevel2">
-<li><a href="#add-an-account-to-a-person-code-addacc-code">Add an account to a person: <code>addacc</code></a></li>
-<li><a href="#login-to-an-account-code-login-code">Login to an account: <code>login</code></a></li>
-<li><a href="#logout-of-an-account-code-logout-code">Logout of an account: <code>logout</code></a></li>
-<li><a href="#delete-the-account-of-a-person-code-delacc-code">Delete the account of a person: <code>delacc</code></a></li>
-</ul>
-</li>
-<li><a href="#grade-commands">Grade Commands</a>
-<ul class="sectlevel2">
-<li><a href="#adding-an-assessment-code-addassess-code">Adding an Assessment : <code>addassess</code></a></li>
-<li><a href="#listing-all-assessments-code-listassess-code">Listing all assessments : <code>listassess</code></a></li>
-<li><a href="#deleting-an-assessment-code-deleteassess-code">Deleting an assessment : <code>deleteassess</code></a></li>
-<li><a href="#updates-the-attendance-of-a-person-code-attendance-code">Updates the attendance of a person: <code>attendance</code></a></li>
-<li><a href="#replaces-the-attendance-of-a-person-code-replaceatten-code">Replaces the attendance of a person: <code>replaceAtten</code></a></li>
-<li><a href="#view-the-attendance-of-a-person-code-viewatten-code">View the attendance of a person: <code>viewAtten</code></a></li>
-</ul>
-</li>
+<li><a href="#general-commands">General Commands</a></li>
+<li><a href="#person-commands">Person Commands</a></li>
+<li><a href="#exam-commands">Exam Commands</a></li>
+<li><a href="#fees-commands">Fees Commands</a></li>
+<li><a href="#privilege-commands">Privilege Commands</a></li>
+<li><a href="#account-commands">Account Commands</a></li>
+<li><a href="#grade-commands">Grade Commands</a></li>
 </ul>
 </li>
 <li><a href="#saving-the-data">Saving the data</a></li>
-</ul></div></div><div id="content"><div id="preamble">
+</ul></div></div><div id="content"><div class="sect1">
+<h2 id="introduction"><a class="link" href="#introduction">Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This product is not meant for end-users and therefore there is no user-friendly installer.
-Please refer to the <a href="DeveloperGuide.html#setting-up">Setting up</a> section to learn how to set up the project.</p>
+<p>ClassRepo is targeted at secondary school users who <strong>prefer to use a desktop app for managing their school details</strong>. ClassRepo is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI). Interested? Jump to the <a href="#quick-start">Quick Start</a> to get started. Enjoy!</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="starting-the-program"><a class="link" href="#starting-the-program">Starting the program</a></h2>
+<h2 id="quick-start"><a class="link" href="#quick-start">Quick Start</a></h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Find the project pane (usually located at the left side)</p>
+<p>Ensure you have Java version <code>9</code> or later installed in your Computer.</p>
 </li>
 <li>
-<p>Open up <code>src/seedu.addressbook</code> folder</p>
+<p>Download the latest <code>addressbook.jar</code> <a href="{repoURL}/releases">here</a>.</p>
 </li>
 <li>
-<p>Right click on <code>Main</code></p>
+<p>Copy the file to the folder you want to use as the home folder for your Address Book.</p>
 </li>
 <li>
-<p>Click <code>Run Main.main()</code></p>
-</li>
-<li>
-<p>The GUI should appear in a few seconds</p>
+<p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/UiNew.png" alt="UiNew">
@@ -105,15 +49,16 @@ Please refer to the <a href="DeveloperGuide.html#setting-up">Setting up</a> sect
 </div>
 </div>
 </div>
-<h1 id="commands-available" class="sect0"><a class="link" href="#commands-available">Commands Available</a></h1>
 <div class="sect1">
-<h2 id="general-commands"><a class="link" href="#general-commands">General Commands</a></h2>
+<h2 id="commands-available"><a class="link" href="#commands-available">Commands Available</a></h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="general-commands"><a class="link" href="#general-commands">General Commands</a></h3>
 <div class="paragraph">
 <p>Below are the generic commands:</p>
 </div>
-<div class="sect2">
-<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">Viewing help : <code>help</code></a></h3>
+<div class="sect3">
+<h4 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">Viewing help : <code>help</code></a></h4>
 <div class="paragraph">
 <p>Format: <code>help</code></p>
 </div>
@@ -132,23 +77,21 @@ Please refer to the <a href="DeveloperGuide.html#setting-up">Setting up</a> sect
 </table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">Exiting the program : <code>exit</code></a></h3>
+<div class="sect3">
+<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">Exiting the program : <code>exit</code></a></h4>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="person-commands"><a class="link" href="#person-commands">Person Commands</a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="person-commands"><a class="link" href="#person-commands">Person Commands</a></h3>
 <div class="paragraph">
 <p>Below are the commands that deals with persons in the system:</p>
 </div>
-<div class="sect2">
-<h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">Adding a person: <code>add</code></a></h3>
+<div class="sect3">
+<h4 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">Adding a person: <code>add</code></a></h4>
 <div class="paragraph">
 <p>Adds a person to the address book.<br>
 Format: <code>add NAME [p]p/PHONE_NUMBER [p]e/EMAIL [p]a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
@@ -182,15 +125,15 @@ be seen using the <code>viewall</code> command.</p>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">Listing all persons : <code>list</code></a></h3>
+<div class="sect3">
+<h4 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">Listing all persons : <code>list</code></a></h4>
 <div class="paragraph">
 <p>Shows a list of all persons in the address book.<br>
 Format: <code>list</code></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="finding-all-persons-containing-any-keyword-in-their-name-code-find-code"><a class="link" href="#finding-all-persons-containing-any-keyword-in-their-name-code-find-code">Finding all persons containing any keyword in their name: <code>find</code></a></h3>
+<div class="sect3">
+<h4 id="finding-all-persons-containing-any-keyword-in-their-name-code-find-code"><a class="link" href="#finding-all-persons-containing-any-keyword-in-their-name-code-find-code">Finding all persons containing any keyword in their name: <code>find</code></a></h4>
 <div class="paragraph">
 <p>Finds persons whose names contain any of the given keywords.<br>
 Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
@@ -226,8 +169,8 @@ Returns Any person having names <code>Betsy</code>, <code>Tim</code>, or <code>J
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">Deleting a person : <code>delete</code></a></h3>
+<div class="sect3">
+<h4 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">Deleting a person : <code>delete</code></a></h4>
 <div class="paragraph">
 <p>Deletes the specified person from the address book. Updates the exams the person is registered for in the exam book and for all persons registered for them in the address book. Irreversible.<br>
 Format: <code>delete INDEX</code></p>
@@ -258,8 +201,8 @@ Deletes the 1st person in the results of the <code>find</code> command.</p>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="view-non-private-details-of-a-person-code-view-code"><a class="link" href="#view-non-private-details-of-a-person-code-view-code">View non-private details of a person : <code>view</code></a></h3>
+<div class="sect3">
+<h4 id="view-non-private-details-of-a-person-code-view-code"><a class="link" href="#view-non-private-details-of-a-person-code-view-code">View non-private details of a person : <code>view</code></a></h4>
 <div class="paragraph">
 <p>Displays the non-private details of the specified person.<br>
 Format: <code>view INDEX</code></p>
@@ -290,8 +233,8 @@ Views the 1st person in the results of the <code>find</code> command.</p>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="view-all-details-of-a-person-code-viewall-code"><a class="link" href="#view-all-details-of-a-person-code-viewall-code">View all details of a person : <code>viewall</code></a></h3>
+<div class="sect3">
+<h4 id="view-all-details-of-a-person-code-viewall-code"><a class="link" href="#view-all-details-of-a-person-code-viewall-code">View all details of a person : <code>viewall</code></a></h4>
 <div class="paragraph">
 <p>Displays all details (including private details) of the specified person.<br>
 Format: <code>viewall INDEX</code></p>
@@ -322,30 +265,28 @@ Views all details of the 1st person in the results of the <code>find</code> comm
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="view-your-own-details-code-viewself-code"><a class="link" href="#view-your-own-details-code-viewself-code">View your own details : <code>viewself</code></a></h3>
+<div class="sect3">
+<h4 id="view-your-own-details-code-viewself-code"><a class="link" href="#view-your-own-details-code-viewself-code">View your own details : <code>viewself</code></a></h4>
 <div class="paragraph">
 <p>Displays the all the details (including private details) of the user, provided the user is logged in.<br>
 Format: <code>viewself</code></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">Clearing all entries : <code>clear</code></a></h3>
+<div class="sect3">
+<h4 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">Clearing all entries : <code>clear</code></a></h4>
 <div class="paragraph">
 <p>Clears all entries from the address book. Reset all the exams in the exam book.<br>
 Format: <code>clear</code></p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="exam-commands"><a class="link" href="#exam-commands">Exam Commands</a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="exam-commands"><a class="link" href="#exam-commands">Exam Commands</a></h3>
 <div class="paragraph">
 <p>Below are the commands that deals with exam data:</p>
 </div>
-<div class="sect2">
-<h3 id="adding-an-exam-code-addexam-code"><a class="link" href="#adding-an-exam-code-addexam-code">Adding an exam : <code>addexam</code></a></h3>
+<div class="sect3">
+<h4 id="adding-an-exam-code-addexam-code"><a class="link" href="#adding-an-exam-code-addexam-code">Adding an exam : <code>addexam</code></a></h4>
 <div class="paragraph">
 <p>Adds an exam to the exam book.<br>
 Format: <code>addexam [p]e/EXAMNAME s/SUBJECTNAME d/EXAMDATE st/EXAMSTARTTIME et/EXAMENDTIME dt/EXAMDETAILS</code></p>
@@ -374,8 +315,8 @@ Format: <code>addexam [p]e/EXAMNAME s/SUBJECTNAME d/EXAMDATE st/EXAMSTARTTIME et
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="deleting-an-exam-code-deleteexam-code"><a class="link" href="#deleting-an-exam-code-deleteexam-code">Deleting an exam : <code>deleteexam</code></a></h3>
+<div class="sect3">
+<h4 id="deleting-an-exam-code-deleteexam-code"><a class="link" href="#deleting-an-exam-code-deleteexam-code">Deleting an exam : <code>deleteexam</code></a></h4>
 <div class="paragraph">
 <p>Deletes the specified exam from the exam book. Irreversible. Persons registered for the corresponding exam will have the exam deleted as well.<br>
 Format: <code>deleteexam INDEX</code></p>
@@ -401,8 +342,8 @@ Deletes the 2nd exam in the exam book.</p>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="editing-an-exam-code-editexam-code"><a class="link" href="#editing-an-exam-code-editexam-code">Editing an exam : <code>editexam</code></a></h3>
+<div class="sect3">
+<h4 id="editing-an-exam-code-editexam-code"><a class="link" href="#editing-an-exam-code-editexam-code">Editing an exam : <code>editexam</code></a></h4>
 <div class="paragraph">
 <p>Edits the specified exam from the exam book. Persons registered for the corresponding exam will have the exam details updated as well.<br>
 Format: <code>editexam INDEX [p/PRIVATESTATUS] [e/EXAMNAME] [s/SUBJECTNAME] [d/EXAMDATE] [st/EXAMSTARTTIME] [et/EXAMENDTIME] [dt/EXAMDETAILS]</code></p>
@@ -448,15 +389,15 @@ however at least 1 of the optional items must be present. Order of parameters ar
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="listing-all-exams-code-examslist-code"><a class="link" href="#listing-all-exams-code-examslist-code">Listing all exams : <code>examslist</code></a></h3>
+<div class="sect3">
+<h4 id="listing-all-exams-code-examslist-code"><a class="link" href="#listing-all-exams-code-examslist-code">Listing all exams : <code>examslist</code></a></h4>
 <div class="paragraph">
 <p>Shows a list of all exams in the exam book.<br>
 Format: <code>examslist</code></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="registering-for-an-exam-code-regexam-code"><a class="link" href="#registering-for-an-exam-code-regexam-code">Registering for an exam : <code>regexam</code></a></h3>
+<div class="sect3">
+<h4 id="registering-for-an-exam-code-regexam-code"><a class="link" href="#registering-for-an-exam-code-regexam-code">Registering for an exam : <code>regexam</code></a></h4>
 <div class="paragraph">
 <p>Registers a specified person for a specified exam.<br>
 Format: <code>regexam PERSONINDEX EXAMINDEX</code></p>
@@ -499,8 +440,8 @@ Registers the 2nd person in the address book for the 2nd exam in the exam book.<
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="deregistering-for-an-exam-code-deregexam-code"><a class="link" href="#deregistering-for-an-exam-code-deregexam-code">Deregistering for an exam : <code>deregexam</code></a></h3>
+<div class="sect3">
+<h4 id="deregistering-for-an-exam-code-deregexam-code"><a class="link" href="#deregistering-for-an-exam-code-deregexam-code">Deregistering for an exam : <code>deregexam</code></a></h4>
 <div class="paragraph">
 <p>Deregister a specified person for a specified exam.<br>
 Format: <code>deregexam PERSONINDEX EXAMINDEX</code></p>
@@ -528,8 +469,8 @@ Deregisters the 2nd person in the address book for the 2nd exam in the exam book
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="viewing-exams-code-viewexams-code"><a class="link" href="#viewing-exams-code-viewexams-code">Viewing exams : <code>viewexams</code></a></h3>
+<div class="sect3">
+<h4 id="viewing-exams-code-viewexams-code"><a class="link" href="#viewing-exams-code-viewexams-code">Viewing exams : <code>viewexams</code></a></h4>
 <div class="paragraph">
 <p>View the non-private exams for a person at the specified <code>INDEX</code>.<br>
 Format: <code>viewexams INDEX</code></p>
@@ -555,23 +496,21 @@ Views the non-private exams of the 1st person in the address book.</p>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="clearing-all-entries-code-clearexams-code"><a class="link" href="#clearing-all-entries-code-clearexams-code">Clearing all entries : <code>clearexams</code></a></h3>
+<div class="sect3">
+<h4 id="clearing-all-entries-code-clearexams-code"><a class="link" href="#clearing-all-entries-code-clearexams-code">Clearing all entries : <code>clearexams</code></a></h4>
 <div class="paragraph">
 <p>Clears all entries from the exam book. All exams will be cleared in the address book as well.<br>
 Format: <code>clearexams</code></p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="fees-commands"><a class="link" href="#fees-commands">Fees Commands</a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="fees-commands"><a class="link" href="#fees-commands">Fees Commands</a></h3>
 <div class="paragraph">
 <p>Below are the commands that deals with fees data:</p>
 </div>
-<div class="sect2">
-<h3 id="adding-fees-to-a-person-code-addfees-code"><a class="link" href="#adding-fees-to-a-person-code-addfees-code">Adding fees to a person: <code>addfees</code></a></h3>
+<div class="sect3">
+<h4 id="adding-fees-to-a-person-code-addfees-code"><a class="link" href="#adding-fees-to-a-person-code-addfees-code">Adding fees to a person: <code>addfees</code></a></h4>
 <div class="paragraph">
 <p>Adds a numerical fee to a person in the address book.<br>
 Format: <code>add INDEX FEE</code></p>
@@ -601,8 +540,8 @@ be seen using the <code>viewall</code> command, or for fees specifically, the <c
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="view-fees-of-a-person-code-viewfees-code"><a class="link" href="#view-fees-of-a-person-code-viewfees-code">View fees of a person : <code>viewfees</code></a></h3>
+<div class="sect3">
+<h4 id="view-fees-of-a-person-code-viewfees-code"><a class="link" href="#view-fees-of-a-person-code-viewfees-code">View fees of a person : <code>viewfees</code></a></h4>
 <div class="paragraph">
 <p>Displays the fees(private) of the specified person.<br>
 Format: <code>viewfees INDEX</code></p>
@@ -634,15 +573,13 @@ Views fees of the 1st person in the results of the <code>find</code> command.</p
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="privilege-commands"><a class="link" href="#privilege-commands">Privilege Commands</a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="privilege-commands"><a class="link" href="#privilege-commands">Privilege Commands</a></h3>
 <div class="paragraph">
 <p>Below are the commands that deals with privilege:</p>
 </div>
-<div class="sect2">
-<h3 id="raises-your-privilege-level-code-raise-code"><a class="link" href="#raises-your-privilege-level-code-raise-code">Raises your privilege level : <code>raise</code></a></h3>
+<div class="sect3">
+<h4 id="raises-your-privilege-level-code-raise-code"><a class="link" href="#raises-your-privilege-level-code-raise-code">Raises your privilege level : <code>raise</code></a></h4>
 <div class="paragraph">
 <p>Raises the privilege level to Admin. Requires the master password.<br>
 Format: <code>viewall PASSWORD</code></p>
@@ -663,15 +600,15 @@ Raises your privilege level to Admin.</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="see-your-privilege-level-code-viewpri-code"><a class="link" href="#see-your-privilege-level-code-viewpri-code">See your privilege level : <code>viewpri</code></a></h3>
+<div class="sect3">
+<h4 id="see-your-privilege-level-code-viewpri-code"><a class="link" href="#see-your-privilege-level-code-viewpri-code">See your privilege level : <code>viewpri</code></a></h4>
 <div class="paragraph">
 <p>Displays your current privilege level as well as the account you are logged in as<br>
 Format: <code>viewpri</code></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="change-the-master-password-code-editpw-code"><a class="link" href="#change-the-master-password-code-editpw-code">Change the master password : <code>editpw</code></a></h3>
+<div class="sect3">
+<h4 id="change-the-master-password-code-editpw-code"><a class="link" href="#change-the-master-password-code-editpw-code">Change the master password : <code>editpw</code></a></h4>
 <div class="paragraph">
 <p>Changes the master password. Requires the current master password and Admin privileges.<br>
 Format: <code>editpw OLD_PASSWORD NEW_PASSWORD</code></p>
@@ -710,15 +647,13 @@ Changes the master password to "new_pw".</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="account-commands"><a class="link" href="#account-commands">Account Commands</a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="account-commands"><a class="link" href="#account-commands">Account Commands</a></h3>
 <div class="paragraph">
 <p>Below are the commands that deals with accounts:</p>
 </div>
-<div class="sect2">
-<h3 id="add-an-account-to-a-person-code-addacc-code"><a class="link" href="#add-an-account-to-a-person-code-addacc-code">Add an account to a person: <code>addacc</code></a></h3>
+<div class="sect3">
+<h4 id="add-an-account-to-a-person-code-addacc-code"><a class="link" href="#add-an-account-to-a-person-code-addacc-code">Add an account to a person: <code>addacc</code></a></h4>
 <div class="paragraph">
 <p>Adds an account to the target person.<br>
 Format: <code>addacc INDEX USERNAME PASSWORD USER_TYPE</code><br></p>
@@ -758,8 +693,8 @@ Adds an account with the username of <code>JohnDoe1337</code> and password of <c
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="login-to-an-account-code-login-code"><a class="link" href="#login-to-an-account-code-login-code">Login to an account: <code>login</code></a></h3>
+<div class="sect3">
+<h4 id="login-to-an-account-code-login-code"><a class="link" href="#login-to-an-account-code-login-code">Login to an account: <code>login</code></a></h4>
 <div class="paragraph">
 <p>Login to the account with the specified username and password.<br>
 Format: <code>login USERNAME PASSWORD</code><br>
@@ -782,8 +717,8 @@ Login an account with the username of <code>JohnDoe1337</code> and password of <
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="logout-of-an-account-code-logout-code"><a class="link" href="#logout-of-an-account-code-logout-code">Logout of an account: <code>logout</code></a></h3>
+<div class="sect3">
+<h4 id="logout-of-an-account-code-logout-code"><a class="link" href="#logout-of-an-account-code-logout-code">Logout of an account: <code>logout</code></a></h4>
 <div class="paragraph">
 <p>Logout of the current account.<br>
 Format: <code>logout</code><br>
@@ -806,8 +741,8 @@ Logs out of the current account, provided there is privilege or account to relin
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="delete-the-account-of-a-person-code-delacc-code"><a class="link" href="#delete-the-account-of-a-person-code-delacc-code">Delete the account of a person: <code>delacc</code></a></h3>
+<div class="sect3">
+<h4 id="delete-the-account-of-a-person-code-delacc-code"><a class="link" href="#delete-the-account-of-a-person-code-delacc-code">Delete the account of a person: <code>delacc</code></a></h4>
 <div class="paragraph">
 <p>Deletes the account of the target person.<br>
 Format: <code>delacc INDEX</code>
@@ -831,15 +766,13 @@ Deletes the account of the first person in the list, provided that he has an acc
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="grade-commands"><a class="link" href="#grade-commands">Grade Commands</a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="grade-commands"><a class="link" href="#grade-commands">Grade Commands</a></h3>
 <div class="paragraph">
 <p>Below are the commands that deals with grades of students:</p>
 </div>
-<div class="sect2">
-<h3 id="adding-an-assessment-code-addassess-code"><a class="link" href="#adding-an-assessment-code-addassess-code">Adding an Assessment : <code>addassess</code></a></h3>
+<div class="sect3">
+<h4 id="adding-an-assessment-code-addassess-code"><a class="link" href="#adding-an-assessment-code-addassess-code">Adding an Assessment : <code>addassess</code></a></h4>
 <div class="paragraph">
 <p>Adds an assessment to the address book.<br>
 Format: <code>addassess ASSESSMENT_NAME</code></p>
@@ -866,15 +799,15 @@ name. Duplicate assessments cannot be added.</p>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="listing-all-assessments-code-listassess-code"><a class="link" href="#listing-all-assessments-code-listassess-code">Listing all assessments : <code>listassess</code></a></h3>
+<div class="sect3">
+<h4 id="listing-all-assessments-code-listassess-code"><a class="link" href="#listing-all-assessments-code-listassess-code">Listing all assessments : <code>listassess</code></a></h4>
 <div class="paragraph">
 <p>Shows a list of all assessments in the address book, along with an index for each<br>
 Format: <code>listassess</code></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="deleting-an-assessment-code-deleteassess-code"><a class="link" href="#deleting-an-assessment-code-deleteassess-code">Deleting an assessment : <code>deleteassess</code></a></h3>
+<div class="sect3">
+<h4 id="deleting-an-assessment-code-deleteassess-code"><a class="link" href="#deleting-an-assessment-code-deleteassess-code">Deleting an assessment : <code>deleteassess</code></a></h4>
 <div class="paragraph">
 <p>Deletes the specified assessment from the assessment book, based on index. Irreversible.<br>
 Format: <code>deleteassess INDEX</code></p>
@@ -900,8 +833,8 @@ Deletes the 2nd assessment in the address book.</p>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="updates-the-attendance-of-a-person-code-attendance-code"><a class="link" href="#updates-the-attendance-of-a-person-code-attendance-code">Updates the attendance of a person: <code>attendance</code></a></h3>
+<div class="sect3">
+<h4 id="updates-the-attendance-of-a-person-code-attendance-code"><a class="link" href="#updates-the-attendance-of-a-person-code-attendance-code">Updates the attendance of a person: <code>attendance</code></a></h4>
 <div class="paragraph">
 <p>Updates the attendance of the target person.<br>
 Format: <code>attendance INDEX d/DATE att/ATTENDANCE</code>
@@ -929,8 +862,8 @@ Marks the attendance of the first person in the list as abesnt for Today&#8217;s
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="replaces-the-attendance-of-a-person-code-replaceatten-code"><a class="link" href="#replaces-the-attendance-of-a-person-code-replaceatten-code">Replaces the attendance of a person: <code>replaceAtten</code></a></h3>
+<div class="sect3">
+<h4 id="replaces-the-attendance-of-a-person-code-replaceatten-code"><a class="link" href="#replaces-the-attendance-of-a-person-code-replaceatten-code">Replaces the attendance of a person: <code>replaceAtten</code></a></h4>
 <div class="paragraph">
 <p>Replaces the current attendance of the target person.<br>
 Format: <code>replaceAtten INDEX d/DATE att/ATTENDANCE</code>
@@ -953,8 +886,8 @@ Marks the attendance of the first person in the list as present for the date 29t
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="view-the-attendance-of-a-person-code-viewatten-code"><a class="link" href="#view-the-attendance-of-a-person-code-viewatten-code">View the attendance of a person: <code>viewAtten</code></a></h3>
+<div class="sect3">
+<h4 id="view-the-attendance-of-a-person-code-viewatten-code"><a class="link" href="#view-the-attendance-of-a-person-code-viewatten-code">View the attendance of a person: <code>viewAtten</code></a></h4>
 <div class="paragraph">
 <p>View the attendance of the target person.<br>
 Format: <code>viewAtten INDEX</code>
@@ -979,11 +912,16 @@ Views the attendance of the first person in the list.</p>
 </div>
 </div>
 </div>
-<h1 id="saving-the-data" class="sect0"><a class="link" href="#saving-the-data">Saving the data</a></h1>
+</div>
+<div class="sect1">
+<h2 id="saving-the-data"><a class="link" href="#saving-the-data">Saving the data</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Address book, exam book and statistics book data are saved in the hard disk automatically after any command that changes the data.</p>
 </div>
 <div class="paragraph">
 <p>There is no need to save manually. In the project root folder, address book data are saved in a file called <code>addressbook.txt</code>,
 exam book data are saved in a file called <code>exams.txt</code> and statistics book data are saved in a file called <code>statistics.txt</code>.</p>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-27 16:36:51 UTC</div></div></div></body></html>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-29 05:39:33 UTC</div></div></div></body></html>
