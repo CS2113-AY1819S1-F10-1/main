@@ -12,7 +12,7 @@
 <li><a href="#fees-commands">Fees Commands</a></li>
 <li><a href="#account">Account Commands</a></li>
 <li><a href="#grade-commands">Grade Commands</a></li>
-<li><a href="#attendance">Attendance Commands</a></li>
+<li><a href="#attendance-commands">Attendance Commands</a></li>
 </ul>
 </li>
 <li><a href="#saving-the-data">Saving the data</a></li>
@@ -20,7 +20,9 @@
 <h2 id="introduction"><a class="link" href="#introduction">Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>ClassRepo is targeted at secondary school users who <strong>prefer to use a desktop app for managing their school details</strong>. ClassRepo is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI). Interested? Jump to the <a href="#quick-start">Quick Start</a> to get started. Enjoy!</p>
+<p>ClassRepo is targeted at secondary school users who <strong>prefer to use a desktop app for managing their school details</strong>.
+ClassRepo is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI). Interested? Jump to the
+<a href="#quick-start">Quick Start</a> to get started. Enjoy!</p>
 </div>
 </div>
 </div>
@@ -948,11 +950,22 @@ The index refers to the index number shown in the most recent assessments listin
 <p>Adds grades to selected student/person for a specific assessment listed in addressbook.<br>
 Format: <code>addgrades PERSON_INDEX ASSESSMENT_INDEX GRADES</code></p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>Grades can be in the form of numbers or letters. No restriction! It is up to the teacher to decide.</p>
+</li>
+</ul>
+</div>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
 <p>Words in <code>UPPER_CASE</code> are the parameters. There are three parameters for this command, which are the index of the person
 or student, index of the appropriate assessment and the grades themselves.</p>
+</div>
+<div class="paragraph">
+<p><strong>NOTE</strong>: You MUST list all persons and assessments first before using this command!<br>
+i.e. Indices are selected after first carrying out the <code>list</code> and <code>listassess</code> commands respectively</p>
 </div>
 </div>
 </div>
@@ -962,10 +975,20 @@ or student, index of the appropriate assessment and the grades themselves.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>addgrades 1 1 89</code><br></p>
+<p><code>list</code></p>
 </li>
 <li>
-<p>Here, the indices have been selected after carrying out the <code>list</code> and <code>listassess</code> commands respectively</p>
+<p><code>listassess</code></p>
+</li>
+<li>
+<p><code>addgrades 1 1 89</code><br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Restriction in v1.3: The grades can only be 'int' values, not 'float'</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -979,7 +1002,8 @@ Format: <code>viewgrades PERSON_INDEX</code></p>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Words in <code>UPPER_CASE</code> are the parameters. There is only one parameter for this command, which is the index of the person whos grades you want to view.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters. There is only one parameter for this command, which is the index of the person
+or student whose grades you want to view.</p>
 </div>
 </div>
 </div>
@@ -1006,8 +1030,9 @@ Format: <code>deletegrades PERSON_INDEX ASSESSMENT_INDEX</code></p>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Deletes the grades and assessment at the specified <code>ASSESSMENT_INDEX</code> of a person specified by the <code>PERSON_INDEX</code>.
-The index refers to the index number shown in the most recent person and assessments listing respectively.</p>
+<p>Deletes the assessment and respective grades for the specified <code>PERSON_INDEX</code> and <code>ASSESSMENT_INDEX</code>.
+The index refers to the index number shown in the most recent person and assessments listing respectively.
+<strong>NOTE</strong>: You must first list all persons and assessments before using this command!</p>
 </div>
 </div>
 </div>
@@ -1019,13 +1044,21 @@ The index refers to the index number shown in the most recent person and assessm
 <li>
 <p><code>deletegrades 1 2</code><br>
 Deletes the grades corresponding to the 2nd assessment in the address book for the student at index 1 in the address book.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>IMPORTANT NOTE</strong>: This does not delete grades for the second assessment as per the listing in view grades command, rather
+for the assessment in second index as seen in list assess command.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="attendance"><a class="link" href="#attendance">Attendance Commands</a></h3>
+<h3 id="attendance-commands"><a class="link" href="#attendance-commands">Attendance Commands</a></h3>
 <div class="sect3">
 <h4 id="updates-the-attendance-of-a-person-code-attendance-code"><a class="link" href="#updates-the-attendance-of-a-person-code-attendance-code">Updates the attendance of a person: <code>attendance</code></a></h4>
 <div class="paragraph">
@@ -1146,4 +1179,4 @@ Shows a list of people who were present today.<br></p>
 <p>There is no need to save manually. Address book data are saved in a file called <code>addressbook.txt</code> in the project root folder.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 14:59:36 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 15:43:34 UTC</div></div></div></body></html>
