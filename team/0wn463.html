@@ -25,10 +25,8 @@
 <div class="sect1">
 <h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Major enhancement</strong>: added <strong>Privilege</strong> and <strong>Account Features</strong></p>
+<div class="sect2">
+<h3 id="strong-major-enhancement-strong-added-strong-privilege-strong-and-strong-account-features-strong"><a class="link" href="#strong-major-enhancement-strong-added-strong-privilege-strong-and-strong-account-features-strong"><strong>Major enhancement</strong>: added <strong>Privilege</strong> and <strong>Account Features</strong></a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -42,12 +40,19 @@
 </li>
 </ul>
 </div>
-</li>
+</div>
+<div class="sect2">
+<h3 id="strong-minor-enhancement-strong"><a class="link" href="#strong-minor-enhancement-strong"><strong>Minor enhancement</strong>:</a></h3>
+<div class="ulist">
+<ul>
 <li>
-<p><strong>Minor enhancement</strong>: Updated code of AddressBook-3 to fulfil the Learning Outcomes expected, to provide a good base to start the project on.</p>
+<p>Updated code of AddressBook-3 to fulfil the Learning Outcomes expected, to provide a good base to start the project on.</p>
 </li>
-<li>
-<p><strong>Other contributions</strong>:</p>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="strong-other-contributions-strong"><a class="link" href="#strong-other-contributions-strong"><strong>Other contributions</strong>:</a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -113,13 +118,12 @@
 <li>
 <p>Contributed to forum discussions (examples:  <a href="https://github.com/nusCS2113-AY1819S1/forum/issues/30">#30</a>, <a href="https://github.com/nusCS2113-AY1819S1/forum/issues/50">#50</a>, <a href="https://github.com/nusCS2113-AY1819S1/forum/issues/58">#58</a>)</p>
 </li>
+<li>
+<p>Tools:</p>
+</li>
 </ul>
 </div>
 </li>
-<li>
-<p>Tools:</p>
-<div class="ulist">
-<ul>
 <li>
 <p>Set up several Dev Ops application</p>
 <div class="ulist">
@@ -147,11 +151,6 @@
 </li>
 </ul>
 </div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
 </div>
 </div>
 </div>
@@ -204,7 +203,7 @@ Format: <code>viewall PASSWORD</code></p>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Examples:</p>
+<p>Example(s):</p>
 </div>
 <div class="ulist">
 <ul>
@@ -250,7 +249,7 @@ Format: <code>editpw OLD_PASSWORD NEW_PASSWORD</code></p>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Examples:</p>
+<p>Example(s):</p>
 </div>
 <div class="ulist">
 <ul>
@@ -288,7 +287,7 @@ Enter <code>BOOLEAN</code> as <code>false</code> to set the default privilege to
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Examples:</p>
+<p>Example(s):</p>
 </div>
 <div class="ulist">
 <ul>
@@ -341,7 +340,7 @@ USERNAME and PASSWORD will be used for logging in.<br></p>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Examples:</p>
+<p>Example(s):</p>
 </div>
 <div class="ulist">
 <ul>
@@ -365,7 +364,7 @@ Deletes the account of the person with INDEX as specified by the last shown list
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Examples:</p>
+<p>Example(s):</p>
 </div>
 <div class="ulist">
 <ul>
@@ -390,7 +389,7 @@ Sets the current privilege level to that of the account.</p>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Examples:</p>
+<p>Example(s):</p>
 </div>
 <div class="ulist">
 <ul>
@@ -414,7 +413,7 @@ Also resets the privilege back to the level of a Basic User.</p>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Examples:</p>
+<p>Example(s):</p>
 </div>
 <div class="ulist">
 <ul>
@@ -450,6 +449,9 @@ Format: <code>listacc</code></p>
 </div>
 <div class="sect2">
 <h3 id="privilege-feature"><a class="link" href="#privilege-feature">Privilege Feature</a></h3>
+<div class="paragraph">
+<p>The figure below shows the class diagram describing the implementation of the Privilege feature.</p>
+</div>
 <div id="fig-PrivilegeDiagram" class="imageblock">
 <div class="content">
 <img src="../images/Privilege.png" alt="Privilege" width="600">
@@ -458,16 +460,30 @@ Format: <code>listacc</code></p>
 </div>
 <div class="sect3">
 <h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
-<div class="paragraph">
-<p><strong>Logic</strong> is assigned to one <strong>Privilege</strong> object at all times. <strong>Privilege</strong> contains a <strong>User</strong> (specified by the <strong>PrivilegeLevel</strong> enum) and a <strong>Person</strong> (referred to as <code>myPerson</code>).<br>
-<strong>User</strong> defines what access level the <strong>Privilege</strong> object has, which is implemented by <strong>BasicUser</strong>, <strong>TutorUser</strong> and <strong>AdminUser</strong>.<br>
-<strong>BasicUser</strong> is the class with the lowest access level and the ancestor to other 2 <strong>User</strong> classes.<br>
-To create an increasing level of access, each <strong>User</strong> of a higher level inherits from the successively lower one.<br>
-<strong>User</strong> levels have their own list of new commands they can run, which is appended to the list inherited from their parent.<br></p>
-</div>
-<div class="paragraph">
-<p><strong>Account</strong> class, which contains its respective <strong>Privilege</strong> object as well as login details, assigns an access level to a <strong>Person</strong>.<br>
-When switching <strong>Privilege</strong> levels, the <strong>Privilege</strong> object referred to by <strong>Logic</strong> will point its <strong>User</strong>(<code>user</code>) and <strong>Person</strong>(<code>myPerson</code>) to those of the desired <strong>Privilege level</strong>, as seen below in the Object Diagram and Sequence Diagram.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Logic</strong> is assigned to one <strong>Privilege</strong> object at all times. <strong>Privilege</strong> contains a <strong>User</strong> (specified by the <strong>PrivilegeLevel</strong> enum) and a <strong>Person</strong> (referred to as <code>myPerson</code>).<br></p>
+</li>
+<li>
+<p><strong>User</strong> defines what access level the <strong>Privilege</strong> object have, which is implemented by <strong>BasicUser</strong>, <strong>TutorUser</strong> and <strong>AdminUser</strong>.<br></p>
+</li>
+<li>
+<p><strong>BasicUser</strong> is the class with the lowest access level, and the ancestor to other 2 <strong>User</strong> classes.<br></p>
+</li>
+<li>
+<p>To create an increasing level of access, each <strong>User</strong> of a higher level inherits from the successively lower one.<br></p>
+</li>
+<li>
+<p><strong>User</strong> levels have their own list of new commands they can run, which is appended to the list inherited from their parent.<br></p>
+</li>
+<li>
+<p><strong>Account</strong> class, which contains its respective <strong>Privilege</strong> object as well as login details, assigns an access level to a <strong>Person</strong>.<br></p>
+</li>
+<li>
+<p>When switching <strong>Privilege</strong> levels, the <strong>Privilege</strong> object referred to by <strong>Logic</strong> will point its <strong>User</strong>(<code>user</code>) and <strong>Person</strong>(<code>myPerson</code>) to those of the desired <strong>Privilege level</strong>, as seen below in the Object Diagram and Sequence Diagram.<br></p>
+</li>
+</ul>
 </div>
 <div id="fig-PrivilegeObjectDiagram" class="imageblock">
 <div class="content">
@@ -693,4 +709,4 @@ The usage of enums also allows us to keep a reference to the created User object
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 15:58:04 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 16:18:05 UTC</div></div></div></body></html>
