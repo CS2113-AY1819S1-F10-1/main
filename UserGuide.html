@@ -12,7 +12,7 @@
 <li><a href="#fees-commands">Fees Commands</a></li>
 <li><a href="#account">Account Commands</a></li>
 <li><a href="#grade-commands">Grade Commands</a></li>
-<li><a href="#attendance-commands">Attendance Commands</a></li>
+<li><a href="#attendance">Attendance Commands</a></li>
 </ul>
 </li>
 <li><a href="#saving-the-data">Saving the data</a></li>
@@ -618,7 +618,7 @@ The exam index refers to the index number shown in the most recent exams listing
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Changes to an exam in the exam book will change the corresponding exam for all persons registered under it, be it an edit or a delete.
+<p>Changes to an exam in the exam book will change the corresponding exam for all persons registered under it, be it an 'edit' or a 'delete'.
 Exams registered for a person will not be shown in the <code>list</code> command and only viewable under the <code>viewall</code> and <code>viewexams</code> command.</p>
 </div>
 </td>
@@ -648,7 +648,7 @@ Format: <code>deregexam PERSONINDEX EXAMINDEX</code></p>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Degisters a specified person for a specified exam.
+<p>Deregisters a specified person for a specified exam.
 The person index refers to the index number shown in the most recent persons listing.
 The exam index refers to the index number shown in the most recent exams listing.</p>
 </div>
@@ -714,7 +714,7 @@ Format: <code>add INDEX FEE</code></p>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Words in <code>UPPER_CASE</code> are the parameters, order of parameters are fixed.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters, the order of parameters are fixed.</p>
 </div>
 <div class="paragraph">
 <p>Fees are automatically marked as <code>private</code>. <code>private</code> details can only
@@ -772,7 +772,7 @@ Views fees of the 1st person in the results of the <code>find</code> command.</p
 <div class="sect2">
 <h3 id="account"><a class="link" href="#account">Account Commands</a></h3>
 <div class="paragraph">
-<p>Below are the commands that deals with accounts:</p>
+<p>Below are the commands that deal with accounts:</p>
 </div>
 <div class="sect3">
 <h4 id="add-an-account-to-a-person-code-addacc-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span"><a class="link" href="#add-an-account-to-a-person-code-addacc-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span">Add an account to a person: <code>addacc</code>  <span class="image"><img src="images/Admin.png" alt="16" width="16"></span></a></h4>
@@ -840,7 +840,7 @@ Deletes the account of the first person in the list, provided that he has an acc
 <div class="sect3">
 <h4 id="login-to-an-account-code-login-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span"><a class="link" href="#login-to-an-account-code-login-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span">Login to an account: <code>login</code>  <span class="image"><img src="images/Basic.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
-<p>Login to the account with the specified username and password.<br>
+<p>Log in to the account with the specified username and password.<br>
 Format: <code>login USERNAME PASSWORD</code><br>
 Logs into the account with the given USERNAME and PASSWORD.<br>
 Sets the current privilege level to that of the account.</p>
@@ -936,7 +936,7 @@ Format: <code>listassess</code></p>
 <div class="sect3">
 <h4 id="deleting-an-assessment-code-deleteassess-code"><a class="link" href="#deleting-an-assessment-code-deleteassess-code">Deleting an assessment : <code>deleteassess</code></a></h4>
 <div class="paragraph">
-<p>Deletes the specified assessment from the assessment book, based on index. Irreversible.<br>
+<p>Deletes the specified assessment from the assessment book, based on the index. Irreversible.<br>
 Format: <code>deleteassess INDEX</code></p>
 </div>
 <div class="sidebarblock">
@@ -960,7 +960,7 @@ Format: <code>addgrades PERSON_INDEX ASSESSMENT_INDEX GRADES</code></p>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Words in <code>UPPER_CASE</code> are the parameters. There are three parameter for this command, which are the index of the person
+<p>Words in <code>UPPER_CASE</code> are the parameters. There are three parameters for this command, which are the index of the person
 or student, index of the appropriate assessment and the grades themselves.</p>
 </div>
 </div>
@@ -982,14 +982,13 @@ or student, index of the appropriate assessment and the grades themselves.</p>
 <div class="sect3">
 <h4 id="viewing-grades-of-a-person-code-viewgrades-code"><a class="link" href="#viewing-grades-of-a-person-code-viewgrades-code">Viewing grades of a person : <code>viewgrades</code></a></h4>
 <div class="paragraph">
-<p>View the grades  for all assessments of a selected student/person.<br>
+<p>View the grades for all assessments of a selected student/person.<br>
 Format: <code>viewgrades PERSON_INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Words in <code>UPPER_CASE</code> are the parameters. There is only one parameter for this command, which is the index of the person
-or studen whos grades you want to view.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters. There is only one parameter for this command, which is the index of the person whos grades you want to view.</p>
 </div>
 </div>
 </div>
@@ -1016,7 +1015,7 @@ Format: <code>deletegrades PERSON_INDEX ASSESSMENT_INDEX</code></p>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Deletes the grades and assessment at the specified <code>ASSESSMENT_INDEX</code> of a person specific by the <code>PERSON_INDEX</code>.
+<p>Deletes the grades and assessment at the specified <code>ASSESSMENT_INDEX</code> of a person specified by the <code>PERSON_INDEX</code>.
 The index refers to the index number shown in the most recent person and assessments listing respectively.</p>
 </div>
 </div>
@@ -1035,13 +1034,14 @@ Deletes the grades corresponding to the 2nd assessment in the address book for t
 </div>
 </div>
 <div class="sect2">
-<h3 id="attendance-commands"><a class="link" href="#attendance-commands">Attendance Commands</a></h3>
+<h3 id="attendance"><a class="link" href="#attendance">Attendance Commands</a></h3>
 <div class="sect3">
 <h4 id="updates-the-attendance-of-a-person-code-attendance-code"><a class="link" href="#updates-the-attendance-of-a-person-code-attendance-code">Updates the attendance of a person: <code>attendance</code></a></h4>
 <div class="paragraph">
 <p>Updates the attendance of the target person.<br>
 Format: <code>attendance INDEX d/DATE att/ATTENDANCE</code>
-Updates the attendance of the person with INDEX as specified by the last shown list according to the DATE.<br></p>
+Updates the attendance of the person with INDEX as specified by the last shown list according to the DATE.<br>
+<sub>*If</sub> <sub>the</sub> <sub>input</sub> <sub>date</sub> <sub>is</sub> <sub>0</sub> <sub>(e.g.</sub> <sub>d/0)</sub><sub>,</sub> <sub>the</sub> <sub>current</sub> <sub>date</sub> <sub>will</sub> <sub>be</sub> <sub>used</sub></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -1058,7 +1058,7 @@ Marks the attendance of the first person in the list as present for the date 29t
 <li>
 <p><code>list</code> <br>
 <code>attendance 1 d/0 att/0</code><br>
-Marks the attendance of the first person in the list as abesnt for Today&#8217;s date.</p>
+Marks the attendance of the first person on the list as absent for today&#8217;s date.</p>
 </li>
 </ul>
 </div>
@@ -1072,13 +1072,74 @@ Marks the attendance of the first person in the list as abesnt for Today&#8217;s
 Format: <code>replaceAtten INDEX d/DATE att/ATTENDANCE</code>
 Replaces the attendance of the person with INDEX as specified by the last shown list according to the DATE.<br></p>
 </div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code> <br>
+<code>replaceAtten 1 d/29-09-2018 att/1</code><br>
+Replaces the attendance of the first person in the list as present for the date 29th September 2018.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div class="sect3">
-<h4 id="view-the-attendance-of-a-person-code-viewatten-code"><a class="link" href="#view-the-attendance-of-a-person-code-viewatten-code">View the attendance of a person: <code>viewAtten</code></a></h4>
+<h4 id="view-the-attendance-of-a-person-code-viewattenperson-code"><a class="link" href="#view-the-attendance-of-a-person-code-viewattenperson-code">View the attendance of a person: <code>viewAttenPerson</code></a></h4>
 <div class="paragraph">
 <p>View the attendance of the target person.<br>
-Format: <code>viewAtten INDEX</code>
+Format: <code>viewAttenPerson INDEX</code>
 View the attendance of the person with INDEX as specified by the last shown list.<br></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code> <br>
+<code>viewAttenPerson 1</code>
+Views the attendance of the first person on the list.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="view-the-attendance-of-a-date-code-viewattendate-code"><a class="link" href="#view-the-attendance-of-a-date-code-viewattendate-code">View the attendance of a date: <code>viewAttenDate</code></a></h4>
+<div class="paragraph">
+<p>View the attendance of the given date.<br>
+Format: <code>viewAttenDate DATE</code>
+Shows a list of people who were present and absent on a particular date.<br>
+If a person&#8217;s attendance has yet to be taken, the person&#8217;s name will default be under absent.<br>
+<sub>*If</sub> <sub>the</sub> <sub>input</sub> <sub>date</sub> <sub>is</sub> <sub>0</sub> <sub>(e.g.</sub> <sub>d/0)</sub><sub>,</sub> <sub>the</sub> <sub>current</sub> <sub>date</sub> <sub>will</sub> <sub>be</sub> <sub>used</sub></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>viewAttenDate d/28-10-2018</code><br>
+Shows a list of people who were present on a particular date.<br></p>
+</li>
+<li>
+<p><code>viewAttenDate d/0</code><br>
+Shows a list of people who were present today.<br></p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1094,4 +1155,4 @@ View the attendance of the person with INDEX as specified by the last shown list
 <p>There is no need to save manually. Address book data are saved in a file called <code>addressbook.txt</code> in the project root folder.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 09:54:37 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 13:27:11 UTC</div></div></div></body></html>
