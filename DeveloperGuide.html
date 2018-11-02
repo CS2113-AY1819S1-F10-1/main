@@ -32,7 +32,8 @@
 <li><a href="#exams-feature">3.1. Exams Feature</a></li>
 <li><a href="#privilege-feature">3.2. Privilege Feature</a></li>
 <li><a href="#grades-feature">3.3. Grades Feature</a></li>
-<li><a href="#attendance">3.4. Attendance Feature</a></li>
+<li><a href="#fees-feature">3.4. Fees Feature</a></li>
+<li><a href="#attendance">3.5. Attendance Feature</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a>
@@ -70,12 +71,9 @@
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
 <li><a href="#deleting-a-person">G.2. Deleting a person</a></li>
-</ul>
-</li>
-<li><a href="#accessing-a-command-of-different-privilege-level">7. Accessing a command of different privilege level</a></li>
-<li><a href="#adding-a-duplicate-person">8. Adding a duplicate person</a>
-<ul class="sectlevel2">
-<li><a href="#saving-data">8.1. Saving data</a></li>
+<li><a href="#accessing-a-command-of-different-privilege-level">G.3. Accessing a command of different privilege level</a></li>
+<li><a href="#adding-a-duplicate-person">G.4. Adding a duplicate person</a></li>
+<li><a href="#saving-data">G.5. Saving data</a></li>
 </ul>
 </li>
 </ul>
@@ -1246,9 +1244,203 @@ grades to a particular student.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="attendance"><a class="link" href="#attendance">3.4. Attendance Feature</a></h3>
+<h3 id="fees-feature"><a class="link" href="#fees-feature">3.4. Fees Feature</a></h3>
 <div class="sect3">
 <h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">3.4.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>A private attribute under the Person class is initialised when a Person is added to the AddressBook. This attribute holds 2 Strings, one being the monetary value of
+the fee and the other being the due date for the respective fee. The current set of commands include:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>Editing a Fee</code></p>
+</li>
+<li>
+<p><code>Viewing Fee of a Person</code></p>
+</li>
+<li>
+<p><code>Listing all Fees</code></p>
+</li>
+<li>
+<p><code>Listing all Due Fees</code></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>An Example of how command 1 - <code>Editing the Fee of a Person</code> works:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The admin will be able to use the 'editfees' command to add a new fee to the Person.</p>
+</li>
+<li>
+<p>The existing fee with its date will be replaced by this new value in the Person object in the AddressBook.</p>
+</li>
+<li>
+<p>The updated fees will then be store in the AddressBook and will be automatically private, only viewable by the admin and tutors.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.4.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-to-define-a-fee-for-each-person"><a class="link" href="#aspect-how-to-define-a-fee-for-each-person">Aspect: How to define a Fee for each Person</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Instantiate Fee attribute under each Person created in the Person Class.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Allow us to skip the need for another data Class to be saved into any of the storage files, therefore being more convenient and reducing the number of files and Books.<br></p>
+</li>
+<li>
+<p>Cons: May get messy with more data manipulation of the Fees attribute when printing/sorting.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Use a seperate date file 'FeesBook' to keep track of each Person and their respective fees.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Data independency and hence no conflict during data manipulation.</p>
+</li>
+<li>
+<p>Cons: Cluttered as there may be too many data Books just to track an attribute.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 3:</strong> A compulsory attribute under Person Class hence occupying a data field in the input for AddPersonCommand.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement and parse.</p>
+</li>
+<li>
+<p>Cons: Input for Add Command would be too long as it will have too many data entry points.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-how-to-list-fees-of-everyone"><a class="link" href="#aspect-how-to-list-fees-of-everyone">Aspect: How to List fees of everyone</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Shallow copies the internalList of ReadOnlyPerson, sorts the copy with a custom comparator and prints the list,
+showing only name and fees.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Allows for easy sorting and does not manipulate the date in the original internalList.</p>
+</li>
+<li>
+<p>Cons: Does not allow for any data manipulation such as omitting any Person</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Looping through internalList and printing every name and respective Fee.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: Unable to be sorted by the date dues of the Fees of each Person.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-having-another-listduefeescommand"><a class="link" href="#aspect-having-another-listduefeescommand">Aspect: Having another ListDueFeesCommand</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Having another Command which only shows the people that have Fees that are due with respect to
+the current system date.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Clearer presentation of data and specific Persons involved. Ability to add "feesdue" tag to only the people shown.</p>
+</li>
+<li>
+<p>Cons: May seem redundant as these people already appear at the top of ListFeesCommand.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Merging it with ListFeesCommand, therefore only have one List Command with respect to Fees.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Less clutter of code.</p>
+</li>
+<li>
+<p>Cons: Inability to show the list of Fees of the Persons whose Fees are not yet due. Restricted in presenting data.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-using-viewfeescommand-with-respect-to-index"><a class="link" href="#aspect-using-viewfeescommand-with-respect-to-index">Aspect: Using ViewFeesCommand with respect to INDEX</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Follows the other ViewCommands with respect to last INDEX presented following any List Command.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Coherent code template as all ViewCommands follow the INDEXED structure. Ability to be flexible depending on which List Command was
+called beforehand.</p>
+</li>
+<li>
+<p>Cons: May not seem intuitive to view Fee of a specific Person if User only knows Name of the Person, therefore leading to use of the Find
+Command first.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Using another parameter such as Name of the Person, instead of INDEX</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: More intuitive to layman Users.</p>
+</li>
+<li>
+<p>Cons: There may be Persons with identical names, thus resulting in conflicts in ViewCommand.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="attendance"><a class="link" href="#attendance">3.5. Attendance Feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">3.5.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The AddressBook contains the attendance of each person for each date that his/her attendance is taken. The current set of commands include:</p>
 </div>
@@ -1292,7 +1484,7 @@ grades to a particular student.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.4.2. Design Considerations</a></h4>
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">3.5.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-to-store-attendance-for-each-person"><a class="link" href="#aspect-how-to-store-attendance-for-each-person">Aspect: How to store attendance for each person</a></h5>
 <div class="ulist">
@@ -3018,11 +3210,8 @@ Expected: Similar to previous.</p>
 </ol>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="accessing-a-command-of-different-privilege-level"><a class="link" href="#accessing-a-command-of-different-privilege-level">7. Accessing a command of different privilege level</a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="accessing-a-command-of-different-privilege-level"><a class="link" href="#accessing-a-command-of-different-privilege-level">G.3. Accessing a command of different privilege level</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3046,10 +3235,8 @@ Expected: Similar to previous.</p>
 </ol>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="adding-a-duplicate-person"><a class="link" href="#adding-a-duplicate-person">8. Adding a duplicate person</a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="adding-a-duplicate-person"><a class="link" href="#adding-a-duplicate-person">G.4. Adding a duplicate person</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3076,8 +3263,9 @@ Expected: Similar to previous.</p>
 <div class="paragraph">
 <p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
+</div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">8.1. Saving data</a></h3>
+<h3 id="saving-data"><a class="link" href="#saving-data">G.5. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3097,4 +3285,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 16:18:05 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-02 00:28:19 UTC</div></div></div></body></html>
