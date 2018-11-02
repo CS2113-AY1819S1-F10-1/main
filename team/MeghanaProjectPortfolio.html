@@ -126,7 +126,7 @@ created with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 <p>Below are the commands that deals with grades/assessments of students:</p>
 </div>
 <div class="sect3">
-<h4 id="adding-an-assessment-code-addassess-code"><a class="link" href="#adding-an-assessment-code-addassess-code">Adding an Assessment : <code>addassess</code></a></h4>
+<h4 id="adding-an-assessment-code-addassess-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span"><a class="link" href="#adding-an-assessment-code-addassess-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span">Adding an Assessment : <code>addassess</code> <span class="image"><img src="../images/Tutor.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Adds an assessment to the address book.<br>
 Format: <code>addassess ASSESSMENT_NAME</code></p>
@@ -154,14 +154,14 @@ name. Duplicate assessments cannot be added.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-all-assessments-code-listassess-code"><a class="link" href="#listing-all-assessments-code-listassess-code">Listing all assessments : <code>listassess</code></a></h4>
+<h4 id="listing-all-assessments-code-listassess-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span"><a class="link" href="#listing-all-assessments-code-listassess-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span">Listing all assessments : <code>listassess</code> <span class="image"><img src="../images/Tutor.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Shows a list of all assessments in the address book, along with an index for each<br>
 Format: <code>listassess</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-an-assessment-code-deleteassess-code"><a class="link" href="#deleting-an-assessment-code-deleteassess-code">Deleting an assessment : <code>deleteassess</code></a></h4>
+<h4 id="deleting-an-assessment-code-deleteassess-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span"><a class="link" href="#deleting-an-assessment-code-deleteassess-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span">Deleting an assessment : <code>deleteassess</code> <span class="image"><img src="../images/Tutor.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Deletes the specified assessment from the assessment book, based on the index. Irreversible.<br>
 Format: <code>deleteassess INDEX</code></p>
@@ -175,33 +175,46 @@ The index refers to the index number shown in the most recent assessments listin
 </div>
 </div>
 <div class="paragraph">
-<p>Example:</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="adding-grades-to-a-person-code-addgrades-code"><a class="link" href="#adding-grades-to-a-person-code-addgrades-code">Adding grades to a person : <code>addgrades</code></a></h4>
-<div class="paragraph">
-<p>Adds grades to selected student/person for a specific assessment listed in addressbook.<br>
-Format: <code>addgrades PERSON_INDEX ASSESSMENT_INDEX GRADES</code></p>
+<p>Example(s):</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Grades are numeric. No restriction on upper limit! It is up to the teacher to decide what the total marks are.</p>
+<p><code>listassess</code><br>
+<code>deleteassess 1</code></p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="adding-grades-to-a-person-code-addgrades-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span"><a class="link" href="#adding-grades-to-a-person-code-addgrades-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span">Adding grades to a person : <code>addgrades</code> <span class="image"><img src="../images/Tutor.png" alt="16" width="16"></span></a></h4>
+<div class="paragraph">
+<p>Adds grades to selected student/person for a specific assessment listed in addressbook.<br>
+Format: <code>addgrades PERSON_INDEX ASSESSMENT_INDEX GRADES</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
 <p>Words in <code>UPPER_CASE</code> are the parameters. There are three parameters for this command, which are the index of the person
-or student, index of the appropriate assessment and the grades themselves.</p>
+or student, index of the appropriate assessment and the grades themselves.<br>
+Grades are numeric. No restriction on upper limit! It is up to the teacher to decide what the total marks are.</p>
 </div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="paragraph">
 <p><strong>NOTE</strong>: You MUST list all persons and assessments first before using this command!<br>
 i.e. Indices are selected after first carrying out the <code>list</code> and <code>listassess</code> commands respectively</p>
 </div>
-</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Example(s):</p>
@@ -209,13 +222,9 @@ i.e. Indices are selected after first carrying out the <code>list</code> and <co
 <div class="ulist">
 <ul>
 <li>
-<p><code>list</code></p>
-</li>
-<li>
-<p><code>listassess</code></p>
-</li>
-<li>
-<p><code>addgrades 1 1 89</code><br></p>
+<p><code>list</code><br>
+<code>listassess</code><br>
+<code>addgrades 1 1 89</code><br></p>
 <div class="ulist">
 <ul>
 <li>
@@ -228,7 +237,7 @@ i.e. Indices are selected after first carrying out the <code>list</code> and <co
 </div>
 </div>
 <div class="sect3">
-<h4 id="viewing-grades-of-a-person-code-viewgrades-code"><a class="link" href="#viewing-grades-of-a-person-code-viewgrades-code">Viewing grades of a person : <code>viewgrades</code></a></h4>
+<h4 id="viewing-grades-of-a-person-code-viewgrades-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span"><a class="link" href="#viewing-grades-of-a-person-code-viewgrades-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span">Viewing grades of a person : <code>viewgrades</code> <span class="image"><img src="../images/Tutor.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>View the grades for all assessments of a selected student/person.<br>
 Format: <code>viewgrades PERSON_INDEX</code></p>
@@ -247,16 +256,14 @@ or student whose grades you want to view.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>viewgrades 1</code><br></p>
-</li>
-<li>
-<p>The results will be displayed as a list of assessments the student has taken and their corresponding grades.</p>
+<p><code>viewgrades 1</code><br>
+The results will be displayed as a list of assessments the student has taken and their corresponding grades.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-grade-code-deletegrades-code"><a class="link" href="#deleting-a-grade-code-deletegrades-code">Deleting a grade : <code>deletegrades</code></a></h4>
+<h4 id="deleting-a-grade-code-deletegrades-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span"><a class="link" href="#deleting-a-grade-code-deletegrades-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span">Deleting a grade : <code>deletegrades</code> <span class="image"><img src="../images/Tutor.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Deletes the specified assessment and respective grades of a student. It is irreversible.<br>
 Format: <code>deletegrades PERSON_INDEX ASSESSMENT_INDEX</code></p>
@@ -264,33 +271,38 @@ Format: <code>deletegrades PERSON_INDEX ASSESSMENT_INDEX</code></p>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Deletes the assessment and respective grades for the specified <code>PERSON_INDEX</code> and <code>ASSESSMENT_INDEX</code>.
-The index refers to the index number shown in the most recent person and assessments listing respectively.
-<strong>NOTE</strong>: You must first list all persons and assessments before using this command!</p>
+<p>Deletes respective grades for the specified <code>PERSON_INDEX</code> for the respective assessment at the specified <code>ASSESSMENT_INDEX</code>.
+The index refers to the index number shown in the most recent person and assessments listing respectively.</p>
 </div>
 </div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You must first list all persons and assessments before using this command!</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Example:</p>
+<p>Example(s):</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>deletegrades 1 2</code></p>
-</li>
-<li>
-<p><code>listassess</code>&#8201;&#8212;&#8201;Check the updated list</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Deletes the grades corresponding to the 2nd assessment in the address book for the student at index 1 in the address book.</p>
-</li>
-<li>
-<p><strong>IMPORTANT NOTE</strong>: This does not delete grades for the second assessment as per the listing in view grades command, rather
+<p><code>list</code><br>
+<code>listassess</code><br>
+<code>deletegrades 1 2</code><br>
+<code>listassess</code>&#8201;&#8212;&#8201;Check the updated list<br>
+Deletes the grades corresponding to the 2nd assessment in the address book for the student at index 1 in the address book.<br>
+<strong>IMPORTANT NOTE</strong>: This does not delete grades for the second assessment as per the listing in view grades command, rather
 for the assessment in second index as seen in list assess command.</p>
-</li>
-</ul>
-</div>
 </li>
 </ul>
 </div>
@@ -517,4 +529,4 @@ grades to a particular student.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-02 05:15:59 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-02 06:56:28 UTC</div></div></div></body></html>

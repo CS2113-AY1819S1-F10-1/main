@@ -200,8 +200,6 @@ Format: <code>viewall PASSWORD</code></p>
 </tr>
 </table>
 </div>
-<div class="sidebarblock">
-<div class="content">
 <div class="paragraph">
 <p>Example(s):</p>
 </div>
@@ -212,8 +210,6 @@ Format: <code>viewall PASSWORD</code></p>
 Raises your privilege level to Admin.</p>
 </li>
 </ul>
-</div>
-</div>
 </div>
 </div>
 <div class="sect3">
@@ -229,8 +225,12 @@ Format: <code>viewpri</code></p>
 <p>Changes the master password. Requires the current master password and Admin privileges.<br>
 Format: <code>editpw OLD_PASSWORD NEW_PASSWORD</code></p>
 </div>
+<div class="sidebarblock">
+<div class="content">
 <div class="paragraph">
-<p>Changes the master password to <code>NEW_PASSWORD</code>, if the provided <code>OLD_PASSWORD</code> is correct.<br></p>
+<p>Changes the master password to <code>NEW_PASSWORD</code>, if the provided <code>OLD_PASSWORD</code> is correct.</p>
+</div>
+</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -246,8 +246,6 @@ Format: <code>editpw OLD_PASSWORD NEW_PASSWORD</code></p>
 </tr>
 </table>
 </div>
-<div class="sidebarblock">
-<div class="content">
 <div class="paragraph">
 <p>Example(s):</p>
 </div>
@@ -260,15 +258,19 @@ Changes the master password to "new_pw".</p>
 </ul>
 </div>
 </div>
-</div>
-</div>
 <div class="sect3">
 <h4 id="sets-default-privilege-code-perm-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span"><a class="link" href="#sets-default-privilege-code-perm-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span">Sets default privilege : <code>perm</code> <span class="image"><img src="../images/Admin.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Sets/Unsets the privilege to be Admin when starting a session.<br>
-Format: <code>perm BOOLEAN</code><br>
-Enter <code>BOOLEAN</code> as <code>true</code> to set the default privilege to be Admin.<br>
+Format: <code>perm BOOLEAN</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Enter <code>BOOLEAN</code> as <code>true</code> to set the default privilege to be Admin.<br>
 Enter <code>BOOLEAN</code> as <code>false</code> to set the default privilege to be Basic.</p>
+</div>
+</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -284,8 +286,6 @@ Enter <code>BOOLEAN</code> as <code>false</code> to set the default privilege to
 </tr>
 </table>
 </div>
-<div class="sidebarblock">
-<div class="content">
 <div class="paragraph">
 <p>Example(s):</p>
 </div>
@@ -303,8 +303,6 @@ Sets the default privilege when starting a session to be Basic.</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
 <div class="paragraph">
 <p><a href="../UserGuide.html#account">Account Section</a></p>
 </div>
@@ -316,12 +314,18 @@ Sets the default privilege when starting a session to be Basic.</p>
 <p>Below are the commands that deal with accounts:</p>
 </div>
 <div class="sect3">
-<h4 id="add-an-account-to-a-person-code-addacc-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span"><a class="link" href="#add-an-account-to-a-person-code-addacc-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span">Add an account to a person: <code>addacc</code>  <span class="image"><img src="../images/Admin.png" alt="16" width="16"></span></a></h4>
+<h4 id="add-an-account-to-a-person-code-addacc-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span"><a class="link" href="#add-an-account-to-a-person-code-addacc-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span">Add an account to a person: <code>addacc</code> <span class="image"><img src="../images/Admin.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Adds an account to the target person.<br>
-Format: <code>addacc INDEX USERNAME PASSWORD USER_TYPE</code><br>
-Creates an account for the person with INDEX as specified by the last shown list.<br>
+Format: <code>addacc INDEX USERNAME PASSWORD USER_TYPE</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Creates an account for the person with INDEX as specified by the last shown list.
 USERNAME and PASSWORD will be used for logging in.<br></p>
+</div>
+</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -337,8 +341,6 @@ USERNAME and PASSWORD will be used for logging in.<br></p>
 </tr>
 </table>
 </div>
-<div class="sidebarblock">
-<div class="content">
 <div class="paragraph">
 <p>Example(s):</p>
 </div>
@@ -352,17 +354,19 @@ Adds an account with the username of <code>JohnDoe1337</code> and password of <c
 </ul>
 </div>
 </div>
-</div>
-</div>
 <div class="sect3">
-<h4 id="delete-the-account-of-a-person-code-delacc-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span"><a class="link" href="#delete-the-account-of-a-person-code-delacc-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span">Delete the account of a person: <code>delacc</code>  <span class="image"><img src="../images/Admin.png" alt="16" width="16"></span></a></h4>
+<h4 id="delete-the-account-of-a-person-code-delacc-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span"><a class="link" href="#delete-the-account-of-a-person-code-delacc-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span">Delete the account of a person: <code>delacc</code> <span class="image"><img src="../images/Admin.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Deletes the account of the target person.<br>
-Format: <code>delacc INDEX</code>
-Deletes the account of the person with INDEX as specified by the last shown list.<br></p>
+Format: <code>delacc INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
+<div class="paragraph">
+<p>Deletes the account of the person with INDEX as specified by the last shown list.</p>
+</div>
+</div>
+</div>
 <div class="paragraph">
 <p>Example(s):</p>
 </div>
@@ -376,58 +380,60 @@ Deletes the account of the first person in the list, provided that he has an acc
 </ul>
 </div>
 </div>
-</div>
-</div>
 <div class="sect3">
-<h4 id="login-to-an-account-code-login-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span"><a class="link" href="#login-to-an-account-code-login-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span">Login to an account: <code>login</code>  <span class="image"><img src="../images/Basic.png" alt="16" width="16"></span></a></h4>
+<h4 id="login-to-an-account-code-login-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span"><a class="link" href="#login-to-an-account-code-login-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span">Login to an account: <code>login</code> <span class="image"><img src="../images/Basic.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Log in to the account with the specified username and password.<br>
-Format: <code>login USERNAME PASSWORD</code><br>
-Logs into the account with the given USERNAME and PASSWORD.<br>
-Sets the current privilege level to that of the account.</p>
+Format: <code>login USERNAME PASSWORD</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
+<div class="paragraph">
+<p>Logs into the account with the given USERNAME and PASSWORD.<br>
+Sets the current privilege level to that of the account.</p>
+</div>
+</div>
+</div>
 <div class="paragraph">
 <p>Example(s):</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>login 1 JohnDoe1337 P455W0RD Admin</code>
+<p><code>login 1 JohnDoe1337 P455W0RD Admin</code><br>
 Login an account with the username of <code>JohnDoe1337</code> and password of <code>P455W0RD</code>, provided it exists.</p>
 </li>
 </ul>
 </div>
 </div>
-</div>
-</div>
 <div class="sect3">
-<h4 id="logout-of-an-account-code-logout-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span"><a class="link" href="#logout-of-an-account-code-logout-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span">Logout of an account: <code>logout</code>  <span class="image"><img src="../images/Basic.png" alt="16" width="16"></span></a></h4>
+<h4 id="logout-of-an-account-code-logout-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span"><a class="link" href="#logout-of-an-account-code-logout-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span">Logout of an account: <code>logout</code> <span class="image"><img src="../images/Basic.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Logout of the current account.<br>
-Format: <code>logout</code><br>
-Logout from the currently signed in account.<br>
-Also resets the privilege back to the level of a Basic User.</p>
+Format: <code>logout</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
+<div class="paragraph">
+<p>Logout from the currently signed in account.<br>
+Also resets the privilege back to the level of a Basic User.</p>
+</div>
+</div>
+</div>
 <div class="paragraph">
 <p>Example(s):</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>logout</code>
+<p><code>logout</code><br>
 Logs out of the current account, provided there is privilege or account to relinquish.</p>
 </li>
 </ul>
 </div>
 </div>
-</div>
-</div>
 <div class="sect3">
-<h4 id="displays-the-list-of-people-with-account-code-listacc-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span"><a class="link" href="#displays-the-list-of-people-with-account-code-listacc-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span">Displays the list of people with account: <code>listacc</code>  <span class="image"><img src="../images/Basic.png" alt="16" width="16"></span></a></h4>
+<h4 id="displays-the-list-of-people-with-account-code-listacc-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span"><a class="link" href="#displays-the-list-of-people-with-account-code-listacc-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span">Displays the list of people with account: <code>listacc</code> <span class="image"><img src="../images/Basic.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Shows a list of all persons with an account in the address book.<br>
 Format: <code>listacc</code></p>
@@ -709,4 +715,4 @@ The usage of enums also allows us to keep a reference to the created User object
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-02 05:15:59 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-02 06:56:28 UTC</div></div></div></body></html>
