@@ -266,6 +266,31 @@ Shows a list of people who were present today.</p>
 </div>
 <div class="sect2">
 <h3 id="attendance"><a class="link" href="#attendance">Attendance Feature</a></h3>
+<div id="fig-AttendanceDiagram" class="imageblock">
+<div class="content">
+<img src="../images/ClassDiagram_Attendance.png" alt="ClassDiagram Attendance" width="800">
+</div>
+<div class="title">Figure 1. Class Diagram of the Attendance feature</div>
+</div>
+<div class="paragraph">
+<p>The attendance field is an additional field to every <code>Person</code> object:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Each Person will have an Attendance object</p>
+</li>
+<li>
+<p>Each Attendance object will contain a Hashmap, which will store the attendance of each person by keying each date to a boolean (isPresent).</p>
+</li>
+<li>
+<p>UniquePersonList will contain 2 lists, containing a list of people who are present or absent for each particular date.</p>
+</li>
+<li>
+<p>Users can thus check the attendance of a particular person, or for a particular date.</p>
+</li>
+</ol>
+</div>
 <div class="sect3">
 <h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
 <div class="paragraph">
@@ -443,7 +468,53 @@ Shows a list of people who were present today.</p>
 </ul>
 </div>
 </div>
+<div class="sect4">
+<h5 id="aspect-how-to-store-data-in-xml-addressbook-txt"><a class="link" href="#aspect-how-to-store-data-in-xml-addressbook-txt">Aspect: How to store data in xml, addressbook.txt</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (Current choice):</strong> Use 2 list to store a list of dates and a list of absent/present</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Simple implementation, and utilizes the fact that each date can only have either present/absent. Iterating through the map to generate the 2 list will thus ensure that the data is in order</p>
+</li>
+<li>
+<p>Cons: In the xml format, data will be stored as 2 separate lists, which may not be as user friendly to edit directly.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Use a list of pairs, Pair &lt;String Date, Boolean isPresent&gt;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Only requires 1 single list to store the data of the entire map</p>
+</li>
+<li>
+<p>Cons: Such implementation will require a Pair object, which will require additional methods and classes, thus requiring longer code.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 3:</strong> Convert Hashmap to xml directly</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Direct transfer of data will thus require less memory space to store the same data.</p>
+</li>
+<li>
+<p>Cons: A Hashmap to xml converter will require either a very long code (unnecessary for only 1 map), or requires the import of an external library.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-09 11:47:32 UTC</div></div></div></body></html>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 01:13:20 UTC</div></div></div></body></html>
