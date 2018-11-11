@@ -10,7 +10,7 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>ClassRepO is a desktop address book application written in Java that targets secondary schools for usage by their students, tutors and staff. This portfolio is meant to document the contributions that I made to the project.</p>
+<p>ClassRepO is a desktop address book application written in Java that targets secondary schools for usage by their students, tutors and administrative staff. This portfolio is meant to document the contributions that I made to the project.</p>
 </div>
 </div>
 </div>
@@ -28,26 +28,23 @@
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: added a new feature <strong>Attendance</strong></p>
+<p><strong>Major enhancement</strong>: added a new field <strong>Attendance</strong> which comes with a few commands</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: Allows the address book application to manage each student&#8217;s attendance.</p>
+<p>What it does: Enables the ClassRepO to keep track of the students' attendance.</p>
 </li>
 <li>
-<p>Justification: This feature improves the product significantly as a school already needs to take the students' attendance. A digitalized storage and management of the attendance will make data analysis faster and also reduces the usage of paper (eco-friendly)</p>
+<p>Justification: This feature improves the product significantly as a school already needs to take the students' attendance. A digitalized storage and management of the attendance will make data analysis faster and also reduces the usage of paper (eco-friendly).</p>
 </li>
 <li>
-<p>Highlights: This feature requires editing of existing code as the additional field (attendance) for each person would mean that there will be a need to change portions of the code that are related to the person.</p>
+<p>Highlights: This feature uses different forms of software tricks (storage type) to make searching and editing of data more efficient.</p>
 </li>
 <li>
-<p>Credits: (<em>to be updated</em>)</p>
+<p>Credits: <a href="https://stackoverflow.com/a/30578421">Victor Hernandez</a> for the base valid date checker method</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p><strong>Minor enhancement</strong>: (<em>to be updated</em>)</p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -58,7 +55,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p><em>to be updated</em></p>
+<p>Added config.json file to fix repoSense issue: <a href="https://github.com/CS2113-AY1819S1-F10-1/main/pull/210">#210</a></p>
 </li>
 </ul>
 </div>
@@ -68,10 +65,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>(<em>to be updated</em>)(<a href="https://github.com" class="bare">https://github.com</a>[#insert PR no. here)</p>
+<p>Continuously updated the feature introduced by me (attendance): <a href="https://github.com/CS2113-AY1819S1-F10-1/main/pull/214">#214</a> | <a href="https://github.com/CS2113-AY1819S1-F10-1/main/pull/209">#209</a> | <a href="https://github.com/CS2113-AY1819S1-F10-1/main/pull/2126">#126</a> | <a href="https://github.com/CS2113-AY1819S1-F10-1/main/pull/68">#68</a></p>
 </li>
 <li>
-<p>(<em>to be updated</em>) Wrote additional tests for existing features to increase coverage from <em><em></em>% to <em></em></em>%</p>
+<p>Wrote additional tests for existing features to increase coverage: <a href="https://github.com/CS2113-AY1819S1-F10-1/main/pull/214">#214</a> | <a href="https://github.com/CS2113-AY1819S1-F10-1/main/pull/209">#209</a> | <a href="https://github.com/CS2113-AY1819S1-F10-1/main/pull/2126">#126</a> | <a href="https://github.com/CS2113-AY1819S1-F10-1/main/pull/68">#68</a></p>
 </li>
 </ul>
 </div>
@@ -81,7 +78,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>(<em>to be updated</em>) Reviewed grammar and spelling of documentation: <a href="https://github.com">#insert PR no. here</a></p>
+<p>Reviewed grammar and spelling for UG and DG: <a href="https://github.com/CS2113-AY1819S1-F10-1/main/pull/209">#209</a></p>
 </li>
 </ul>
 </div>
@@ -91,13 +88,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>(<em>to be updated</em>) PRs reviewed (with non-trivial review comments): <a href="https://github.com">#insert PR no. here</a></p>
-</li>
-<li>
-<p>Contributed to forum discussions <a href="https://github.com">#insert PR no. here</a></p>
-</li>
-<li>
-<p>(<em>to be updated</em>) Reported bugs and suggestions for other teams in the class <a href="https://github.com">#insert PR no. here</a></p>
+<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/CS2113-AY1819S1-F10-1/main/pull/221">#221</a></p>
 </li>
 </ul>
 </div>
@@ -139,7 +130,7 @@ Format: <code>attendance INDEX d/DATE att/ATTENDANCE</code></p>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Updates the attendance of the person with INDEX as specified by the last shown list according to the DATE.<br>
+<p>Updates the attendance of the person with INDEX as specified by the last shown list.<br>
 <sub>*If</sub> <sub>the</sub> <sub>input</sub> <sub>date</sub> <sub>is</sub> <sub>0</sub> <sub>(e.g.</sub> <sub>d/0)</sub><sub>,</sub> <sub>the</sub> <sub>current</sub> <sub>date</sub> <sub>will</sub> <sub>be</sub> <sub>used</sub></p>
 </div>
 </div>
@@ -171,7 +162,7 @@ Format: <code>replaceAtten INDEX d/DATE att/ATTENDANCE</code></p>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Replaces the attendance of the person with INDEX as specified by the last shown list according to the DATE.</p>
+<p>Replaces the attendance of the person with INDEX as specified by the last shown list.</p>
 </div>
 </div>
 </div>
@@ -245,6 +236,68 @@ Shows a list of people who were present today.</p>
 </ul>
 </div>
 </div>
+<div class="sect3">
+<h4 id="replaces-the-attendance-of-a-person-code-replaceatten-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span-2"><a class="link" href="#replaces-the-attendance-of-a-person-code-replaceatten-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span-2">Replaces the attendance of a person: <code>replaceAtten</code> <span class="image"><img src="../images/Tutor.png" alt="16" width="16"></span></a></h4>
+<div class="paragraph">
+<p>Replaces the current attendance of the target person.<br>
+Format: <code>replaceAtten INDEX d/DATE att/ATTENDANCE</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Replaces the attendance of the person with INDEX as specified by the last shown list according to the DATE.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Example(s):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code> <br>
+<code>replaceAtten 1 d/29-09-2018 att/1</code><br>
+Replaces the attendance of the first person in the list as present for the date 29th September 2018.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="coming-is-v2-0"><a class="link" href="#coming-is-v2-0">Coming is v2.0:</a></h3>
+<div class="sect3">
+<h4 id="update-multiple-people-attendance-code-multiatten-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span"><a class="link" href="#update-multiple-people-attendance-code-multiatten-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span">Update multiple people attendance: <code>multiAtten</code> <span class="image"><img src="../images/Tutor.png" alt="16" width="16"></span></a></h4>
+<div class="paragraph">
+<p>Updates the attendance of multiple people based on the list of index.<br>
+Format: <code>multiAtten i/MULTIPLE_INDEX d/DATE att/ATTENDANCE</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Updates the attendance of muultiple people with a list of INDEX as specified by the last shown list.<br>
+<sub>*If</sub> <sub>the</sub> <sub>input</sub> <sub>date</sub> <sub>is</sub> <sub>0</sub> <sub>(e.g.</sub> <sub>d/0)</sub><sub>,</sub> <sub>the</sub> <sub>current</sub> <sub>date</sub> <sub>will</sub> <sub>be</sub> <sub>used</sub><br>
+<sub>*If</sub> <sub>the</sub> <sub>input</sub> <sub>index</sub> <sub>is</sub> <sub>0</sub> <sub>(e.g.</sub> <sub>i/0)</sub><sub>,</sub> <sub>all</sub> <sub>people</sub> <sub>in</sub> <sub>the</sub> <sub>addressbook</sub> <sub>will</sub> <sub>be</sub> <sub>updated</sub></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Example(s):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code> <br>
+<code>multiAtten i/1 2 4 5 d/29-09-2018 att/1</code><br>
+Marks the attendance of the people with index 1, 2, 4 and 5 in the list as present for the date 29th September 2018.</p>
+</li>
+<li>
+<p><code>list</code> <br>
+<code>attendance i/0  d/0 att/0</code><br>
+Marks the attendance of everybody on the list as absent for today&#8217;s date.</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -272,19 +325,25 @@ Shows a list of people who were present today.</p>
 </div>
 <div class="title">Figure 1. Class Diagram of the Attendance feature</div>
 </div>
+<div id="fig-AttendanceDiagramWithMethods" class="imageblock">
+<div class="content">
+<img src="../images/ClassDiagram_Attendance_with_Methods.png" alt="ClassDiagram Attendance with Methods" width="800">
+</div>
+<div class="title">Figure 2. Class Diagram that links from UniquePersonList to Attendance object, including methods</div>
+</div>
 <div class="paragraph">
 <p>The attendance field is an additional field to every <code>Person</code> object:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Each Person will have an Attendance object</p>
+<p>Each <code>Person</code> will have an <code>Attendance</code> object</p>
 </li>
 <li>
-<p>Each Attendance object will contain a Hashmap, which will store the attendance of each person by keying each date to a boolean (isPresent).</p>
+<p>Each <code>Attendance</code> object will contain a Hashmap, which will store the attendance of each person by keying each String <code>date</code> to a boolean <code>isPresent</code>.</p>
 </li>
 <li>
-<p>UniquePersonList will contain 2 lists, containing a list of people who are present or absent for each particular date.</p>
+<p><code>UniquePersonList</code> will contain 2 lists, containing a list of people who are present or absent for each particular date.</p>
 </li>
 <li>
 <p>Users can thus check the attendance of a particular person, or for a particular date.</p>
@@ -490,7 +549,7 @@ Shows a list of people who were present today.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Only requires 1 single list to store the data of the entire map</p>
+<p>Pros: Only requires 1 single list to store the data of the entire map.</p>
 </li>
 <li>
 <p>Cons: Such implementation will require a Pair object, which will require additional methods and classes, thus requiring longer code.</p>
@@ -515,6 +574,48 @@ Shows a list of people who were present today.</p>
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="coming-in-v2-0"><a class="link" href="#coming-in-v2-0">Coming in v2.0</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-to-implement-code-multiatten-code-command"><a class="link" href="#aspect-how-to-implement-code-multiatten-code-command">Aspect: : How to implement <code>multiAtten</code> Command</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (Most likely choice):</strong> <code>multiAtten</code> command calls the <code>attendance</code> command multiple times</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Reduce the need for repeated code since multiAtten command is very similar to attendance command.</p>
+</li>
+<li>
+<p>Pros: Simpler to implement when input is 0 as there is no need to catch index 0 since index 0 will not exist in the UniquePersonList.</p>
+</li>
+<li>
+<p>Cons: Increase in coupling as a change in <code>attendance</code> command will cause <code>multiAtten</code> command to change.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2 (Unlikely choice):</strong> Reimplement the command as a brand new command</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Cleaner codes</p>
+</li>
+<li>
+<p>Pros: A brand new implementation would allow for future upgrades</p>
+</li>
+<li>
+<p>Cons: Lengthier and repeated code</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 07:41:06 UTC</div></div></div></body></html>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 07:44:36 UTC</div></div></div></body></html>

@@ -1338,19 +1338,25 @@ Command first.</p>
 </div>
 <div class="title">Figure 10. Class Diagram of the Attendance feature</div>
 </div>
+<div id="fig-AttendanceDiagramWithMethods" class="imageblock">
+<div class="content">
+<img src="images/ClassDiagram_Attendance_with_Methods.png" alt="ClassDiagram Attendance with Methods" width="800">
+</div>
+<div class="title">Figure 11. Class Diagram that links from UniquePersonList to Attendance object, including methods</div>
+</div>
 <div class="paragraph">
 <p>The attendance field is an additional field to every <code>Person</code> object:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Each Person will have an Attendance object</p>
+<p>Each <code>Person</code> will have an <code>Attendance</code> object</p>
 </li>
 <li>
-<p>Each Attendance object will contain a Hashmap, which will store the attendance of each person by keying each date to a boolean (isPresent).</p>
+<p>Each <code>Attendance</code> object will contain a Hashmap, which will store the attendance of each person by keying each String <code>date</code> to a boolean <code>isPresent</code>.</p>
 </li>
 <li>
-<p>UniquePersonList will contain 2 lists, containing a list of people who are present or absent for each particular date.</p>
+<p><code>UniquePersonList</code> will contain 2 lists, containing a list of people who are present or absent for each particular date.</p>
 </li>
 <li>
 <p>Users can thus check the attendance of a particular person, or for a particular date.</p>
@@ -1556,7 +1562,7 @@ Command first.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Only requires 1 single list to store the data of the entire map</p>
+<p>Pros: Only requires 1 single list to store the data of the entire map.</p>
 </li>
 <li>
 <p>Cons: Such implementation will require a Pair object, which will require additional methods and classes, thus requiring longer code.</p>
@@ -1573,6 +1579,48 @@ Command first.</p>
 </li>
 <li>
 <p>Cons: A Hashmap to xml converter will require either a very long code (unnecessary for only 1 map), or requires the import of an external library.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="coming-in-v2-0"><a class="link" href="#coming-in-v2-0">2.5.3. Coming in v2.0</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-to-implement-code-multiatten-code-command"><a class="link" href="#aspect-how-to-implement-code-multiatten-code-command">Aspect: : How to implement <code>multiAtten</code> Command</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (Most likely choice):</strong> <code>multiAtten</code> command calls the <code>attendance</code> command multiple times</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Reduce the need for repeated code since multiAtten command is very similar to attendance command.</p>
+</li>
+<li>
+<p>Pros: Simpler to implement when input is 0 as there is no need to catch index 0 since index 0 will not exist in the UniquePersonList.</p>
+</li>
+<li>
+<p>Cons: Increase in coupling as a change in <code>attendance</code> command will cause <code>multiAtten</code> command to change.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2 (Unlikely choice):</strong> Reimplement the command as a brand new command</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Cleaner codes</p>
+</li>
+<li>
+<p>Pros: A brand new implementation would allow for future upgrades</p>
+</li>
+<li>
+<p>Cons: Lengthier and repeated code</p>
 </li>
 </ul>
 </div>
@@ -1643,7 +1691,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 11. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 12. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -3226,4 +3274,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 07:41:06 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 07:44:36 UTC</div></div></div></body></html>
