@@ -7,12 +7,24 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="strong-what-is-it-strong"><a class="link" href="#strong-what-is-it-strong"><strong>What Is It?</strong></a></h2>
+<h2 id="introduction"><a class="link" href="#introduction">Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>ClassRepo is an enhanced AddressBook application, which is targeted at Secondary Schools to provide them with an easy
-and effective learning management system. The users can interact with it using a CLI. The application also has a GUI
-created with JavaFX. It is written in Java, and has about 10 kLoC.</p>
+<p>This portfolio highlights my contributions to a team software development project. After almost 12 weeks of advancements,
+we have created ClassRepo, which is an all-in-one school management system.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="strong-more-about-classrepo-strong"><a class="link" href="#strong-more-about-classrepo-strong"><strong>More About ClassRepo</strong></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ClassRepo is an enhanced AddressBook application, which is targeted at secondary schools to provide them with an easy
+and effective learning management system. Our aim is to help the students, teachers and the admin personnel in
+secondary schools by bolstering their efficiency. Spending less time on mundane tasks such as attendance taking would
+mean an increase in time available for actual learning to take place. With this goal in mind, our app targets 5 key areas,
+namely privilege (to ensure data security), exams, assessments &amp; grades, fees and attendance. The users can interact with
+our app using a CLI. The application also has a GUI created with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 </div>
 </div>
 </div>
@@ -23,14 +35,11 @@ created with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 <ul>
 <li>
 <p>Code Contributed - <a href="https://nuscs2113-ay1819s1.github.io/dashboard/#=undefined&amp;search=meg1456&amp;sort=displayName&amp;since=2018-09-12&amp;until=2018-11-05&amp;timeframe=day&amp;reverse=false&amp;repoSort=true">RepoSense</a></p>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
 <li>
-<p><strong>Major Enhancements</strong>: Added the <strong>Grades Feature</strong></p>
-</li>
-</ol>
-</div>
-</li>
+<p><strong>Major Enhancements</strong>: Added the <strong>Assessments/Grades Feature</strong></p>
+<div class="ulist">
+<ul>
 <li>
 <p>Able to add/list/delete assessments</p>
 </li>
@@ -54,19 +63,19 @@ created with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 <pre>Highlights: This enhancement is multifaceted and requires addition of new commands as well as careful modification to existing ones. The implementation requires meticulousness to ensure that the code is well-integrated and runs smoothly without any bugs.</pre>
 </div>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><strong>Minor Enhancement</strong>: Added functions to allow statistics such as average grade for each assessment to be calculated automatically (Coming Soon in v1.4)</p>
 </li>
-<li>
-<p><strong>Other Contributions</strong>:</p>
-</li>
-</ol>
+</ul>
 </div>
 </li>
 <li>
-<p>Project management</p>
+<p><strong>Minor Enhancement</strong>: Added functions to allow statistics such as average grade for each assessment to be calculated automatically, so manual work required by the user is reduced.</p>
+</li>
+<li>
+<p><strong>Other Contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project Management</p>
 <div class="ulist">
 <ul>
 <li>
@@ -80,7 +89,7 @@ created with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Tweaked contents of User Guide, Developer Guide to fit our project. Contributed to 'About Us' page.</p>
+<p>Tweaked contents of User Guide and Developer Guide to fit our project. Contributed to 'About Us' page.</p>
 </li>
 </ul>
 </div>
@@ -101,6 +110,9 @@ created with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 <p>Reported bugs and suggestions for other teams in the class: <a href="https://github.com/CS2113-AY1819S1-W13-4/main/issues/125">#125</a>,
 <a href="https://github.com/CS2113-AY1819S1-W13-4/main/issues/89">#89</a>, <a href="https://github.com/CS2113-AY1819S1-W13-4/main/issues/94">#94</a>,
 <a href="https://github.com/CS2113-AY1819S1-W13-4/main/issues/108">#108</a></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -200,26 +212,11 @@ Format: <code>addgrades PERSON_INDEX ASSESSMENT_INDEX GRADES</code></p>
 <p>Words in <code>UPPER_CASE</code> are the parameters. There are three parameters for this command, which are the index of the person
 or student, index of the appropriate assessment and the grades themselves.<br>
 1. No restriction on upper limit! It is up to the teacher to decide what the total marks are.<br>
-2. In case of any mistake in the entry or necessity to update grade, you can overwrite a previously entered value by
+2. In case of any mistake in the entry or necessity to update the grade, you can overwrite a previously entered value by
 simply using the same function again!<br>
 <code>addgrades PERSON_INDEX ASSESSMENT_INDEX UPDATED_GRADES</code></p>
 </div>
 </div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>You must list all persons and assessments first before using this command!<br>
-i.e. Indices are selected after first carrying out the <code>list</code> and <code>listassess</code> commands respectively</p>
-</div>
-</td>
-</tr>
-</table>
 </div>
 <div class="paragraph">
 <p>Example(s):</p>
@@ -275,20 +272,6 @@ Format: <code>deletegrades PERSON_INDEX ASSESSMENT_INDEX</code></p>
 The index refers to the index number shown in the most recent person and assessments listing respectively.</p>
 </div>
 </div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>You must first list all persons and assessments before using this command!</p>
-</div>
-</td>
-</tr>
-</table>
 </div>
 <div class="paragraph">
 <p>Example(s):</p>
@@ -466,7 +449,7 @@ and the grades for these assessments being stored in the AddressBook. The curren
 </div>
 <div id="fig-AddAssessmentDiagram" class="imageblock">
 <div class="content">
-<img src="../images/AssessmentClassDiagram.png" alt="AssessmentClassDiagram" width="800">
+<img src="../images/assessmentClassDiagram.png" alt="assessmentClassDiagram" width="800">
 </div>
 <div class="title">Figure 1. Class Diagram</div>
 </div>
@@ -476,7 +459,7 @@ and the grades for these assessments being stored in the AddressBook. The curren
 <p>A list of unique assessments can be stored in the addressbook.</p>
 </li>
 <li>
-<p>Each assessment object contains a Hashmap, with Person as the Key and Grades as the Value. Hence, the grades of all
+<p>Each assessment object contains a Hash Map, with Person as the Key and Grades as the Value. Hence, the grades of all
 students for a particular assessment will be stored together in the same HashMap.</p>
 </li>
 <li>
@@ -690,4 +673,4 @@ grades to a particular student.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 01:10:21 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 04:00:16 UTC</div></div></div></body></html>
