@@ -4020,11 +4020,14 @@ Expected: Error details shown in the status console. Output console remains the 
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list. Logged in as tutor/admin.</p>
+<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list. Logged in as tutor/admin. No attendance for the person has been taken.</p>
 </li>
 <li>
 <p>Test case: <code>viewAttenPerson 1</code><br>
 Expected: Person has no attendance. Status console shows success message. Output console shows nil and nil.</p>
+</li>
+<li>
+<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list. Logged in as tutor/admin. Attendance for person has been taken.</p>
 </li>
 <li>
 <p>Test case: <code>viewAttenPerson 1</code>.<br>
@@ -4089,4 +4092,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 14:03:15 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 14:17:21 UTC</div></div></div></body></html>
