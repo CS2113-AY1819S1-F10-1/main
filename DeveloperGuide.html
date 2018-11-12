@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>ClassRepo - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">ClassRep0</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2113-AY1819S1-F10-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>ClassRepo - Developer Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">ClassRepo</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2113-AY1819S1-F10-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>ClassRepo - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>CS2113T-AY1819S1 Team F10-1</code>      Since: <code>Aug 2018</code>      Licence: <code>MIT</code></p>
@@ -59,8 +59,8 @@
 <ul class="sectlevel2">
 <li><a href="#loading-sample-data">F.1. Loading sample data</a></li>
 <li><a href="#launch-and-shutdown">F.2. Launch and Shutdown</a></li>
-<li><a href="#privilege-account-feature-2">F.3. Privilege/Account Feature</a></li>
-<li><a href="#deleting-a-person">F.4. Deleting a person</a></li>
+<li><a href="#testing-privileges-accounts">F.3. Testing Privileges/Accounts</a></li>
+<li><a href="#deleting-an-exam">F.4. Deleting an exam</a></li>
 <li><a href="#adding-a-duplicate-person">F.5. Adding a duplicate person</a></li>
 <li><a href="#registering-a-person-for-an-exam">F.6. Registering a person for an exam</a></li>
 <li><a href="#deregistering-a-person-for-an-exam">F.7. Deregistering a person for an exam</a></li>
@@ -68,7 +68,8 @@
 <li><a href="#viewing-exams-as-a-student">F.9. Viewing exams as a student</a></li>
 <li><a href="#adding-attendance-for-a-person">F.10. Adding attendance for a person</a></li>
 <li><a href="#updating-attendance-for-a-person">F.11. Updating attendance for a person</a></li>
-<li><a href="#data-storage">F.12. Data storage</a></li>
+<li><a href="#editing-fees-for-a-person">F.12. Editing fees for a person</a></li>
+<li><a href="#data-storage">F.13. Data storage</a></li>
 </ul>
 </li>
 </ul>
@@ -146,7 +147,7 @@ Do not disable them. If you have disabled them, go to <code>File</code> &gt; <co
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Run the <code>seedu.address.Main</code> and try a few commands</p>
+<p>Run the <code>src.classrepo.Main</code> and try a few commands</p>
 </li>
 <li>
 <p><a href="#Testing">Run the tests</a> to ensure they all pass</p>
@@ -850,7 +851,7 @@ and the grades for these assessments being stored in the AddressBook. The curren
 <div class="paragraph">
 <p>This is the class diagram for the assessments, grades and statistics combined:</p>
 </div>
-<div id="fig-AddAssessmentDiagram" class="imageblock">
+<div id="fig-AssessmentDiagram" class="imageblock">
 <div class="content">
 <img src="images/AssessmentClassDiagram.png" alt="AssessmentClassDiagram" width="800">
 </div>
@@ -859,7 +860,7 @@ and the grades for these assessments being stored in the AddressBook. The curren
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>A list of unique assessments can be stored in the addressbook.</p>
+<p>A list of unique assessments can be stored in the AddressBook.</p>
 </li>
 <li>
 <p>Each assessment object contains a Hash Map, with Person as the Key and Grades as the Value. Hence, the grades of all
@@ -887,7 +888,7 @@ stats such as average score, total exam takers, max score and min score.</p>
 <p>The user (teacher/ admin) will be able to use the 'addassess' command to add a new assessment.</p>
 </li>
 <li>
-<p>This assessment will only be added to the Address Book if it is not already present. i.e. check for duplicate assessments
+<p>This assessment will only be added to the AddressBook if it is not already present. i.e. check for duplicate assessments
 is done.</p>
 </li>
 <li>
@@ -899,7 +900,7 @@ grades to a particular student.</p>
 <div class="paragraph">
 <p>This is demonstrated by the following sequence diagram:</p>
 </div>
-<div id="fig-AddAssessmentDiagram" class="imageblock">
+<div id="fig-AddAssessmentSeqDiagram" class="imageblock">
 <div class="content">
 <img src="images/Assessment_Seq_Diagram.png" alt="Assessment Seq Diagram" width="800">
 </div>
@@ -1095,7 +1096,7 @@ grades to a particular student.</p>
 <p>Fees contain both a String value as well as a String duedate</p>
 </li>
 <li>
-<p>Users can thus check the Fees of a particular person, or list out all the fees of the Persons in the address book</p>
+<p>Users can thus check the Fees of a particular person, or list out all the fees of the Persons in the AddressBook</p>
 </li>
 </ol>
 </div>
@@ -1399,7 +1400,7 @@ Command first.</p>
 <p>The user (teacher/ admin) will be able to use the 'attendance' command to update the attendance of a particular person (student).</p>
 </li>
 <li>
-<p>The specific person is extracted from the Addressbook.</p>
+<p>The specific person is extracted from the AddressBook.</p>
 </li>
 <li>
 <p>A check is performed to check if the person already has his/her attendance taken.</p>
@@ -1786,7 +1787,7 @@ See <a href="UsingGradle.html">UsingGradle.adoc</a> for more info on how to run 
 <ol class="loweralpha" type="a">
 <li>
 <p><em>Unit tests</em> targeting the lowest level methods/classes.<br>
-e.g. <code>seedu.addressbook.commons.UtilsTest</code></p>
+e.g. <code>classrepo.commons.UtilsTest</code></p>
 </li>
 <li>
 <p><em>Integration tests</em> that are checking the integration of multiple code units (those code units are assumed to be working).<br>
@@ -1856,7 +1857,7 @@ e.g. <code>LogicTest</code></p>
 <div class="sect2">
 <h3 id="managing-dependencies"><a class="link" href="#managing-dependencies">5.6. Managing Dependencies</a></h3>
 <div class="paragraph">
-<p>A project often depends on third-party libraries. For example, Address Book depends on the <a href="http://wiki.fasterxml.com/JacksonHome">Jackson library</a> for XML parsing. Managing these <em>dependencies</em> can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives.<br>
+<p>A project often depends on third-party libraries. For example, AddressBook depends on the <a href="http://wiki.fasterxml.com/JacksonHome">Jackson library</a> for XML parsing. Managing these <em>dependencies</em> can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives.<br>
 a. Include those libraries in the repo (this bloats the repo size)<br>
 b. Require developers to download those libraries manually (this creates extra work for developers)</p>
 </div>
@@ -2007,6 +2008,12 @@ Click to Expand
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">admin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hide <a href="#private-exam">private exams</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">not reveal to students the details before they are finalised</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tutor/admin</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">register a user for an exam</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">allow the user to know of the exam and keep track of the number of exam-takers</p></td>
@@ -2068,7 +2075,7 @@ Click to Expand
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view my non-private exams</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view my exams</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">know details of the exams I am going to take</p></td>
 </tr>
 <tr>
@@ -2110,9 +2117,6 @@ Click to Expand
 </tbody>
 </table>
 <div class="paragraph">
-<p><em>{More to be added}</em></p>
-</div>
-<div class="paragraph">
 <p> </div></details> </p>
 </div>
 </div>
@@ -2126,7 +2130,7 @@ Click to Expand
  </summary><div> </p>
 </div>
 <div class="paragraph">
-<p>(For all use cases below, the <strong>System</strong> is the <code>AddressBook</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
+<p>(For all use cases below, the <strong>System</strong> is the <code>ClassRepo</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
 <h3 id="use-case-add-person" class="discrete">Use case: Add person</h3>
 <h4 id="actors-tutor-admin" class="discrete">Actors: Tutor, Admin</h4>
@@ -2182,7 +2186,6 @@ Use case ends.</p>
 </ul>
 </div>
 <h3 id="use-case-delete-person" class="discrete">Use case: Delete person</h3>
-<h4 id="system-adressbook-exambook" class="discrete">System: AdressBook, ExamBook</h4>
 <h4 id="actors-tutor-admin-2" class="discrete">Actors: Tutor, Admin</h4>
 <div class="paragraph">
 <p><a href="#mss"><strong>MSS</strong></a></p>
@@ -2235,7 +2238,6 @@ Use case resumes at step 2.</p>
 </ul>
 </div>
 <h3 id="use-case-add-exam" class="discrete">Use case: Add exam</h3>
-<h4 id="system-exambook" class="discrete">System: ExamBook</h4>
 <h4 id="actor-admin" class="discrete">Actor: Admin</h4>
 <div class="paragraph">
 <p><a href="#mss"><strong>MSS</strong></a></p>
@@ -2289,7 +2291,6 @@ Use case ends.</p>
 </ul>
 </div>
 <h3 id="use-case-delete-exam" class="discrete">Use case: Delete exam</h3>
-<h4 id="system-adressbook-exambook-2" class="discrete">System: AdressBook, ExamBook</h4>
 <h4 id="actor-admin-2" class="discrete">Actor: Admin</h4>
 <div class="paragraph">
 <p><a href="#mss"><strong>MSS</strong></a></p>
@@ -2339,7 +2340,6 @@ Use case resumes at step 2.</p>
 </ul>
 </div>
 <h3 id="use-case-edit-exam" class="discrete">Use case: Edit exam</h3>
-<h4 id="system-adressbook-exambook-3" class="discrete">System: AdressBook, ExamBook</h4>
 <h4 id="actor-admin-3" class="discrete">Actor: Admin</h4>
 <div class="paragraph">
 <p><a href="#mss"><strong>MSS</strong></a></p>
@@ -2417,7 +2417,6 @@ Use case resumes at step 2.</p>
 </ul>
 </div>
 <h3 id="use-case-register-for-an-exam" class="discrete">Use case: Register for an exam</h3>
-<h4 id="system-adressbook-exambook-4" class="discrete">System: AdressBook, ExamBook</h4>
 <h4 id="actor-tutor-admin" class="discrete">Actor: Tutor, Admin</h4>
 <div class="paragraph">
 <p><a href="#mss"><strong>MSS</strong></a></p>
@@ -2494,7 +2493,6 @@ Use case resumes at step 4.</p>
 </ul>
 </div>
 <h3 id="use-case-deregister-for-an-exam" class="discrete">Use case: Deregister for an exam</h3>
-<h4 id="system-adressbook-exambook-5" class="discrete">System: AdressBook, ExamBook</h4>
 <h4 id="actor-tutor-admin-2" class="discrete">Actor: Tutor, Admin</h4>
 <div class="paragraph">
 <p><a href="#mss"><strong>MSS</strong></a></p>
@@ -2571,7 +2569,6 @@ Use case resumes at step 4.</p>
 </ul>
 </div>
 <h3 id="use-case-viewing-the-exams-list" class="discrete">Use case: Viewing the exams list</h3>
-<h4 id="system-exambook-2" class="discrete">System: ExamBook</h4>
 <h4 id="actor-tutor-admin-3" class="discrete">Actor: Tutor, Admin</h4>
 <div class="paragraph">
 <p><a href="#mss"><strong>MSS</strong></a></p>
@@ -2595,10 +2592,8 @@ Use case resumes at step 4.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The list is empty.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
+<p>2a. The list is empty.<br>
+Use case ends.</p>
 </li>
 </ul>
 </div>
@@ -2631,20 +2626,16 @@ Use case resumes at step 4.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The list is empty.<br></p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
+<p>2a. The list is empty.<br>
+Use case ends.</p>
 </li>
 <li>
 <p>3a. User is not a Tutor/Admin and is not logged in.<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p>3a1. ClassRepo shows an error message.<br></p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
+<p>3a1. ClassRepo shows an error message.<br>
+Use case ends.</p>
 </li>
 </ul>
 </div>
@@ -2654,10 +2645,8 @@ Use case resumes at step 4.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>3b1. ClassRepo shows an error message.<br></p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
+<p>3b1. ClassRepo shows an error message.<br>
+Use case ends.</p>
 </li>
 </ul>
 </div>
@@ -2667,10 +2656,8 @@ Use case resumes at step 4.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>4a1. ClassRepo shows a list of his non-private exams.<br></p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
+<p>4a1. ClassRepo shows a list of his non-private exams.<br>
+Use case ends.</p>
 </li>
 </ul>
 </div>
@@ -2678,7 +2665,6 @@ Use case resumes at step 4.</p>
 </ul>
 </div>
 <h3 id="use-case-add-assessment" class="discrete">Use case: Add assessment</h3>
-<h4 id="system-classrop" class="discrete">System: ClassRop</h4>
 <h4 id="actor-tutor-admin-4" class="discrete">Actor: Tutor, Admin</h4>
 <div class="paragraph">
 <p><a href="#mss"><strong>MSS</strong></a></p>
@@ -2713,7 +2699,7 @@ Use case resumes at step 4.</p>
 <ul>
 <li>
 <p>3a1. ClassRepo shows an error message.<br>
-Use case ends.<br></p>
+Use case ends.</p>
 </li>
 </ul>
 </div>
@@ -2732,7 +2718,6 @@ Use case ends.</p>
 </ul>
 </div>
 <h3 id="use-case-viewing-the-assessments-list" class="discrete">Use case: Viewing the assessments list</h3>
-<h4 id="system-classrepo" class="discrete">System: ClassRepo</h4>
 <h4 id="actor-student-tutor-admin" class="discrete">Actor: Student, Tutor, Admin</h4>
 <div class="paragraph">
 <p><a href="#mss"><strong>MSS</strong></a></p>
@@ -2756,15 +2741,12 @@ Use case ends.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The list is empty.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
+<p>2a. The list is empty.<br>
+Use case ends.</p>
 </li>
 </ul>
 </div>
 <h3 id="use-case-add-grades-for-an-assessment" class="discrete">Use case: Add grades for an assessment</h3>
-<h4 id="system-classrepo-2" class="discrete">System: ClassRepo</h4>
 <h4 id="actor-tutor-admin-5" class="discrete">Actor: Tutor, Admin</h4>
 <div class="paragraph">
 <p><a href="#mss"><strong>MSS</strong></a></p>
@@ -2775,13 +2757,13 @@ Use case ends.</p>
 <p>User requests to list persons.</p>
 </li>
 <li>
-<p>ClassRepo displays an indexed list of all persons in the addressbook.</p>
+<p>ClassRepo displays an indexed list of all persons in the AddressBook.</p>
 </li>
 <li>
 <p>User requests to list assessments.</p>
 </li>
 <li>
-<p>ClassRepo displays an indexed list of all assessments in the addressbook.</p>
+<p>ClassRepo displays an indexed list of all assessments in the AddressBook.</p>
 </li>
 <li>
 <p>User requests to add grades to a specific person in the person list for a specific assessment in the assessments list.</p>
@@ -2843,7 +2825,6 @@ Use case resumes at step 4.</p>
 </ul>
 </div>
 <h3 id="use-case-add-statistic" class="discrete">Use case: Add statistic</h3>
-<h4 id="system-classrop-2" class="discrete">System: ClassRop</h4>
 <h4 id="actor-tutor-admin-6" class="discrete">Actor: Tutor, Admin</h4>
 <div class="paragraph">
 <p><a href="#mss"><strong>MSS</strong></a></p>
@@ -2854,7 +2835,7 @@ Use case resumes at step 4.</p>
 <p>User requests to list assessments.</p>
 </li>
 <li>
-<p>ClassRepo displays an indexed list of all assessments in the addressbook.</p>
+<p>ClassRepo displays an indexed list of all assessments in the AddressBook.</p>
 </li>
 <li>
 <p>User requests to add a statistic for a specific assessment.</p>
@@ -2881,7 +2862,7 @@ Use case ends.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>5a1. ClassRepo shows an error message.<br>
+<p>3a1. ClassRepo shows an error message.<br>
 Use case resumes at step 2.</p>
 </li>
 </ul>
@@ -2890,7 +2871,6 @@ Use case resumes at step 2.</p>
 </ul>
 </div>
 <h3 id="use-case-viewing-the-statistics-list" class="discrete">Use case: Viewing the statistics list</h3>
-<h4 id="system-classrepo-3" class="discrete">System: ClassRepo</h4>
 <h4 id="actor-student-tutor-admin-2" class="discrete">Actor: Student, Tutor, Admin</h4>
 <div class="paragraph">
 <p><a href="#mss"><strong>MSS</strong></a></p>
@@ -2914,10 +2894,8 @@ Use case resumes at step 2.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The list is empty.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
+<p>2a. The list is empty.<br>
+Use case ends.</p>
 </li>
 </ul>
 </div>
@@ -2931,7 +2909,7 @@ Use case resumes at step 2.</p>
 <p>User requests to view his own details<br></p>
 </li>
 <li>
-<p>ClassRepo shows the details of the person associated with the logged-in account<br></p>
+<p>ClassRepo shows the details of the person associated with the logged-in account</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2948,10 +2926,8 @@ Use case resumes at step 2.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>1a1. ClassRepo displays an error message.<br></p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
+<p>1a1. ClassRepo displays an error message.<br>
+Use case ends.</p>
 </li>
 </ul>
 </div>
@@ -2974,7 +2950,7 @@ Use case resumes at step 2.</p>
 <p>User enters password<br></p>
 </li>
 <li>
-<p>ClassRepo increases the user&#8217;s privileges to Admin<br></p>
+<p>ClassRepo increases the user&#8217;s privileges to Admin</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3003,7 +2979,7 @@ Use case ends.</p>
 <ul>
 <li>
 <p>3a1. ClassRepo shows an error message<br>
-Use case ends</p>
+Use case ends.</p>
 </li>
 </ul>
 </div>
@@ -3033,62 +3009,7 @@ Use case ends</p>
 <p>User enters the new password</p>
 </li>
 <li>
-<p>ClassRepo changes the password to the new one<br></p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>3a. Incorrect password entered</p>
-<div class="ulist">
-<ul>
-<li>
-<p>3a1. ClassRepo shows an error message<br>
-User case resumes from step 2</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>5a. New password in the invalid format</p>
-<div class="ulist">
-<ul>
-<li>
-<p>5a1. ClassRepo shows an error message<br>
-User case resumes from step 4</p>
-</li>
-<li>
-<p>5b1. The new password is the same as the old password<br>
-5b2. ClassRepo shows an error message<br>
-User case resumes from step 4</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
-<h3 id="use-case-add-account-to-a-person" class="discrete">Use case: Add account to a person</h3>
-<h4 id="actor-admin-5" class="discrete">Actor: Admin</h4>
-<div class="paragraph">
-<p><a href="#mss"><strong>MSS</strong></a></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to list persons<br></p>
-</li>
-<li>
-<p>AddressBook shows a list of persons<br></p>
-</li>
-<li>
-<p>User requests to add an account to a target person<br></p>
-</li>
-<li>
-<p>ClassRepo adds the account to the person<br></p>
+<p>ClassRepo changes the password to the new one</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3101,17 +3022,75 @@ User case resumes from step 4</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The list is empty.<br></p>
+<p>3a. Incorrect password entered</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. ClassRepo shows an error message<br>
+User case resumes from step 2.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>5a. New password in the invalid format</p>
+<div class="ulist">
+<ul>
+<li>
+<p>5a1. ClassRepo shows an error message<br>
+User case resumes from step 4.</p>
+</li>
+<li>
+<p>5b1. The new password is the same as the old password<br></p>
+</li>
+<li>
+<p>5b2. ClassRepo shows an error message<br>
+User case resumes from step 4.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-add-account-to-a-person" class="discrete">Use case: Add account to a person</h3>
+<h4 id="actor-admin-5" class="discrete">Actor: Admin</h4>
+<div class="paragraph">
+<p><a href="#mss"><strong>MSS</strong></a></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list persons<br></p>
+</li>
+<li>
+<p>ClassRepo shows a list of persons<br></p>
+</li>
+<li>
+<p>User requests to add an account to a target person<br></p>
+</li>
+<li>
+<p>ClassRepo adds the account to the person</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
-<li>
-<p>3a. The given index is invalid.<br></p>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. AddressBook shows an error message.<br>
+<p>2a. The list is empty.<br>
+Use case ends.</p>
+</li>
+<li>
+<p>3a. The given index is invalid.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. ClassRepo shows an error message.<br>
 Use case resumes at step 2.</p>
 </li>
 </ul>
@@ -3119,10 +3098,10 @@ Use case resumes at step 2.</p>
 </li>
 <li>
 <p>3b. The account format is invalid.<br></p>
-<div class="ulist none">
-<ul class="none">
+<div class="ulist">
+<ul>
 <li>
-<p>3b1. AddressBook shows an error message.<br>
+<p>3b1. ClassRepo shows an error message.<br>
 Use case resumes at step 2.</p>
 </li>
 </ul>
@@ -3130,10 +3109,10 @@ Use case resumes at step 2.</p>
 </li>
 <li>
 <p>3c. The target person has an existing account.<br></p>
-<div class="ulist none">
-<ul class="none">
+<div class="ulist">
+<ul>
 <li>
-<p>3c1. AddressBook shows an error message.<br>
+<p>3c1. ClassRepo shows an error message.<br>
 Use case resumes at step 2.</p>
 </li>
 </ul>
@@ -3152,13 +3131,13 @@ Use case resumes at step 2.</p>
 <p>User requests to list persons</p>
 </li>
 <li>
-<p>AddressBook shows a list of persons</p>
+<p>ClassRepo shows a list of persons</p>
 </li>
 <li>
 <p>User requests to delete the account belonging to a specific person in the list</p>
 </li>
 <li>
-<p>AddressBook deletes the account<br></p>
+<p>ClassRepo deletes the account</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3176,10 +3155,10 @@ Use case ends.</p>
 </li>
 <li>
 <p>3a. The given index is invalid.<br></p>
-<div class="ulist none">
-<ul class="none">
+<div class="ulist">
+<ul>
 <li>
-<p>3a1. AddressBook shows an error message.<br>
+<p>3a1. ClassRepo shows an error message.<br>
 Use case resumes at step 2.</p>
 </li>
 </ul>
@@ -3187,10 +3166,10 @@ Use case resumes at step 2.</p>
 </li>
 <li>
 <p>3b. Target person does not have an account.<br></p>
-<div class="ulist none">
-<ul class="none">
+<div class="ulist">
+<ul>
 <li>
-<p>3b1. AddressBook shows an error message.<br>
+<p>3b1. ClassRepo shows an error message.<br>
 Use case resumes at step 2.</p>
 </li>
 </ul>
@@ -3205,16 +3184,16 @@ Use case resumes at step 2.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to log in<br></p>
+<p>User requests to log in</p>
 </li>
 <li>
-<p>AddressBook requests username and password<br></p>
+<p>ClassRepo requests username and password</p>
 </li>
 <li>
-<p>User enters username and password<br></p>
+<p>User enters username and password</p>
 </li>
 <li>
-<p>AddressBook logs the user into the account<br></p>
+<p>ClassRepo logs the user into the account</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3228,10 +3207,10 @@ Use case resumes at step 2.</p>
 <ul class="none">
 <li>
 <p>3a. User provided the wrong number of arguments<br></p>
-<div class="ulist none">
-<ul class="none">
+<div class="ulist">
+<ul>
 <li>
-<p>3a1. AddressBook shows an error message.<br>
+<p>3a1. ClassRepo shows an error message.<br>
 Use case ends.</p>
 </li>
 </ul>
@@ -3239,10 +3218,10 @@ Use case ends.</p>
 </li>
 <li>
 <p>3b. No existing account has the given username.<br></p>
-<div class="ulist none">
-<ul class="none">
+<div class="ulist">
+<ul>
 <li>
-<p>3b1. AddressBook shows an error message.<br>
+<p>3b1. ClassRepo shows an error message.<br>
 Use case ends.</p>
 </li>
 </ul>
@@ -3250,13 +3229,11 @@ Use case ends.</p>
 </li>
 <li>
 <p>3c. The password does not match the existing account with the given username.<br></p>
-<div class="ulist none">
-<ul class="none">
+<div class="ulist">
+<ul>
 <li>
-<p>3c1. AddressBook shows an error message.<br></p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
+<p>3c1. ClassRepo shows an error message.<br>
+Use case ends.</p>
 </li>
 </ul>
 </div>
@@ -3273,7 +3250,7 @@ Use case ends.</p>
 <p>User requests to log out</p>
 </li>
 <li>
-<p>ClassRepo logs the user out of his account<br></p>
+<p>ClassRepo logs the user out of his account</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3287,13 +3264,11 @@ Use case ends.</p>
 <ul class="none">
 <li>
 <p>2. User is not logged in<br></p>
-<div class="ulist none">
-<ul class="none">
+<div class="ulist">
+<ul>
 <li>
-<p>2a1. AddressBook shows an error message.<br></p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
+<p>2a1. ClassRepo shows an error message.<br>
+Use case ends.</p>
 </li>
 </ul>
 </div>
@@ -3307,10 +3282,10 @@ Use case ends.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to view his privilege<br></p>
+<p>User requests to view his privilege</p>
 </li>
 <li>
-<p>ClassRepo shows the privilege level and the account the user is logged in as<br></p>
+<p>ClassRepo shows the privilege level and the account the user is logged in as</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3325,16 +3300,16 @@ Use case ends.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list all the students in the address book<br></p>
+<p>User requests to list all the students in the address book</p>
 </li>
 <li>
-<p>ClassRepo shows all the current students in the console<br></p>
+<p>ClassRepo shows all the current students in the console</p>
 </li>
 <li>
-<p>User requests to edit fees of a student to a certain value<br></p>
+<p>User requests to edit fees of a student to a certain value</p>
 </li>
 <li>
-<p>ClassRepo shows the new Fees values of the student<br></p>
+<p>ClassRepo shows the new Fees values of the student</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3352,7 +3327,7 @@ Use case ends.</p>
 <ul>
 <li>
 <p>1a1. ClassRepo shows that the list is empty.<br>
-Use case ends.<br></p>
+Use case ends.</p>
 </li>
 </ul>
 </div>
@@ -3384,16 +3359,16 @@ Use case ends.</p>
 <p>ClassRepo shows a list of people.</p>
 </li>
 <li>
-<p>User request to update attendance of person with index x<br></p>
+<p>User request to update attendance of person with index x</p>
 </li>
 <li>
-<p>ClassRepo shows attendance of person with index x is updated<br></p>
+<p>ClassRepo shows attendance of person with index x is updated</p>
 </li>
 <li>
-<p>User requests to change attendance of person with index x<br></p>
+<p>User requests to change attendance of person with index x</p>
 </li>
 <li>
-<p>ClassRepo shows attendance of person with index x is replaced<br></p>
+<p>ClassRepo shows attendance of person with index x is replaced</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3459,16 +3434,16 @@ Use case ends.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to view attendance of person with index x<br></p>
+<p>User requests to view attendance of person with index x</p>
 </li>
 <li>
-<p>ClassRepo shows attendance of person with index x<br></p>
+<p>ClassRepo shows attendance of person with index x</p>
 </li>
 <li>
-<p>User request to view attendances of people for date y<br></p>
+<p>User request to view attendances of people for date y</p>
 </li>
 <li>
-<p>ClassRepo shows the lists of people who are present and absent for date y<br></p>
+<p>ClassRepo shows the lists of people who are present and absent for date y</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3638,9 +3613,9 @@ Expected: Shows the GUI with a set of sample contacts. The window size may not b
 </div>
 </div>
 <div class="sect2">
-<h3 id="privilege-account-feature-2"><a class="link" href="#privilege-account-feature-2">F.3. Privilege/Account Feature</a></h3>
+<h3 id="testing-privileges-accounts"><a class="link" href="#testing-privileges-accounts">F.3. Testing Privileges/Accounts</a></h3>
 <div class="paragraph">
-<p>The account available in the sample data. Avoid modifying them to ensure smooth testing.</p>
+<p>There are 3 accounts available in the sample data. Avoid modifying them to ensure smooth testing.</p>
 </div>
 <table class="tableblock frame-all grid-all" style="width: 50%;">
 <colgroup>
@@ -3679,7 +3654,7 @@ Expected: Shows the GUI with a set of sample contacts. The window size may not b
 </tbody>
 </table>
 <div class="paragraph">
-<p>The master password is <code>default_pw</code>.</p>
+<p>The master password for the <code>raise</code> commamd is <code>default_pw</code>.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -3711,13 +3686,13 @@ Other similar situations to try: Log in as a tutor/admin instead.<br></p>
 <p>Test case: <code>logout</code><br>
 <code>viewpri</code><br>
 <code>viewself</code><br>
-Expected: Logout is successful.  Viewpri shows updated details on the output console. Viewself shows error on the status console<br></p>
+Expected: Logout is successful.  Viewpri shows updated details on the output console. Viewself shows error on the status console.<br></p>
 </li>
 <li>
 <p>Prerequisites: Not logged in/no privilege to relinquish.</p>
 </li>
 <li>
-<p>Test case: <code>logout</code>
+<p>Test case: <code>logout</code><br>
 Expected: Logout is unsuccessful, as shown in the status console.<br></p>
 </li>
 </ol>
@@ -3733,7 +3708,7 @@ Expected: Logout is unsuccessful, as shown in the status console.<br></p>
 <li>
 <p>Test case: <code>raise default_pw</code><br>
 <code>viewpri</code><br>
-Expected: Raise privilege is successful. Viewpri shows updated privileges<br></p>
+Expected: Raise privilege is successful. Viewpri shows updated privileges.<br></p>
 </li>
 </ol>
 </div>
@@ -3780,30 +3755,30 @@ Expected: Commands execute only if the privilege level is sufficient.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">F.4. Deleting a person</a></h3>
+<h3 id="deleting-an-exam"><a class="link" href="#deleting-an-exam">F.4. Deleting an exam</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Deleting a person while all persons are listed</p>
+<p>Deleting an exam while all exams are listed</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list. Logged in as admin.</p>
+<p>Prerequisites: List all exams using the <code>listexams</code> command. Multiple exams in the list. Logged in as admin.</p>
 </li>
 <li>
-<p>Test case: <code>delete 1</code><br>
-Expected: First contact is deleted from the list. Details of the deleted contact shown in the status console. List in the output console is updated.</p>
+<p>Test case: <code>deleteexam 1</code><br>
+Expected: First exam is deleted from the list. Details of the deleted exam shown in the status console. List in the output console is updated.</p>
 </li>
 <li>
 <p>Test case: <code>delete 0</code><br>
-Expected: No person is deleted. Error details are shown in the status console. Output console remains the same.</p>
+Expected: No exam is deleted. Error details are shown in the status console. Output console remains the same.</p>
 </li>
 <li>
-<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size), <code>delete a</code> (where a is not an integer)<br>
+<p>Other incorrect delete commands to try: <code>deleteexam</code>, <code>deleteexam x</code> (where x is larger than the list size), <code>deleteexam a</code> (where a is not an integer)<br>
 Expected: Similar to previous.</p>
 </li>
 <li>
-<p>Other similar commands to try: <code>deletexam</code>, <code>deleteassess</code><br>
+<p>Other similar commands to try: <code>delete</code>, <code>deleteassess</code><br>
 Expected: Similar to previous.</p>
 </li>
 </ol>
@@ -3817,9 +3792,12 @@ Expected: Similar to previous.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add a person while it already exists in the address book. Logged in as admin</p>
+<p>Add a person while it already exists in the AddressBook</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Logged in as admin.</p>
+</li>
 <li>
 <p>Test case: <code>add John Doe p/98765432 e/johnd@gmail.com a/311, Clementi Ave 2, #02-25 t/friends t/owesMoney</code><br>
 Expected: Contact is added to the list. Details of the added contact shown in the status console. List in the output console is updated.</p>
@@ -3843,7 +3821,7 @@ Expected: Similar to previous.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Register a person in the addressbook for an exam in the exambook</p>
+<p>Register a person in the AddressBook for an exam in the ExamBook</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -3872,11 +3850,11 @@ Expected: Similar to previous.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Deregister a person in the addressbook for an exam in the exambook</p>
+<p>Deregister a person in the AddressBook for an exam in the ExamBook</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list. List all exams using the <code>listexams</code> command. Multiple exams in the list. Logged in as tutor/admin.</p>
+<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list. List all exams using the <code>listexams</code> command. Multiple exams in the list. Logged in as tutor/admin. Have the 1st person in the AddressBook be registered for the 1st exam in the exam book.</p>
 </li>
 <li>
 <p>Test case: <code>deregexam 1 1</code><br>
@@ -3955,7 +3933,9 @@ Expected: Status console shows error message. Output console remains the same.</
 </li>
 <li>
 <p>Test case: <code>attendance 1 d/0 att/1</code><br>
-Expected: Attendance is updated for person. Status console shows success message. Output console remains the same.</p>
+<code>viewAttenPerson 1</code>
+Expected: Attendance is updated for person. After the first command, status console shows success message. Output console remains the same. After the second command,
+status console shows the list of dates the person had attendance taken. Output console remains the same.</p>
 </li>
 <li>
 <p>Test case: <code>attendance 1 d/0 att/1</code> after the previous test case was performed.<br>
@@ -3979,11 +3959,13 @@ Expected: Error details shown in the status console. Output console remains the 
 <p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list. Logged in as tutor/admin. Attendance was already taken once on same date.</p>
 </li>
 <li>
-<p>Test case: <code>attendance 1 d/0 att/1</code><br>
-Expected: Attendance is updated for person. Status console shows success message. Output console remains the same.</p>
+<p>Test case: <code>replaceAtten 1 d/0 att/1</code><br>
+<code>viewAttenPerson 1</code>
+Expected: Attendance is updated for person. After the first command, status console shows success message. Output console remains the same. After the second command,
+status console shows the list of dates the person had attendance taken. Output console remains the same.</p>
 </li>
 <li>
-<p>Test case: <code>attendance 1 d/10-10-2018 att/1</code>.<br>
+<p>Test case: <code>replaceAtten 1 d/10-10-2018 att/1</code>.<br>
 Expected: Error details shown in the status console. Output console remains the same.</p>
 </li>
 </ol>
@@ -3993,7 +3975,36 @@ Expected: Error details shown in the status console. Output console remains the 
 </div>
 </div>
 <div class="sect2">
-<h3 id="data-storage"><a class="link" href="#data-storage">F.12. Data storage</a></h3>
+<h3 id="editing-fees-for-a-person"><a class="link" href="#editing-fees-for-a-person">F.12. Editing fees for a person</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Editing fees for a person while all persons are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list. Logged in as admin.</p>
+</li>
+<li>
+<p>Test case: <code>editfees 1 34.50 11-12-2018</code><br>
+Expected: Fees is updated for person. After the first command, status console shows success message. Output console remains the same.</p>
+</li>
+<li>
+<p>Test case: <code>editfees 1 34.540 11-12-2018</code><br>
+Expected: Status console shows error message. Output console remains the same.</p>
+</li>
+<li>
+<p>Other similar situations to try: Enter an invalid date/date format.<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="data-storage"><a class="link" href="#data-storage">F.13. Data storage</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4028,11 +4039,11 @@ Expected: Similar to previous.</p>
 <p>Prerequisites: Run the application at least once to generate the storage files and add in some person and exam data. Register some persons for some exams.</p>
 </li>
 <li>
-<p>Delete <code>exams.txt</code></p>
+<p>Delete <code>exams.txt</code>.</p>
 </li>
 <li>
 <p>Run the application again.<br>
-Expected: The application is unable to be opened. Refer to the <code>log.txt</code> in the base folder to check for the error message, which should indicate an error for the phone number.</p>
+Expected: The application is unable to be opened. Refer to the <code>log.txt</code> in the base folder to check for the error message, which should indicate an error for missing data.</p>
 </li>
 <li>
 <p>Other similar edits can be made to <code>addressbook.txt</code> to try.<br>
@@ -4045,4 +4056,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 06:03:55 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 11:51:15 UTC</div></div></div></body></html>
