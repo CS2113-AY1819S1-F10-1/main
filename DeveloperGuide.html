@@ -59,8 +59,8 @@
 <ul class="sectlevel2">
 <li><a href="#loading-sample-data">F.1. Loading sample data</a></li>
 <li><a href="#launch-and-shutdown">F.2. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-person">F.3. Deleting a person</a></li>
-<li><a href="#accessing-a-command-of-different-privilege-level">F.4. Accessing a command of different privilege level</a></li>
+<li><a href="#privilege-account-feature-2">F.3. Privilege/Account Feature</a></li>
+<li><a href="#deleting-a-person">F.4. Deleting a person</a></li>
 <li><a href="#adding-a-duplicate-person">F.5. Adding a duplicate person</a></li>
 <li><a href="#registering-a-person-for-an-exam">F.6. Registering a person for an exam</a></li>
 <li><a href="#deregistering-a-person-for-an-exam">F.7. Deregistering a person for an exam</a></li>
@@ -524,7 +524,7 @@ The main features are:</p>
 <div class="sect2">
 <h3 id="privilege-account-feature"><a class="link" href="#privilege-account-feature">2.2. Privilege/Account Feature</a></h3>
 <div class="paragraph">
-<p>The Privilege feature aims to only restrict the user&#8217;s to their allowed commands, while the Account feature provides a means for the user to authenticate themselves to access more commands.</p>
+<p>The Privilege feature aims to only restrict the user&#8217;s interaction to their allowed commands, while the Account feature provides a means for the user to authenticate himself/herself to access more commands.</p>
 </div>
 <hr>
 <div class="paragraph">
@@ -1776,7 +1776,7 @@ See <a href="UsingGradle.html">UsingGradle.adoc</a> for more info on how to run 
 <div class="sect2">
 <h3 id="types-of-tests"><a class="link" href="#types-of-tests">4.2. Types of tests</a></h3>
 <div class="paragraph">
-<p>We have one type of test:</p>
+<p>We have 3 types of test:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -3525,7 +3525,8 @@ able to accomplish most of the tasks faster using commands than using the mouse.
 <h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Given below are instructions to test the app manually.</p>
+<p>Given below are instructions to test the app manually.<br>
+Before reporting bugs, refer to <a href="UserGuide.html#known-issues">Known Issues</a> to see the list of known issues that we deemed low priority to fix.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3571,25 +3572,159 @@ These instructions only provide a starting point for testers to work on; testers
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Download the jar file and copy into an empty folder</p>
-</li>
-<li>
 <p>Double-click the jar file<br>
 Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.</p>
 </li>
 </ol>
 </div>
 </li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The below image shows the different interactable interfaces</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Interface.png" alt="Interface" width="500">
+</div>
+<div class="title">Figure 13. The different interfaces</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="privilege-account-feature-2"><a class="link" href="#privilege-account-feature-2">F.3. Privilege/Account Feature</a></h3>
+<div class="paragraph">
+<p>The account available in the sample data. Avoid modifying them to ensure smooth testing.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 50%;">
+<colgroup>
+<col style="width: 26.8292%;">
+<col style="width: 24.3902%;">
+<col style="width: 24.3902%;">
+<col style="width: 24.3904%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Person</th>
+<th class="tableblock halign-left valign-top">Username</th>
+<th class="tableblock halign-left valign-top">Password</th>
+<th class="tableblock halign-left valign-top">Privilege</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filbert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fil_username</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fil_password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Basic</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lira</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lira_username</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lira_password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tutor</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">John Doe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">john_the_admin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pw123</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Admin</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The master password is <code>default_pw</code>.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>Saving window preferences</p>
+<p>Logging in</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Resize the window to an optimum size. Move the window to a different location. Close the window.</p>
+<p>Prerequisites: Not logged in.</p>
 </li>
 <li>
-<p>Re-launch the app by double-clicking the jar file.<br>
-Expected: The most recent window size and location are retained.</p>
+<p>Test case: <code>login fil_username fil_password</code><br>
+<code>viewpri</code><br>
+<code>viewself</code><br>
+Expected: Login is successful. Viewpri/viewself shows correct details on both consoles.<br>
+Other similar situations to try: Log in as a tutor/admin instead.<br></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Logging out</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Logged in/have privilege to relinquish.</p>
+</li>
+<li>
+<p>Test case: <code>logout</code><br>
+<code>viewpri</code><br>
+<code>viewself</code><br>
+Expected: Logout is successful.  Viewpri shows updated details on the output console. Viewself shows error on the status console<br></p>
+</li>
+<li>
+<p>Prerequisites: Not logged in/no privilege to relinquish.</p>
+</li>
+<li>
+<p>Test case: <code>logout</code>
+Expected: Logout is unsuccessful, as shown in the status console.<br></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Raising privilege</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Not logged in.</p>
+</li>
+<li>
+<p>Test case: <code>raise default_pw</code><br>
+<code>viewpri</code><br>
+Expected: Raise privilege is successful. Viewpri shows updated privileges<br></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Accessing a command without sufficient privilege level</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list. Not logged in or logged in as student.</p>
+</li>
+<li>
+<p>Test case: <code>delete 1</code><br>
+<code>delete 1</code><br>
+Expected: No person is deleted. Error details shown in the status console. Output console remains the same.<br>
+Other similar situations to try: Log in as a tutor instead.<br></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Accessing a command with sufficient privilege level</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list. Privilege is Admin, either by logging in or raising privileges.</p>
+</li>
+<li>
+<p>Test case: <code>delete 1</code><br>
+Expected: 1st person in the list deleted. Status console shows success message. Output console shows updated list.</p>
+</li>
+<li>
+<p>Test case: <code>help</code><br>
+Expected: Output console shows the list of runnable commands given the current privilege level.</p>
+</li>
+<li>
+<p>Other commands to try: For full list of commands testable, refer to <a href="UserGuide.html#command-summary">Command Summary</a><br>
+Expected: Commands execute only if the privilege level is sufficient.</p>
 </li>
 </ol>
 </div>
@@ -3598,7 +3733,7 @@ Expected: The most recent window size and location are retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">F.3. Deleting a person</a></h3>
+<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">F.4. Deleting a person</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3621,33 +3756,7 @@ Expected: No person is deleted. Error details are shown in the status console. O
 Expected: Similar to previous.</p>
 </li>
 <li>
-<p>Other similar commands to try: <code>deletexam</code>, <code>deleteassess</code><br>
-Expected: Similar to previous.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="accessing-a-command-of-different-privilege-level"><a class="link" href="#accessing-a-command-of-different-privilege-level">F.4. Accessing a command of different privilege level</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Accessing a command of different privilege level than of current user</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list. Not logged in or logged in a student.</p>
-</li>
-<li>
-<p>Test case: <code>delete 1</code><br>
-Expected: No person is deleted. Error details are shown in the status console. Output console remains the same.</p>
-</li>
-<li>
-<p>Other commands of different privilege to try: <code>listexams</code>, <code>listall</code>, <code>deleteexam 1</code><br>
-Expected: Similar to previous.</p>
+<p>Other similar commands to try: <code>deletexam</code>, <code>deleteassess</code><br></p>
 </li>
 </ol>
 </div>
@@ -3888,4 +3997,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 04:50:21 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 04:55:30 UTC</div></div></div></body></html>
