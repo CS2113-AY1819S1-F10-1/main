@@ -156,7 +156,7 @@ name. Duplicate assessments cannot be added.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-all-assessments-code-listassess-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span"><a class="link" href="#listing-all-assessments-code-listassess-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span">Listing all assessments : <code>listassess</code> <span class="image"><img src="../images/Tutor.png" alt="16" width="16"></span></a></h4>
+<h4 id="listing-all-assessments-code-listassess-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span"><a class="link" href="#listing-all-assessments-code-listassess-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span">Listing all assessments : <code>listassess</code> <span class="image"><img src="../images/Basic.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Shows a list of all assessments in the address book, along with an index for each<br>
 Format: <code>listassess</code></p>
@@ -255,7 +255,8 @@ Using <code>list</code> command</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>viewgrades 1</code><br>
+<p><code>list</code><br>
+<code>viewgrades 1</code><br>
 The results will be displayed as a list of assessments the student has taken and their corresponding grades.</p>
 </li>
 </ul>
@@ -356,7 +357,7 @@ statistics book to ensure that it is up to date.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-all-statistics-code-liststatistics-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span"><a class="link" href="#listing-all-statistics-code-liststatistics-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span">Listing all statistics : <code>liststatistics</code> <span class="image"><img src="../images/Tutor.png" alt="16" width="16"></span></a></h4>
+<h4 id="listing-all-statistics-code-liststatistics-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span"><a class="link" href="#listing-all-statistics-code-liststatistics-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span">Listing all statistics : <code>liststatistics</code> <span class="image"><img src="../images/Basic.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Shows a list of all statistics in the statistics book, along with an index for each<br>
 Format: <code>liststatistics</code></p>
@@ -370,7 +371,7 @@ Format: <code>liststatistics</code></p>
 <td class="content">
 <div class="paragraph">
 <p>If you delete an assessment after generating its statistics, this statistic will still remain in the statistics book. This
-is to ensure that the school can maintain a record of all its statistics over time, if needed, even though the assessment
+is to ensure that the school can maintain a record of all its statistics over time if needed, even though the assessment
 may have ended and the grades are awarded to students. It is up to the school to decide how long they want to store their
 statistics for.</p>
 </div>
@@ -480,10 +481,10 @@ students for a particular assessment will be stored together in the same HashMap
 </li>
 <li>
 <p>Each person object (or student) can have a list of assessments and respective grades under it. This makes sense
-logically since a student will have multiple assessments through the school year.</p>
+logically since a student will have multiple assessments throughout the school year.</p>
 </li>
 <li>
-<p>Statistics can be added for any existing assessment. The grades stored in the HasHMap will be used to calculate various
+<p>Statistics can be added for an existing assessment. The grades stored in the HasHMap will be used to calculate various
 stats such as average score, total exam takers, max score and min score.</p>
 </li>
 <li>
@@ -530,7 +531,7 @@ grades to a particular student.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Better design in terms of OOP. Allows easier calculation of statistics per assessment as you can simply loop through all the grades. It is also a good model of the real-world where all grades for an assessment will be stored together.</p>
+<p>Pros: Better design in terms of OOP. Allows easier calculation of statistics per assessment as you can simply loop through all the grades. It is also a good model of the real world where all grades for an assessment will be stored together.</p>
 </li>
 <li>
 <p>Cons: This is a little more tedious in terms of coding.</p>
@@ -596,7 +597,7 @@ grades to a particular student.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: These assessment statistics have no direct link to person object. It is a separate set of information accessible to all users (students, teachers and admin). Hence, a separate Statistics Book provides increased clarity and makes sense in terms of the end-usage. This also gives easy access to find and see statistics in raw XML format.</p>
+<p>Pros: These assessment statistics have no direct link to the person object. It is a separate set of information accessible to all users (students, teachers and admin). Hence, a separate Statistics Book provides increased clarity and makes sense in terms of the end-usage. This also gives easy access to find and see statistics in raw XML format.</p>
 </li>
 <li>
 <p>Cons: Using an extra storage file implies that additional methods and file paths are needed. Makes code lengthier and repetitive.</p>
@@ -625,11 +626,11 @@ grades to a particular student.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> A fixed set of statistics (average score, total number of exam takers, max score and min score) are automatically calculated inside the application itself.</p>
+<p><strong>Alternative 1 (current choice):</strong> A fixed set of statistics (average score, the total number of exam takers, max score and min score) are automatically calculated inside the application itself.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Reduces human effort. Makes the process of creating a statistic easier for user as they would not have to use any external tools like Excel to do this.</p>
+<p>Pros: Reduces human effort. Makes the process of creating a statistic easier for the user as they would not have to use any external tools like Excel to do this.</p>
 </li>
 <li>
 <p>Cons: Only the statistics parameters currently built into the app can be added. If the user wants to add any other parameter like pass rate, then it is currently not possible.</p>
@@ -689,4 +690,4 @@ grades to a particular student.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 01:00:00 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 01:10:21 UTC</div></div></div></body></html>

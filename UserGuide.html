@@ -13,7 +13,6 @@
 <li><a href="#Fees">Fees Commands</a></li>
 <li><a href="#grade-commands">Grade Commands</a></li>
 <li><a href="#attendance-commands">Attendance Commands</a></li>
-<li><a href="#coming-is-v2-0">Coming is v2.0:</a></li>
 </ul>
 </li>
 <li><a href="#saving-the-data">Saving the data</a></li>
@@ -29,7 +28,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>ClassRepo is targeted at secondary school users who <strong>prefer to use a desktop app for managing all their school related
+<p>ClassRepo is targeted at secondary school users who <strong>prefer to use a desktop app for managing all their school-related
 information</strong>.
 ClassRepo is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI).<br></p>
 </div>
@@ -264,8 +263,8 @@ Format: <code>add NAME [p]p/PHONE_NUMBER [p]e/EMAIL [p]a/ADDRESS [t/TAG]&#8230;&
 <div class="content">
 <div class="paragraph">
 <p>Words in <code>UPPER_CASE</code> are the parameters, items in <code>SQUARE_BRACKETS</code> are optional,
-items with <code>&#8230;&#8203;</code> after them can have multiple instances. Order of parameters are fixed.<br>
-Put a <code>p</code> before the phone / email / address prefixes to mark it as <code>private</code>. <code>private</code> details can only
+items with <code>&#8230;&#8203;</code> after them can have multiple instances. Order of parameters is fixed.<br>
+Put a <code>p</code> before the phone/ email/address prefixes to mark it as <code>private</code>. <code>private</code> details can only
 be seen using the <code>viewall</code> command.<br>
 Persons can have any number of tags (including 0).</p>
 </div>
@@ -611,7 +610,7 @@ Format: <code>addexam [p]e/EXAM_NAME s/SUBJECT_NAME d/EXAM_DATE st/EXAM_START_TI
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Words in <code>UPPER_CASE</code> are the parameters, items in <code>SQUARE_BRACKETS</code> are optional. Order of parameters are fixed.<br>
+<p>Words in <code>UPPER_CASE</code> are the parameters, items in <code>SQUARE_BRACKETS</code> are optional. Order of parameters is fixed.<br>
 Put a <code>p</code> before the exam name prefix to mark the exam as <code>private</code>.</p>
 </div>
 </div>
@@ -675,7 +674,7 @@ Format: <code>editexam INDEX [p/PRIVATE_STATUS] [e/EXAM_NAME] [s/SUBJECT_NAME] [
 <div class="paragraph">
 <p>Edits the exam at the specified <code>INDEX</code>.
 The index refers to the index number shown in the most recent exams listing.
-Words in <code>UPPER_CASE</code> are the parameters, items in <code>SQUARE_BRACKETS</code> are optional. Order of parameters are fixed. At least 1 item in <code>SQUARE_BRACKETS</code> must be present.</p>
+Words in <code>UPPER_CASE</code> are the parameters, items in <code>SQUARE_BRACKETS</code> are optional. Order of parameters is fixed. At least 1 item in <code>SQUARE_BRACKETS</code> must be present.</p>
 </div>
 </div>
 </div>
@@ -785,7 +784,7 @@ Deregisters the 2nd person in the address book for the 2nd exam in the exam book
 <div class="sect3">
 <h4 id="viewing-exams-code-viewexams-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span"><a class="link" href="#viewing-exams-code-viewexams-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span">Viewing exams : <code>viewexams</code> <span class="image"><img src="images/Basic.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
-<p>View the exams for a specificied person in the address book.<br>
+<p>View the exams for a specified person in the address book.<br>
 Format: <code>viewexams INDEX</code></p>
 </div>
 <div class="sidebarblock">
@@ -855,7 +854,7 @@ DUE_DATE must have the form of DD-MM-YYYY</p>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Words in <code>UPPER_CASE</code> are the parameters, the order of parameters are fixed.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters, the order of parameters is fixed.</p>
 </div>
 <div class="paragraph">
 <p>Fees are automatically marked as <code>private</code>. <code>private</code> details can only
@@ -1017,7 +1016,7 @@ name. Duplicate assessments cannot be added.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-all-assessments-code-listassess-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span"><a class="link" href="#listing-all-assessments-code-listassess-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span">Listing all assessments : <code>listassess</code> <span class="image"><img src="images/Tutor.png" alt="16" width="16"></span></a></h4>
+<h4 id="listing-all-assessments-code-listassess-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span"><a class="link" href="#listing-all-assessments-code-listassess-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span">Listing all assessments : <code>listassess</code> <span class="image"><img src="images/Basic.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Shows a list of all assessments in the address book, along with an index for each<br>
 Format: <code>listassess</code></p>
@@ -1116,7 +1115,8 @@ Using <code>list</code> command</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>viewgrades 1</code><br>
+<p><code>list</code><br>
+<code>viewgrades 1</code><br>
 The results will be displayed as a list of assessments the student has taken and their corresponding grades.</p>
 </li>
 </ul>
@@ -1217,7 +1217,7 @@ statistics book to ensure that it is up to date.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-all-statistics-code-liststatistics-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span"><a class="link" href="#listing-all-statistics-code-liststatistics-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span">Listing all statistics : <code>liststatistics</code> <span class="image"><img src="images/Tutor.png" alt="16" width="16"></span></a></h4>
+<h4 id="listing-all-statistics-code-liststatistics-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span"><a class="link" href="#listing-all-statistics-code-liststatistics-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span">Listing all statistics : <code>liststatistics</code> <span class="image"><img src="images/Basic.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Shows a list of all statistics in the statistics book, along with an index for each<br>
 Format: <code>liststatistics</code></p>
@@ -1231,7 +1231,7 @@ Format: <code>liststatistics</code></p>
 <td class="content">
 <div class="paragraph">
 <p>If you delete an assessment after generating its statistics, this statistic will still remain in the statistics book. This
-is to ensure that the school can maintain a record of all its statistics over time, if needed, even though the assessment
+is to ensure that the school can maintain a record of all its statistics over time if needed, even though the assessment
 may have ended and the grades are awarded to students. It is up to the school to decide how long they want to store their
 statistics for.</p>
 </div>
@@ -1270,7 +1270,7 @@ The index refers to the index number shown in the most recent statistics listing
 <div class="sect2">
 <h3 id="attendance-commands"><a class="link" href="#attendance-commands">Attendance Commands</a></h3>
 <div class="paragraph">
-<p>Below are the commands that deals with attendance data:</p>
+<p>Below are the commands that deal with attendance data:</p>
 </div>
 <div class="sect3">
 <h4 id="updates-the-attendance-of-a-person-code-attendance-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span"><a class="link" href="#updates-the-attendance-of-a-person-code-attendance-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span">Updates the attendance of a person: <code>attendance</code> <span class="image"><img src="images/Tutor.png" alt="16" width="16"></span></a></h4>
@@ -1413,9 +1413,10 @@ Replaces the attendance of the first person in the list as present for the date 
 </ul>
 </div>
 </div>
+<div class="sect3">
+<h4 id="coming-in-v2-0"><a class="link" href="#coming-in-v2-0">Coming in v2.0:</a></h4>
+
 </div>
-<div class="sect2">
-<h3 id="coming-is-v2-0"><a class="link" href="#coming-is-v2-0">Coming is v2.0:</a></h3>
 <div class="sect3">
 <h4 id="update-multiple-people-attendance-code-multiatten-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span"><a class="link" href="#update-multiple-people-attendance-code-multiatten-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span">Update multiple people attendance: <code>multiAtten</code> <span class="image"><img src="images/Tutor.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
@@ -1803,4 +1804,4 @@ Click to Expand
 <p> </div></details> </p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 01:00:00 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 01:10:21 UTC</div></div></div></body></html>

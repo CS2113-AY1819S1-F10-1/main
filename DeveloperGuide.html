@@ -111,7 +111,7 @@ Do not disable them. If you have disabled them, go to <code>File</code> &gt; <co
 <p>Fork this repo, and clone the fork to your computer</p>
 </li>
 <li>
-<p>Open IntelliJ (if you are not in the welcome screen, click <code>File</code> &gt; <code>Close Project</code> to close the existing project dialog first)</p>
+<p>Open IntelliJ (if you are not in the welcome screen, click <code>File</code> &gt; <code>Close Project</code> to close the existing project dialogue first)</p>
 </li>
 <li>
 <p>Set up the correct JDK version for Gradle</p>
@@ -320,7 +320,7 @@ The main features are:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>First the specific exam and person will be identified from the most recent exams and persons listing respectively.</p>
+<p>First, the specific exam and person will be identified from the most recent exams and persons listing respectively.</p>
 </li>
 <li>
 <p>The specific exam and person is then extracted out of the ExamBook and AddressBook respectively.</p>
@@ -338,18 +338,18 @@ The main features are:</p>
 <p>The exam is added to the specific person.</p>
 </li>
 <li>
-<p>For the AddressBook, any copies of the original exam is removed and replaced with the new exam.</p>
+<p>For the AddressBook, any copies of the original exam are removed and replaced with the new exam.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>This is demostrated by the following sequence diagram:</p>
+<p>This is demonstrated by the following sequence diagram:</p>
 </div>
 <div id="fig-registerPersonDiagram" class="imageblock">
 <div class="content">
 <img src="images/RegisterExam_Sequence_Diagram.png" alt="RegisterExam Sequence Diagram" width="1200">
 </div>
-<div class="title">Figure 2. Sequence Diagram of registering person for an exam with no errors occuring</div>
+<div class="title">Figure 2. Sequence Diagram of registering a person for an exam with no errors occurring</div>
 </div>
 </div>
 <div class="sect3">
@@ -366,7 +366,7 @@ The main features are:</p>
 <p>Pros: Less space is needed.</p>
 </li>
 <li>
-<p>Cons: This can waste some time, if no changes need to be made for example.</p>
+<p>Cons: This can waste some time if no changes need to be made for example.</p>
 </li>
 </ul>
 </div>
@@ -442,7 +442,7 @@ The main features are:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Less methods and easier to understand implementation.</p>
+<p>Pros: Fewer methods and easier to understand implementation.</p>
 </li>
 <li>
 <p>Cons: Duplicate exams can be added, especially after modification of an exam in the ExamBook.</p>
@@ -556,7 +556,7 @@ The main features are:</p>
 <p><strong>User</strong> levels have their own list of new commands they can run, which is appended to the list inherited from their parent.<br></p>
 </li>
 <li>
-<p><strong>Account</strong> class, which contains its respective <strong>Privilege</strong> object as well as login details, assigns an <strong>Privilege</strong> level to a <strong>Person</strong>.<br></p>
+<p><strong>Account</strong> class, which contains its respective <strong>Privilege</strong> object as well as login details, assigns a <strong>Privilege</strong> level to a <strong>Person</strong>.<br></p>
 </li>
 </ul>
 </div>
@@ -566,7 +566,7 @@ The main features are:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>First, the <strong>Command</strong> will retrieve the <strong>Person</strong> with the specified user name, which is gotten from <strong>AddressBook</strong> who receives it from <strong>UniquePersonList</strong>.</p>
+<p>First, the <strong>Command</strong> will retrieve the <strong>Person</strong> with the specified username, which is gotten from <strong>AddressBook</strong> who receives it from <strong>UniquePersonList</strong>.</p>
 </li>
 <li>
 <p>The <strong>Command</strong> then validates that the specified password matches the password the <strong>Account</strong> belonging to the retrieved person.</p>
@@ -719,7 +719,7 @@ The usage of enums also allows us to keep a reference to the created <strong>Use
 <p>Pros: Quick to implement.</p>
 </li>
 <li>
-<p>Cons: Has a higher level of coupling compared to Alternative 1. Also, would require storing or instantiating a default <strong>Privilege</strong> object and making <strong>Logic</strong> point to this new object if <strong>Logout Command</strong> were to be called.</p>
+<p>Cons: Has a higher level of coupling compared to Alternative 1. Also, would require storing or instantiating a default <strong>Privilege</strong> object and making a <strong>Logic</strong> point to this new object if <strong>Logout Command</strong> were to be called.</p>
 </li>
 </ul>
 </div>
@@ -867,10 +867,10 @@ students for a particular assessment will be stored together in the same HashMap
 </li>
 <li>
 <p>Each person object (or student) can have a list of assessments and respective grades under it. This makes sense
-logically since a student will have multiple assessments through the school year.</p>
+logically since a student will have multiple assessments throughout the school year.</p>
 </li>
 <li>
-<p>Statistics can be added for any existing assessment. The grades stored in the HasHMap will be used to calculate various
+<p>Statistics can be added for an existing assessment. The grades stored in the HasHMap will be used to calculate various
 stats such as average score, total exam takers, max score and min score.</p>
 </li>
 <li>
@@ -917,7 +917,7 @@ grades to a particular student.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Better design in terms of OOP. Allows easier calculation of statistics per assessment as you can simply loop through all the grades. It is also a good model of the real-world where all grades for an assessment will be stored together.</p>
+<p>Pros: Better design in terms of OOP. Allows easier calculation of statistics per assessment as you can simply loop through all the grades. It is also a good model of the real world where all grades for an assessment will be stored together.</p>
 </li>
 <li>
 <p>Cons: This is a little more tedious in terms of coding.</p>
@@ -983,7 +983,7 @@ grades to a particular student.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: These assessment statistics have no direct link to person object. It is a separate set of information accessible to all users (students, teachers and admin). Hence, a separate Statistics Book provides increased clarity and makes sense in terms of the end-usage. This also gives easy access to find and see statistics in raw XML format.</p>
+<p>Pros: These assessment statistics have no direct link to the person object. It is a separate set of information accessible to all users (students, teachers and admin). Hence, a separate Statistics Book provides increased clarity and makes sense in terms of the end-usage. This also gives easy access to find and see statistics in raw XML format.</p>
 </li>
 <li>
 <p>Cons: Using an extra storage file implies that additional methods and file paths are needed. Makes code lengthier and repetitive.</p>
@@ -1012,11 +1012,11 @@ grades to a particular student.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> A fixed set of statistics (average score, total number of exam takers, max score and min score) are automatically calculated inside the application itself.</p>
+<p><strong>Alternative 1 (current choice):</strong> A fixed set of statistics (average score, the total number of exam takers, max score and min score) are automatically calculated inside the application itself.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Reduces human effort. Makes the process of creating a statistic easier for user as they would not have to use any external tools like Excel to do this.</p>
+<p>Pros: Reduces human effort. Makes the process of creating a statistic easier for the user as they would not have to use any external tools like Excel to do this.</p>
 </li>
 <li>
 <p>Cons: Only the statistics parameters currently built into the app can be added. If the user wants to add any other parameter like pass rate, then it is currently not possible.</p>
@@ -1136,7 +1136,7 @@ the fee and the other being the duedate for that respective fee. The current set
 <p>The existing fee with its date will be replaced by this new value in the Person object in the AddressBook.</p>
 </li>
 <li>
-<p>The updated fees will then be store in the AddressBook and will be automatically private, only viewable by the admin and tutors.</p>
+<p>The updated fees will then be stored in the AddressBook and will be automatically private, only viewable by the admin and tutors.</p>
 </li>
 </ol>
 </div>
@@ -1170,7 +1170,7 @@ the fee and the other being the duedate for that respective fee. The current set
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Use a seperate date file 'FeesBook' to keep track of each Person and their respective fees.</p>
+<p><strong>Alternative 2:</strong> Use a separate date file 'FeesBook' to keep track of each Person and their respective fees.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1223,7 +1223,7 @@ the fee and the other being the duedate for that respective fee. The current set
 <p>Pros: Lesser commands in the Fees feature, therefore lesser clutter.</p>
 </li>
 <li>
-<p>Cons: Counter intuitive as Admin would have to manually edit values to be "0.00".</p>
+<p>Cons: Counterintuitive as Admin would have to manually edit values to be "0.00".</p>
 </li>
 </ul>
 </div>
@@ -1304,7 +1304,7 @@ the current system date.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Follows the other ViewCommands with respect to last INDEX presented following any List Command.</p>
+<p><strong>Alternative 1 (current choice):</strong> Follows the other ViewCommands with respect to the last INDEX presented following any List Command.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1547,7 +1547,7 @@ Command first.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="aspect-how-to-store-data-in-xml-addressbook-txt"><a class="link" href="#aspect-how-to-store-data-in-xml-addressbook-txt">Aspect: How to store data in xml, addressbook.txt</a></h5>
+<h5 id="aspect-how-to-store-data-in-xml-addressbook-txt"><a class="link" href="#aspect-how-to-store-data-in-xml-addressbook-txt">Aspect: How to store data in XML, addressbook.txt</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1555,10 +1555,10 @@ Command first.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Simple implementation, and utilizes the fact that each date can only have either present/absent. Iterating through the map to generate the 2 list will thus ensure that the data is in order</p>
+<p>Pros: Simple implementation, and utilizes the fact that each date can only have either present/absent. Iterating through the map to generate the 2 lists will thus ensure that the data is in order</p>
 </li>
 <li>
-<p>Cons: In the xml format, data will be stored as 2 separate lists, which may not be as user friendly to edit directly.</p>
+<p>Cons: In the XML format, data will be stored as 2 separate lists, which may not be as user-friendly to edit directly.</p>
 </li>
 </ul>
 </div>
@@ -1577,14 +1577,14 @@ Command first.</p>
 </div>
 </li>
 <li>
-<p><strong>Alternative 3:</strong> Convert Hashmap to xml directly</p>
+<p><strong>Alternative 3:</strong> Convert Hashmap to XML directly</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Pros: Direct transfer of data will thus require less memory space to store the same data.</p>
 </li>
 <li>
-<p>Cons: A Hashmap to xml converter will require either a very long code (unnecessary for only 1 map), or requires the import of an external library.</p>
+<p>Cons: A Hashmap to XML converter will require either a very long code (unnecessary for only 1 map), or requires the import of an external library.</p>
 </li>
 </ul>
 </div>
@@ -1604,10 +1604,10 @@ Command first.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Reduce the need for repeated code since multiAtten command is very similar to attendance command.</p>
+<p>Pros: Reduce the need for repeated code since the multiAtten command is very similar to attendance command.</p>
 </li>
 <li>
-<p>Pros: Simpler to implement when input is 0 as there is no need to catch index 0 since index 0 will not exist in the UniquePersonList.</p>
+<p>Pros: Simpler to implement when the input is 0 as there is no need to catch index 0 since index 0 will not exist in the UniquePersonList.</p>
 </li>
 <li>
 <p>Cons: Increase in coupling as a change in <code>attendance</code> command will cause <code>multiAtten</code> command to change.</p>
@@ -1828,7 +1828,7 @@ e.g. <code>seedu.addressbook.logic.LogicTest</code></p>
 <div class="sect2">
 <h3 id="documentation-previews"><a class="link" href="#documentation-previews">5.4. Documentation Previews</a></h3>
 <div class="paragraph">
-<p>When a pull request has changes to asciidoc files, you can use <a href="https://www.netlify.com/">Netlify</a> to see a preview of how the HTML version of those asciidoc files will look like when the pull request is merged. See <a href="UsingNetlify.html">UsingNetlify.adoc</a> for more details.</p>
+<p>When a pull request has changed to asciidoc files, you can use <a href="https://www.netlify.com/">Netlify</a> to see a preview of how the HTML version of those asciidoc files will look like when the pull request is merged. See <a href="UsingNetlify.html">UsingNetlify.adoc</a> for more details.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2058,6 +2058,24 @@ Click to Expand
 <td class="tableblock halign-left valign-top"><p class="tableblock">user with many exams in the exam book</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">sort exams by a specified field</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">locate an exam easily</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tutor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mark my student(s)s' attendance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of their attendance and submit to the school</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tutor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit my student(s)'s attendance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">correct any mistakes or make changes if any</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tutor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view my student(s)' attendance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">review and analyse my student(s)'s attendance to see if any of them require help in their work</p></td>
 </tr>
 </tbody>
 </table>
@@ -2317,7 +2335,7 @@ Use case resumes at step 2.</p>
 <p>ClassRepo edits the exam for all persons registered for it in the AddressBook.</p>
 </li>
 <li>
-<p>ClassRepo shows a updated list of exams in the ExamBook.</p>
+<p>ClassRepo shows an updated list of exams in the ExamBook.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2401,7 +2419,7 @@ Use case resumes at step 2.</p>
 <p>ClassRepo updates the specific exam for all persons registered for it in the AddressBook.</p>
 </li>
 <li>
-<p>ClassRepo shows a updated list of exams of the specified person.</p>
+<p>ClassRepo shows an updated list of exams of the specified person.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2478,7 +2496,7 @@ Use case resumes at step 4.</p>
 <p>ClassRepo updates the specific exam for all persons registered for it in the AddressBook.</p>
 </li>
 <li>
-<p>ClassRepo shows a updated list of exams of the specified person.</p>
+<p>ClassRepo shows an updated list of exams of the specified person.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2583,27 +2601,33 @@ Use case resumes at step 4.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The list is empty.<br>
-Use case ends.</p>
+<p>2a. The list is empty.<br></p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
 </li>
 <li>
 <p>3a. User is not a Tutor/Admin and is not logged in.<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p>3a1. ClassRepo shows an error message.<br>
-Use case ends.</p>
+<p>3a1. ClassRepo shows an error message.<br></p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>3b. User is logged in as a Student and tries to view exams of other students.<br></p>
+<p>3b. User is logged in as a Student and tries to view the exams of other students.<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p>3b1. ClassRepo shows an error message.<br>
-Use case ends.</p>
+<p>3b1. ClassRepo shows an error message.<br></p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
 </li>
 </ul>
 </div>
@@ -2613,8 +2637,10 @@ Use case ends.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>4a1. ClassRepo shows a list of his non-private exams.<br>
-Use case ends.</p>
+<p>4a1. ClassRepo shows a list of his non-private exams.<br></p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
 </li>
 </ul>
 </div>
@@ -2628,10 +2654,10 @@ Use case ends.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to view his own details</p>
+<p>User requests to view his own details<br></p>
 </li>
 <li>
-<p>ClassRepo shows the details of the person associated with the logged-in account</p>
+<p>ClassRepo shows the details of the person associated with the logged-in account<br></p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2648,8 +2674,10 @@ Use case ends.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>1a1. ClassRepo displays an error message.<br>
-Use case ends.</p>
+<p>1a1. ClassRepo displays an error message.<br></p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
 </li>
 </ul>
 </div>
@@ -2663,16 +2691,16 @@ Use case ends.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to increase his privilege</p>
+<p>User requests to increase his privilege<br></p>
 </li>
 <li>
-<p>ClassRepo requests authentication password</p>
+<p>ClassRepo requests authentication password<br></p>
 </li>
 <li>
-<p>User enters password</p>
+<p>User enters password<br></p>
 </li>
 <li>
-<p>ClassRepo increases the user&#8217;s privileges to Admin</p>
+<p>ClassRepo increases the user&#8217;s privileges to Admin<br></p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2722,7 +2750,7 @@ Use case ends</p>
 <p>ClassRepo requests the current password</p>
 </li>
 <li>
-<p>User enters current password</p>
+<p>User enters the current password</p>
 </li>
 <li>
 <p>ClassRepo requests the new password</p>
@@ -2731,7 +2759,7 @@ Use case ends</p>
 <p>User enters the new password</p>
 </li>
 <li>
-<p>ClassRepo changes the password to the new one</p>
+<p>ClassRepo changes the password to the new one<br></p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2777,16 +2805,16 @@ User case resumes from step 4</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list persons</p>
+<p>User requests to list persons<br></p>
 </li>
 <li>
-<p>AddressBook shows a list of persons</p>
+<p>AddressBook shows a list of persons<br></p>
 </li>
 <li>
-<p>User requests to add an account to a target person</p>
+<p>User requests to add an account to a target person<br></p>
 </li>
 <li>
-<p>ClassRepo adds the account to the person</p>
+<p>ClassRepo adds the account to the person<br></p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2799,46 +2827,40 @@ User case resumes from step 4</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The list is empty.</p>
+<p>2a. The list is empty.<br></p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
 <li>
-<p>3a. The given index is invalid.</p>
+<p>3a. The given index is invalid.<br></p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. AddressBook shows an error message.</p>
-<div class="paragraph">
-<p>Use case resumes at step 2.</p>
-</div>
+<p>3a1. AddressBook shows an error message.<br>
+Use case resumes at step 2.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>3b. The account format is invalid.</p>
+<p>3b. The account format is invalid.<br></p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3b1. AddressBook shows an error message.</p>
-<div class="paragraph">
-<p>Use case resumes at step 2.</p>
-</div>
+<p>3b1. AddressBook shows an error message.<br>
+Use case resumes at step 2.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>3c. The target person has an existing account.</p>
+<p>3c. The target person has an existing account.<br></p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3c1. AddressBook shows an error message.</p>
-<div class="paragraph">
-<p>Use case resumes at step 2.</p>
-</div>
+<p>3c1. AddressBook shows an error message.<br>
+Use case resumes at step 2.</p>
 </li>
 </ul>
 </div>
@@ -2862,7 +2884,7 @@ User case resumes from step 4</p>
 <p>User requests to delete the account belonging to a specific person in the list</p>
 </li>
 <li>
-<p>AddressBook deletes the account</p>
+<p>AddressBook deletes the account<br></p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2875,33 +2897,27 @@ User case resumes from step 4</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The list is empty.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
+<p>2a. The list is empty.<br>
+Use case ends.</p>
 </li>
 <li>
-<p>3a. The given index is invalid.</p>
+<p>3a. The given index is invalid.<br></p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. AddressBook shows an error message.</p>
-<div class="paragraph">
-<p>Use case resumes at step 2.</p>
-</div>
+<p>3a1. AddressBook shows an error message.<br>
+Use case resumes at step 2.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>3b. Target person does not have an account.</p>
+<p>3b. Target person does not have an account.<br></p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3b1. AddressBook shows an error message.</p>
-<div class="paragraph">
-<p>Use case resumes at step 2.</p>
-</div>
+<p>3b1. AddressBook shows an error message.<br>
+Use case resumes at step 2.</p>
 </li>
 </ul>
 </div>
@@ -2915,16 +2931,16 @@ User case resumes from step 4</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to log in</p>
+<p>User requests to log in<br></p>
 </li>
 <li>
-<p>AddressBook requests username and password</p>
+<p>AddressBook requests username and password<br></p>
 </li>
 <li>
-<p>User enters username and password</p>
+<p>User enters username and password<br></p>
 </li>
 <li>
-<p>AddressBook logs the user into the account</p>
+<p>AddressBook logs the user into the account<br></p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2937,37 +2953,33 @@ User case resumes from step 4</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a. User provided the wrong number of arguments</p>
+<p>3a. User provided the wrong number of arguments<br></p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. AddressBook shows an error message.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
+<p>3a1. AddressBook shows an error message.<br>
+Use case ends.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>3b. No existing account has the given username.</p>
+<p>3b. No existing account has the given username.<br></p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3b1. AddressBook shows an error message.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
+<p>3b1. AddressBook shows an error message.<br>
+Use case ends.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>3c. Password does not match the existing account with the given username.</p>
+<p>3c. The password does not match the existing account with the given username.<br></p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3c1. AddressBook shows an error message.</p>
+<p>3c1. AddressBook shows an error message.<br></p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2987,7 +2999,7 @@ User case resumes from step 4</p>
 <p>User requests to log out</p>
 </li>
 <li>
-<p>ClassRepo logs the user out of his account</p>
+<p>ClassRepo logs the user out of his account<br></p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3000,11 +3012,11 @@ User case resumes from step 4</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2. User is not logged in</p>
+<p>2. User is not logged in<br></p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a1. AddressBook shows an error message.</p>
+<p>2a1. AddressBook shows an error message.<br></p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3021,10 +3033,10 @@ User case resumes from step 4</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to view his privilege</p>
+<p>User requests to view his privilege<br></p>
 </li>
 <li>
-<p>ClassRepo shows the privilege level and the account the user is logged in as</p>
+<p>ClassRepo shows the privilege level and the account the user is logged in as<br></p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3079,7 +3091,7 @@ User case resumes from step 4</p>
 </dd>
 <dt class="hdlist1"><a id="privilege-level"></a> Privilege Level</dt>
 <dd>
-<p>Describes the authority of the current user. Interchangable with the term "access level"</p>
+<p>Describes the authority of the current user. Interchangeable with the term "access level"</p>
 </dd>
 <dt class="hdlist1"><a id="mss"></a> Main Success Scenario</dt>
 <dd>
@@ -3412,7 +3424,7 @@ Expected: Error details shown in the status console. Output console remains the 
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: Run the application at least once to generate the storage files and add in some person data.</p>
+<p>Prerequisites: Run the application at least once to generate the storage files and add in some person&#8217;s data.</p>
 </li>
 <li>
 <p>Open up <code>addressbook.txt</code>.</p>
@@ -3456,4 +3468,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 01:00:00 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 01:10:21 UTC</div></div></div></body></html>

@@ -159,7 +159,7 @@ Format: <code>addexam [p]e/EXAM_NAME s/SUBJECT_NAME d/EXAM_DATE st/EXAM_START_TI
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Words in <code>UPPER_CASE</code> are the parameters, items in <code>SQUARE_BRACKETS</code> are optional. Order of parameters are fixed.<br>
+<p>Words in <code>UPPER_CASE</code> are the parameters, items in <code>SQUARE_BRACKETS</code> are optional. Order of parameters is fixed.<br>
 Put a <code>p</code> before the exam name prefix to mark the exam as <code>private</code>.</p>
 </div>
 </div>
@@ -223,7 +223,7 @@ Format: <code>editexam INDEX [p/PRIVATE_STATUS] [e/EXAM_NAME] [s/SUBJECT_NAME] [
 <div class="paragraph">
 <p>Edits the exam at the specified <code>INDEX</code>.
 The index refers to the index number shown in the most recent exams listing.
-Words in <code>UPPER_CASE</code> are the parameters, items in <code>SQUARE_BRACKETS</code> are optional. Order of parameters are fixed. At least 1 item in <code>SQUARE_BRACKETS</code> must be present.</p>
+Words in <code>UPPER_CASE</code> are the parameters, items in <code>SQUARE_BRACKETS</code> are optional. Order of parameters is fixed. At least 1 item in <code>SQUARE_BRACKETS</code> must be present.</p>
 </div>
 </div>
 </div>
@@ -333,7 +333,7 @@ Deregisters the 2nd person in the address book for the 2nd exam in the exam book
 <div class="sect3">
 <h4 id="viewing-exams-code-viewexams-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span"><a class="link" href="#viewing-exams-code-viewexams-code-span-class-image-img-src-images-basic-png-alt-16-width-16-span">Viewing exams : <code>viewexams</code> <span class="image"><img src="../images/Basic.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
-<p>View the exams for a specificied person in the address book.<br>
+<p>View the exams for a specified person in the address book.<br>
 Format: <code>viewexams INDEX</code></p>
 </div>
 <div class="sidebarblock">
@@ -444,7 +444,7 @@ The main features are:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>First the specific exam and person will be identified from the most recent exams and persons listing respectively.</p>
+<p>First, the specific exam and person will be identified from the most recent exams and persons listing respectively.</p>
 </li>
 <li>
 <p>The specific exam and person is then extracted out of the ExamBook and AddressBook respectively.</p>
@@ -462,18 +462,18 @@ The main features are:</p>
 <p>The exam is added to the specific person.</p>
 </li>
 <li>
-<p>For the AddressBook, any copies of the original exam is removed and replaced with the new exam.</p>
+<p>For the AddressBook, any copies of the original exam are removed and replaced with the new exam.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>This is demostrated by the following sequence diagram:</p>
+<p>This is demonstrated by the following sequence diagram:</p>
 </div>
 <div id="fig-registerPersonDiagram" class="imageblock">
 <div class="content">
 <img src="../images/RegisterExam_Sequence_Diagram.png" alt="RegisterExam Sequence Diagram" width="1200">
 </div>
-<div class="title">Figure 2. Sequence Diagram of registering person for an exam with no errors occuring</div>
+<div class="title">Figure 2. Sequence Diagram of registering a person for an exam with no errors occurring</div>
 </div>
 </div>
 <div class="sect3">
@@ -490,7 +490,7 @@ The main features are:</p>
 <p>Pros: Less space is needed.</p>
 </li>
 <li>
-<p>Cons: This can waste some time, if no changes need to be made for example.</p>
+<p>Cons: This can waste some time if no changes need to be made for example.</p>
 </li>
 </ul>
 </div>
@@ -566,7 +566,7 @@ The main features are:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Less methods and easier to understand implementation.</p>
+<p>Pros: Fewer methods and easier to understand implementation.</p>
 </li>
 <li>
 <p>Cons: Duplicate exams can be added, especially after modification of an exam in the ExamBook.</p>
@@ -646,4 +646,4 @@ The main features are:</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 01:00:00 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 01:10:21 UTC</div></div></div></body></html>
