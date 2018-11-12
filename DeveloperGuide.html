@@ -3317,6 +3317,151 @@ Use case ends.</p>
 </li>
 </ol>
 </div>
+<h3 id="use-case-taking-attendance-for-student" class="discrete">Use case: Taking attendance for student</h3>
+<h4 id="actor-tutor" class="discrete">Actor: Tutor</h4>
+<div class="paragraph">
+<p><a href="#mss"><strong>MSS</strong></a></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list people.</p>
+</li>
+<li>
+<p>ClassRepo shows a list of people.</p>
+</li>
+<li>
+<p>User request to update attendance of person with index x<br></p>
+</li>
+<li>
+<p>ClassRepo shows attendance of person with index x is updated<br></p>
+</li>
+<li>
+<p>User requests to change attendance of person with index x<br></p>
+</li>
+<li>
+<p>ClassRepo shows attendance of person with index x is replaced<br></p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a. User provided the invalid index.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. ClassRepo shows an error message.<br>
+Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3b. Person with index x already has attendance.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>3b1. ClassRepo shows an error message and suggests to use the replaceAtten command.<br>
+Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>5a. User provided the invalid index.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>5a1. ClassRepo shows an error message.<br>
+Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>5b. Person with index x does not have existing attendance.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>5b1. ClassRepo shows an error message and suggests to use attendance command.<br>
+Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-viewing-of-attendance" class="discrete">Use case: Viewing of attendance</h3>
+<h4 id="actor-tutor-2" class="discrete">Actor: Tutor</h4>
+<div class="paragraph">
+<p><a href="#mss"><strong>MSS</strong></a></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to view attendance of person with index x<br></p>
+</li>
+<li>
+<p>ClassRepo shows attendance of person with index x<br></p>
+</li>
+<li>
+<p>User request to view attendances of people for date y<br></p>
+</li>
+<li>
+<p>ClassRepo shows the lists of people who are present and absent for date y<br></p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. User provided the invalid index.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. ClassRepo shows an error message.<br>
+Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3a. User provided the invalid index.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. ClassRepo shows an error message.<br>
+Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>4b. User input invalid date.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>4b1. ClassRepo shows an error message.<br>
+Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p><em>{More to be added}</em></p>
 </div>
@@ -3399,7 +3544,7 @@ These instructions only provide a starting point for testers to work on; testers
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Loading of sample data into program</p>
+<p>Loading of sample data into the program</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -3469,7 +3614,7 @@ Expected: First contact is deleted from the list. Details of the deleted contact
 </li>
 <li>
 <p>Test case: <code>delete 0</code><br>
-Expected: No person is deleted. Error details shown in the status console. Output console remains the same.</p>
+Expected: No person is deleted. Error details are shown in the status console. Output console remains the same.</p>
 </li>
 <li>
 <p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size), <code>delete a</code> (where a is not an integer)<br>
@@ -3494,11 +3639,11 @@ Expected: Similar to previous.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list. Not logged in or logged in as student.</p>
+<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list. Not logged in or logged in a student.</p>
 </li>
 <li>
 <p>Test case: <code>delete 1</code><br>
-Expected: No person is deleted. Error details shown in the status console. Output console remains the same.</p>
+Expected: No person is deleted. Error details are shown in the status console. Output console remains the same.</p>
 </li>
 <li>
 <p>Other commands of different privilege to try: <code>listexams</code>, <code>listall</code>, <code>deleteexam 1</code><br>
@@ -3524,7 +3669,7 @@ Expected: Contact is added to the list. Details of the added contact shown in th
 </li>
 <li>
 <p>Test case: <code>add John Doe p/98765432 e/johnd@gmail.com a/311, Clementi Ave 2, #02-25 t/friends t/owesMoney</code> after the previous test case was performed.<br>
-Expected: No person is added. Error details shown in the status console. Output console remains the same.</p>
+Expected: No person is added. Error details are shown in the status console. Output console remains the same.</p>
 </li>
 <li>
 <p>Other similar commands to try: <code>addexam</code>, <code>addassess</code><br>
@@ -3553,7 +3698,7 @@ Expected: Exam is added to person. Status console shows success message. Output 
 </li>
 <li>
 <p>Test case: <code>regexam 1 1</code> after the previous test case was performed.<br>
-Expected: Exam is not added. Error details shown in the status console. Output console remains the same.</p>
+Expected: Exam is not added. Error details are shown in the status console. Output console remains the same.</p>
 </li>
 <li>
 <p>Other similar commands to try: <code>addassess</code>, <code>addstatistics</code><br>
@@ -3582,7 +3727,7 @@ Expected: Exam is removed from person. Status console shows success message. Out
 </li>
 <li>
 <p>Test case: <code>deregexam 1 1</code> after the previous test case was performed.<br>
-Expected: Exam is not removed. Error details shown in the status console. Output console remains the same.</p>
+Expected: Exam is not removed. Error details are shown in the status console. Output console remains the same.</p>
 </li>
 </ol>
 </div>
@@ -3607,7 +3752,7 @@ Expected: Exam is edited. Status console shows success message. Output console d
 </li>
 <li>
 <p>Test case: <code>editexam 1 p/n</code> after the previous test case was performed.<br>
-Expected: Exam is not edited. Error details shown in the status console. Output console remains the same.</p>
+Expected: Exam is not edited. Error details are shown in the status console. Output console remains the same.</p>
 </li>
 </ol>
 </div>
@@ -3624,7 +3769,7 @@ Expected: Exam is not edited. Error details shown in the status console. Output 
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: Logged in with a student account of the 1st person in the AddressBook. AddressBook has mutiple persons.</p>
+<p>Prerequisites: Logged in with a student account of the 1st person in the AddressBook. AddressBook has multiple persons.</p>
 </li>
 <li>
 <p>Test case: <code>viewexams 1</code><br>
@@ -3743,4 +3888,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 04:04:56 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 04:40:20 UTC</div></div></div></body></html>
