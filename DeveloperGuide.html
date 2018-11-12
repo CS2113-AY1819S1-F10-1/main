@@ -57,12 +57,18 @@
 <li><a href="#glossary">Appendix E: Glossary</a></li>
 <li><a href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
-<li><a href="#launch-and-shutdown">F.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-person">F.2. Deleting a person</a></li>
-<li><a href="#accessing-a-command-of-different-privilege-level">F.3. Accessing a command of different privilege level</a></li>
-<li><a href="#adding-a-duplicate-person">F.4. Adding a duplicate person</a></li>
-<li><a href="#data-storage">F.5. Data storage</a></li>
-<li><a href="#instructions-for-manual-testing-2">F.6. Instructions for Manual Testing</a></li>
+<li><a href="#loading-sample-data">F.1. Loading sample data</a></li>
+<li><a href="#launch-and-shutdown">F.2. Launch and Shutdown</a></li>
+<li><a href="#deleting-a-person">F.3. Deleting a person</a></li>
+<li><a href="#accessing-a-command-of-different-privilege-level">F.4. Accessing a command of different privilege level</a></li>
+<li><a href="#adding-a-duplicate-person">F.5. Adding a duplicate person</a></li>
+<li><a href="#registering-a-person-for-an-exam">F.6. Registering a person for an exam</a></li>
+<li><a href="#deregistering-a-person-for-an-exam">F.7. Deregistering a person for an exam</a></li>
+<li><a href="#editing-an-exam">F.8. Editing an exam</a></li>
+<li><a href="#viewing-exams-as-a-student">F.9. Viewing exams as a student</a></li>
+<li><a href="#adding-attendance-for-a-person">F.10. Adding attendance for a person</a></li>
+<li><a href="#updating-attendance-for-a-person">F.11. Updating attendance for a person</a></li>
+<li><a href="#data-storage">F.12. Data storage</a></li>
 </ul>
 </li>
 </ul>
@@ -1983,19 +1989,19 @@ Click to Expand
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tutor/admin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">admin</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add a new exam</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tutor/admin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">admin</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">delete an exam</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">remove entries that I no longer need</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tutor/admin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">admin</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">edit an exam</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">update the details of exam entries</p></td>
 </tr>
@@ -2182,7 +2188,7 @@ Use case resumes at step 2.</p>
 </div>
 <h3 id="use-case-add-exam" class="discrete">Use case: Add exam</h3>
 <h4 id="system-exambook" class="discrete">System: ExamBook</h4>
-<h4 id="actor-tutor-admin" class="discrete">Actor: Tutor, Admin</h4>
+<h4 id="actor-admin" class="discrete">Actor: Admin</h4>
 <div class="paragraph">
 <p><a href="#mss"><strong>MSS</strong></a></p>
 </div>
@@ -2236,7 +2242,7 @@ Use case ends.</p>
 </div>
 <h3 id="use-case-delete-exam" class="discrete">Use case: Delete exam</h3>
 <h4 id="system-adressbook-exambook-2" class="discrete">System: AdressBook, ExamBook</h4>
-<h4 id="actor-tutor-admin-2" class="discrete">Actor: Tutor, Admin</h4>
+<h4 id="actor-admin-2" class="discrete">Actor: Admin</h4>
 <div class="paragraph">
 <p><a href="#mss"><strong>MSS</strong></a></p>
 </div>
@@ -2286,7 +2292,7 @@ Use case resumes at step 2.</p>
 </div>
 <h3 id="use-case-edit-exam" class="discrete">Use case: Edit exam</h3>
 <h4 id="system-adressbook-exambook-3" class="discrete">System: AdressBook, ExamBook</h4>
-<h4 id="actor-tutor-admin-3" class="discrete">Actor: Tutor, Admin</h4>
+<h4 id="actor-admin-3" class="discrete">Actor: Admin</h4>
 <div class="paragraph">
 <p><a href="#mss"><strong>MSS</strong></a></p>
 </div>
@@ -2364,7 +2370,7 @@ Use case resumes at step 2.</p>
 </div>
 <h3 id="use-case-register-for-an-exam" class="discrete">Use case: Register for an exam</h3>
 <h4 id="system-adressbook-exambook-4" class="discrete">System: AdressBook, ExamBook</h4>
-<h4 id="actor-tutor-admin-4" class="discrete">Actor: Tutor, Admin</h4>
+<h4 id="actor-tutor-admin" class="discrete">Actor: Tutor, Admin</h4>
 <div class="paragraph">
 <p><a href="#mss"><strong>MSS</strong></a></p>
 </div>
@@ -2441,7 +2447,7 @@ Use case resumes at step 4.</p>
 </div>
 <h3 id="use-case-deregister-for-an-exam" class="discrete">Use case: Deregister for an exam</h3>
 <h4 id="system-adressbook-exambook-5" class="discrete">System: AdressBook, ExamBook</h4>
-<h4 id="actor-tutor-admin-5" class="discrete">Actor: Tutor, Admin</h4>
+<h4 id="actor-tutor-admin-2" class="discrete">Actor: Tutor, Admin</h4>
 <div class="paragraph">
 <p><a href="#mss"><strong>MSS</strong></a></p>
 </div>
@@ -2518,7 +2524,7 @@ Use case resumes at step 4.</p>
 </div>
 <h3 id="use-case-viewing-the-exams-list" class="discrete">Use case: Viewing the exams list</h3>
 <h4 id="system-exambook-2" class="discrete">System: ExamBook</h4>
-<h4 id="actor-tutor-admin-6" class="discrete">Actor: Tutor, Admin</h4>
+<h4 id="actor-tutor-admin-3" class="discrete">Actor: Tutor, Admin</h4>
 <div class="paragraph">
 <p><a href="#mss"><strong>MSS</strong></a></p>
 </div>
@@ -2703,7 +2709,7 @@ Use case ends</p>
 </ul>
 </div>
 <h3 id="use-case-change-master-password" class="discrete">Use case: Change master password</h3>
-<h4 id="actor-admin" class="discrete">Actor: Admin</h4>
+<h4 id="actor-admin-4" class="discrete">Actor: Admin</h4>
 <div class="paragraph">
 <p><a href="#mss"><strong>MSS</strong></a></p>
 </div>
@@ -2764,7 +2770,7 @@ User case resumes from step 4</p>
 </ol>
 </div>
 <h3 id="use-case-add-account-to-a-person" class="discrete">Use case: Add account to a person</h3>
-<h4 id="actor-admin-2" class="discrete">Actor: Admin</h4>
+<h4 id="actor-admin-5" class="discrete">Actor: Admin</h4>
 <div class="paragraph">
 <p><a href="#mss"><strong>MSS</strong></a></p>
 </div>
@@ -2840,7 +2846,7 @@ User case resumes from step 4</p>
 </ul>
 </div>
 <h3 id="use-case-delete-account" class="discrete">Use case: Delete account</h3>
-<h4 id="actor-admin-3" class="discrete">Actor: Admin</h4>
+<h4 id="actor-admin-6" class="discrete">Actor: Admin</h4>
 <div class="paragraph">
 <p><a href="#mss"><strong>MSS</strong></a></p>
 </div>
@@ -3102,7 +3108,30 @@ These instructions only provide a starting point for testers to work on; testers
 </table>
 </div>
 <div class="sect2">
-<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">F.1. Launch and Shutdown</a></h3>
+<h3 id="loading-sample-data"><a class="link" href="#loading-sample-data">F.1. Loading sample data</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Loading of sample data into program</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Move the <code>jar</code> file into the working directory.</p>
+</li>
+<li>
+<p>Copy the sample data from the <a href="https://github.com/CS2113-AY1819S1-F10-1/main/tree/master/sample_data">GitHub Repo</a> into the working directory.</p>
+</li>
+<li>
+<p>Launch the <code>jar</code> file. Type <code>list</code> into the CLI to confirm that the data is loaded into the system.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">F.2. Launch and Shutdown</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3137,7 +3166,7 @@ Expected: The most recent window size and location are retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">F.2. Deleting a person</a></h3>
+<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">F.3. Deleting a person</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3145,18 +3174,22 @@ Expected: The most recent window size and location are retained.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list.</p>
+<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list. Logged in as admin.</p>
 </li>
 <li>
 <p>Test case: <code>delete 1</code><br>
-Expected: First contact is deleted from the list. Details of the deleted contact shown in the status console.</p>
+Expected: First contact is deleted from the list. Details of the deleted contact shown in the status console. List in the output console is updated.</p>
 </li>
 <li>
 <p>Test case: <code>delete 0</code><br>
-Expected: No person is deleted. Error details shown in the status console. Console bar remains the same.</p>
+Expected: No person is deleted. Error details shown in the status console. Output console remains the same.</p>
 </li>
 <li>
 <p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size), <code>delete a</code> (where a is not an integer)<br>
+Expected: Similar to previous.</p>
+</li>
+<li>
+<p>Other similar commands to try: <code>deletexam</code>, <code>deleteassess</code><br>
 Expected: Similar to previous.</p>
 </li>
 </ol>
@@ -3166,7 +3199,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="accessing-a-command-of-different-privilege-level"><a class="link" href="#accessing-a-command-of-different-privilege-level">F.3. Accessing a command of different privilege level</a></h3>
+<h3 id="accessing-a-command-of-different-privilege-level"><a class="link" href="#accessing-a-command-of-different-privilege-level">F.4. Accessing a command of different privilege level</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3174,11 +3207,11 @@ Expected: Similar to previous.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list.</p>
+<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list. Not logged in or logged in as student.</p>
 </li>
 <li>
 <p>Test case: <code>delete 1</code><br>
-Expected: No person is deleted. Error details shown in the status console. Console bar remains the same.</p>
+Expected: No person is deleted. Error details shown in the status console. Output console remains the same.</p>
 </li>
 <li>
 <p>Other commands of different privilege to try: <code>listexams</code>, <code>listall</code>, <code>deleteexam 1</code><br>
@@ -3191,11 +3224,11 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-duplicate-person"><a class="link" href="#adding-a-duplicate-person">F.4. Adding a duplicate person</a></h3>
+<h3 id="adding-a-duplicate-person"><a class="link" href="#adding-a-duplicate-person">F.5. Adding a duplicate person</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add a person while it already exists in the address book.</p>
+<p>Add a person while it already exists in the address book. Logged in as admin</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -3204,7 +3237,7 @@ Expected: Contact is added to the list. Details of the added contact shown in th
 </li>
 <li>
 <p>Test case: <code>add John Doe p/98765432 e/johnd@gmail.com a/311, Clementi Ave 2, #02-25 t/friends t/owesMoney</code> after the previous test case was performed.<br>
-Expected: No person is added. Error details shown in the status console. Console bar remains the same.</p>
+Expected: No person is added. Error details shown in the status console. Output console remains the same.</p>
 </li>
 <li>
 <p>Other similar commands to try: <code>addexam</code>, <code>addassess</code><br>
@@ -3217,11 +3250,165 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="data-storage"><a class="link" href="#data-storage">F.5. Data storage</a></h3>
+<h3 id="registering-a-person-for-an-exam"><a class="link" href="#registering-a-person-for-an-exam">F.6. Registering a person for an exam</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Dealing with missing/corrupted data files</p>
+<p>Register a person in the addressbook for an exam in the exambook</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list. List all exams using the <code>listexams</code> command. Multiple exams in the list. Logged in as tutor/admin.</p>
+</li>
+<li>
+<p>Test case: <code>regexam 1 1</code><br>
+Expected: Exam is added to person. Status console shows success message. Output console displays the exams of person.</p>
+</li>
+<li>
+<p>Test case: <code>regexam 1 1</code> after the previous test case was performed.<br>
+Expected: Exam is not added. Error details shown in the status console. Output console remains the same.</p>
+</li>
+<li>
+<p>Other similar commands to try: <code>addassess</code>, <code>addstatistics</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deregistering-a-person-for-an-exam"><a class="link" href="#deregistering-a-person-for-an-exam">F.7. Deregistering a person for an exam</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deregister a person in the addressbook for an exam in the exambook</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list. List all exams using the <code>listexams</code> command. Multiple exams in the list. Logged in as tutor/admin.</p>
+</li>
+<li>
+<p>Test case: <code>deregexam 1 1</code><br>
+Expected: Exam is removed from person. Status console shows success message. Output console displays the exams of person.</p>
+</li>
+<li>
+<p>Test case: <code>deregexam 1 1</code> after the previous test case was performed.<br>
+Expected: Exam is not removed. Error details shown in the status console. Output console remains the same.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-an-exam"><a class="link" href="#editing-an-exam">F.8. Editing an exam</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Edit an exam in the ExamBook and change its details</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all exams using the <code>listexams</code> command. Multiple exams in the list. Logged in as admin.</p>
+</li>
+<li>
+<p>Test case: <code>editexam 1 p/n</code><br>
+Expected: Exam is edited. Status console shows success message. Output console displays the updated list of exams.</p>
+</li>
+<li>
+<p>Test case: <code>editexam 1 p/n</code> after the previous test case was performed.<br>
+Expected: Exam is not edited. Error details shown in the status console. Output console remains the same.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-exams-as-a-student"><a class="link" href="#viewing-exams-as-a-student">F.9. Viewing exams as a student</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>View non-private exams in a student account</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Logged in with a student account of the 1st person in the AddressBook. AddressBook has mutiple persons.</p>
+</li>
+<li>
+<p>Test case: <code>viewexams 1</code><br>
+Expected: Status console shows success message. Output console displays the list of non-private exams of the 1st person in the AddressBook.</p>
+</li>
+<li>
+<p>Test case: <code>viewexams 2</code><br>
+Expected: Status console shows error message. Output console remains the same.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-attendance-for-a-person"><a class="link" href="#adding-attendance-for-a-person">F.10. Adding attendance for a person</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding attendance for a person while all persons are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list. Logged in as tutor/admin.</p>
+</li>
+<li>
+<p>Test case: <code>attendance 1 d/0 att/1</code><br>
+Expected: Attendance is updated for person. Status console shows success message. Output console remains the same.</p>
+</li>
+<li>
+<p>Test case: <code>attendance 1 d/0 att/1</code> after the previous test case was performed.<br>
+Expected: Error details shown in the status console. Output console remains the same.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="updating-attendance-for-a-person"><a class="link" href="#updating-attendance-for-a-person">F.11. Updating attendance for a person</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Updating attendance for a person while all persons are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list. Logged in as tutor/admin. Attendance was already taken once on same date.</p>
+</li>
+<li>
+<p>Test case: <code>attendance 1 d/0 att/1</code><br>
+Expected: Attendance is updated for person. Status console shows success message. Output console remains the same.</p>
+</li>
+<li>
+<p>Test case: <code>attendance 1 d/10-10-2018 att/1</code>.<br>
+Expected: Error details shown in the status console. Output console remains the same.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="data-storage"><a class="link" href="#data-storage">F.12. Data storage</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Dealing with corrupted data files</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -3245,30 +3432,22 @@ Expected: Similar to previous.</p>
 </div>
 </li>
 <li>
-<p><em>{explain how to simulate a missing/corrupted file and the expected behaviour}</em></p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="instructions-for-manual-testing-2"><a class="link" href="#instructions-for-manual-testing-2">F.6. Instructions for Manual Testing</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Loading of sample data into program</p>
+<p>Dealing with missing data files</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Move the <code>jar</code> file into the working directory.</p>
+<p>Prerequisites: Run the application at least once to generate the storage files and add in some person and exam data. Register some persons for some exams.</p>
 </li>
 <li>
-<p>Copy the sample data from the <a href="https://github.com/CS2113-AY1819S1-F10-1/main/tree/master/sample_data">GitHub Repo</a> into the working directory.</p>
+<p>Delete <code>exams.txt</code></p>
 </li>
 <li>
-<p>Launch the <code>jar</code> file. Type <code>list</code> into the CLI to confirm that the data is loaded into the system.</p>
+<p>Run the application again.<br>
+Expected: The application is unable to be opened. Refer to the <code>log.txt</code> in the base folder to check for the error message, which should indicate an error for the phone number.</p>
+</li>
+<li>
+<p>Other similar edits can be made to <code>addressbook.txt</code> to try.<br>
+Expected: Similar to previous.</p>
 </li>
 </ol>
 </div>
@@ -3277,4 +3456,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 15:18:59 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 01:00:00 UTC</div></div></div></body></html>

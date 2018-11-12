@@ -64,7 +64,7 @@ The user interacts with it using a CLI, and it has a very basic GUI. It is an en
 <p>Justification: This feature improves the product significantly because exams would be present in every school and it would be valuable for the school tutors and admins to manage them in a single application. Students would be able to benefit as they can check their exam schedules without the need to ask others or record them separately.</p>
 </li>
 <li>
-<p>Highlights: This enhancement affects existing commands, data structures and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands and data structures. This is because a single exam object is closely related to the whole AddressBook.</p>
+<p>Highlights: This enhancement affects existing commands, data structures and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands and data structures. This is because a single exam object is closely related to the whole AddressBook. Hence, there are checks to ensure that the exams are always synchronised in both storage files.</p>
 </li>
 <li>
 <p>Credits: <a href="https://stackoverflow.com/a/30578421">Victor Hernandez</a> for the base valid date checker method.</p>
@@ -117,7 +117,7 @@ The user interacts with it using a CLI, and it has a very basic GUI. It is an en
 <p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/CS2113-AY1819S1-F10-1/main/pull/68">#68</a></p>
 </li>
 <li>
-<p>Manually tested all features in my team&#8217;s application and reported any issues: <a href="https://github.com/CS2113-AY1819S1-F10-1/main/issues/161">#161</a>, <a href="https://github.com/CS2113-AY1819S1-F10-1/main/issues/173">#173</a></p>
+<p>Manually tested all features in my team&#8217;s application and reported any issues: <a href="https://github.com/CS2113-AY1819S1-F10-1/main/issues/161">#161</a>, <a href="https://github.com/CS2113-AY1819S1-F10-1/main/issues/173">#173</a>, <a href="https://github.com/CS2113-AY1819S1-F10-1/main/issues/246">#246</a>, <a href="https://github.com/CS2113-AY1819S1-F10-1/main/issues/269">#269</a></p>
 </li>
 <li>
 <p>Manually tested other teams' applications and reported any issues: <a href="https://github.com/CS2113-AY1819S1-T16-4/main/issues/192">#192</a>, <a href="https://github.com/CS2113-AY1819S1-T16-4/main/issues/197">#197</a></p>
@@ -151,7 +151,7 @@ The user interacts with it using a CLI, and it has a very basic GUI. It is an en
 <p>Below are the commands that deals with exam data:</p>
 </div>
 <div class="sect3">
-<h4 id="adding-an-exam-code-addexam-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span"><a class="link" href="#adding-an-exam-code-addexam-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span">Adding an exam : <code>addexam</code> <span class="image"><img src="../images/Tutor.png" alt="16" width="16"></span></a></h4>
+<h4 id="adding-an-exam-code-addexam-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span"><a class="link" href="#adding-an-exam-code-addexam-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span">Adding an exam : <code>addexam</code> <span class="image"><img src="../images/Admin.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Adds an exam to the exam book, with the number of takers initialised as <code>0</code>.<br>
 Format: <code>addexam [p]e/EXAM_NAME s/SUBJECT_NAME d/EXAM_DATE st/EXAM_START_TIME et/EXAM_END_TIME dt/EXAM_DETAILS</code></p>
@@ -186,7 +186,7 @@ Format: <code>listexams</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-an-exam-code-deleteexam-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span"><a class="link" href="#deleting-an-exam-code-deleteexam-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span">Deleting an exam : <code>deleteexam</code> <span class="image"><img src="../images/Tutor.png" alt="16" width="16"></span></a></h4>
+<h4 id="deleting-an-exam-code-deleteexam-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span"><a class="link" href="#deleting-an-exam-code-deleteexam-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span">Deleting an exam : <code>deleteexam</code> <span class="image"><img src="../images/Admin.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Deletes the specified exam from the exam book. Irreversible. Persons registered for the corresponding exam will have the exam deleted as well.<br>
 Format: <code>deleteexam INDEX</code></p>
@@ -213,7 +213,7 @@ Deletes the 2nd exam in the exam book.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-an-exam-code-editexam-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span"><a class="link" href="#editing-an-exam-code-editexam-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span">Editing an exam : <code>editexam</code> <span class="image"><img src="../images/Tutor.png" alt="16" width="16"></span></a></h4>
+<h4 id="editing-an-exam-code-editexam-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span"><a class="link" href="#editing-an-exam-code-editexam-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span">Editing an exam : <code>editexam</code> <span class="image"><img src="../images/Admin.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Edits the specified exam from the exam book. Persons registered for the corresponding exam will have the exam details updated as well.<br>
 Format: <code>editexam INDEX [p/PRIVATE_STATUS] [e/EXAM_NAME] [s/SUBJECT_NAME] [d/EXAM_DATE] [st/EXAM_START_TIME] [et/EXAM_END_TIME] [dt/EXAM_DETAILS]</code></p>
@@ -380,7 +380,7 @@ Views the exams of the 1st person in the address book, <strong>if the logged-acc
 </div>
 </div>
 <div class="sect3">
-<h4 id="clearing-all-entries-code-clearexams-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span"><a class="link" href="#clearing-all-entries-code-clearexams-code-span-class-image-img-src-images-tutor-png-alt-16-width-16-span">Clearing all entries : <code>clearexams</code> <span class="image"><img src="../images/Tutor.png" alt="16" width="16"></span></a></h4>
+<h4 id="clearing-all-entries-code-clearexams-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span"><a class="link" href="#clearing-all-entries-code-clearexams-code-span-class-image-img-src-images-admin-png-alt-16-width-16-span">Clearing all entries : <code>clearexams</code> <span class="image"><img src="../images/Admin.png" alt="16" width="16"></span></a></h4>
 <div class="paragraph">
 <p>Clears all entries from the exam book. All exams will be cleared in the address book as well.<br>
 Format: <code>clearexams</code></p>
@@ -646,4 +646,4 @@ The main features are:</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 15:18:59 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 01:00:00 UTC</div></div></div></body></html>
